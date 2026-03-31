@@ -13,6 +13,8 @@ run({
     "/blog",
     "/post/which-social-media-management-tool-is-best-for-you",
     "/post/how-to-schedule-a-post-on-social-media",
+    "/post/how-to-become-a-good-community-manager",
+    "/post/reach-vs-impressions-in-social-media-marketing",
     "/privacy-policy",
     "/terms-and-services",
     "/faq",

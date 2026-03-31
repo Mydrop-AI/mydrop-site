@@ -267,7 +267,7 @@ export const blogPosts: BlogPost[] = [
     heroImage: "/media/images/original-site/legacy-top-scheduling-tools-blog-banner.png",
     heroImageAlt:
       "Planning and scheduling social media posts on a visual content calendar.",
-    heroCaption: "How to Schedule a Post on Social Media",
+    heroCaption: "Planning social content in advance with a visual publishing calendar",
     intro: [
       "Scheduling social media content in advance helps teams stay consistent and frees up daily execution time.",
       "This guide walks through a practical process for planning and scheduling posts with Mydrop AI.",
@@ -281,6 +281,62 @@ export const blogPosts: BlogPost[] = [
       "Use scheduling to remove daily posting stress and focus on stronger strategy.",
     ],
     ctaLabel: "Start using Mydrop AI for free",
+    ctaHref: "https://app.mydropai.com/register",
+  },
+  {
+    slug: "how-to-become-a-good-community-manager",
+    title: "How To Become a Good Community Manager ?",
+    description:
+      "Learn how to become an effective community manager with practical skills, strategy tips, and tools that help you scale engagement.",
+    author: "Ariana Collins, Mydrop Team",
+    publishedAt: "2025-02-19",
+    updatedAt: "2025-02-19",
+    readTime: "6 min read",
+    heroImage: "/media/images/original-site/legacy-how-to-become-a-community-manager.png",
+    heroImageAlt:
+      "Community manager coordinating social engagement and audience feedback",
+    heroCaption: "Building stronger brand communities through consistent engagement",
+    intro: [
+      "Community managers build trust between brands and audiences through consistent communication and engagement.",
+      "This guide covers the core skills, tools, strategy, and execution habits needed to grow as a community manager.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "How To Become a Good Community Manager: Conclusion",
+    closingParagraphs: [
+      "Use the right skills, tools, and strategic process to build a strong and loyal online community.",
+    ],
+    ctaLabel: "Sign up for Mydrop AI",
+    ctaHref: "https://app.mydropai.com/register",
+  },
+  {
+    slug: "reach-vs-impressions-in-social-media-marketing",
+    title: "Reach vs. Impressions in Social Media Marketing",
+    description:
+      "Understand the difference between reach and impressions and learn how to use both metrics to improve campaign performance.",
+    author: "Maya Chen, Mydrop Team",
+    publishedAt: "2025-03-07",
+    updatedAt: "2025-03-07",
+    readTime: "6 min read",
+    heroImage: "/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png",
+    heroImageAlt:
+      "Analytics dashboard visuals representing reach and impressions in social campaigns",
+    heroCaption: "Comparing audience breadth and frequency in social media analytics",
+    intro: [
+      "Reach and impressions are two core social media metrics that often get mixed up.",
+      "This guide explains what each metric means and how to use both for better campaign decisions.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "Use reach and impressions together to understand both visibility and repeat exposure.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
     ctaHref: "https://app.mydropai.com/register",
   },
 ];
