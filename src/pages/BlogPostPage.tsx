@@ -25,6 +25,10 @@ const INSTAGRAM_ENGAGEMENT_SLUG = "how-to-boost-instagram-engagement-in-2026";
 const CONTENT_CREATION_2026_SLUG = "how-to-get-started-with-content-creation-in-2024";
 const INFLUENCER_QUESTIONS_SLUG = "10-essential-questions-to-ask-before-working-with-influencers";
 const CONTENT_CALENDAR_2026_SLUG = "how-to-plan-a-social-media-content-calendar-in-2026";
+const SOCIAL_PROOF_CAMPAIGNS_SLUG = "how-to-use-social-proof-in-your-marketing-campaigns";
+const TIKTOK_FOLLOWERS_SLUG = "skyrocket-your-tiktok-followers-with-these-tips-for-brands-creators";
+const TOP_SCHEDULING_TOOLS_SLUG = "top-scheduling-tools-for-social-media";
+const WHAT_ARE_SOCIAL_MEDIA_TOOLS_SLUG = "what-are-social-media-tools";
 
 const BLOG_PUBLISHER = {
   "@type": "Organization",
@@ -89,6 +93,10 @@ export default function BlogPostPage() {
   const isContentCreation2026Post = post.slug === CONTENT_CREATION_2026_SLUG;
   const isInfluencerQuestionsPost = post.slug === INFLUENCER_QUESTIONS_SLUG;
   const isContentCalendar2026Post = post.slug === CONTENT_CALENDAR_2026_SLUG;
+  const isSocialProofCampaignsPost = post.slug === SOCIAL_PROOF_CAMPAIGNS_SLUG;
+  const isTikTokFollowersPost = post.slug === TIKTOK_FOLLOWERS_SLUG;
+  const isTopSchedulingToolsPost = post.slug === TOP_SCHEDULING_TOOLS_SLUG;
+  const isWhatAreSocialMediaToolsPost = post.slug === WHAT_ARE_SOCIAL_MEDIA_TOOLS_SLUG;
 
   return (
     <>
@@ -2186,7 +2194,1029 @@ export default function BlogPostPage() {
               </>
             )}
 
-            {!isSocialToolsPost && !isSchedulingPost && !isCommunityManagerPost && !isReachImpressionsPost && !isInstagramEngagementPost && !isContentCreation2026Post && !isInfluencerQuestionsPost && !isContentCalendar2026Post && (
+            {isSocialProofCampaignsPost && (
+              <>
+                <p itemProp="description">
+                  Building a loyal customer base and standing out in a crowded marketplace is not easy.
+                  One of the most effective ways to increase trust and conversion is social proof.
+                </p>
+
+                <p>
+                  If you are not sure how to use social proof in your campaigns, this guide breaks down
+                  what to collect, how to present it, and how to scale it across your marketing channels.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    alt="Marketing team reviewing social proof assets and campaign messaging"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Social proof works best when it is integrated into campaign planning early</figcaption>
+                </figure>
+
+                <h2>What Is Social Proof?</h2>
+                <p>
+                  Social proof is the tendency for people to look at other people&apos;s behavior before making
+                  decisions. In marketing, this includes reviews, testimonials, influencer mentions,
+                  user-generated content, and visible signs of customer satisfaction.
+                </p>
+                <p>
+                  When prospects see others trust your brand, perceived risk goes down and purchase confidence goes up.
+                </p>
+
+                <h2>Why Social Proof Matters</h2>
+                <p>
+                  For small business owners, social media managers, community managers, and creators,
+                  social proof can improve three core outcomes:
+                </p>
+                <ul>
+                  <li><strong>Trust:</strong> New prospects feel safer choosing your offer.</li>
+                  <li><strong>Engagement:</strong> Real customer stories create stronger interaction.</li>
+                  <li><strong>Sales:</strong> Credibility reduces hesitation and improves conversion rate.</li>
+                </ul>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-google-rating.webp"
+                    alt="Online rating and customer review summary used as trust signals"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Visible ratings and testimonials can remove buying friction quickly</figcaption>
+                </figure>
+
+                <h2>Types of Social Proof You Can Use</h2>
+
+                <h3>Customer Reviews and Testimonials</h3>
+                <p>
+                  Positive reviews are often the first signal prospects look for. Highlight specific results,
+                  not vague praise, to make testimonials more persuasive.
+                </p>
+
+                <h3>Influencer Endorsements</h3>
+                <p>
+                  Influencers can extend reach and transfer trust when there is strong audience alignment.
+                  Focus on fit and credibility, not only follower count.
+                </p>
+
+                <h3>Case Studies</h3>
+                <p>
+                  Case studies are high-conviction proof. Show the starting problem, the strategy used,
+                  and measurable outcomes.
+                </p>
+
+                <h3>User-Generated Content</h3>
+                <p>
+                  User-generated content is authentic and relatable. It often outperforms polished brand content
+                  because it feels more real to the audience.
+                </p>
+
+                <h3>Social Media Mentions</h3>
+                <p>
+                  Mentions and tags show active market conversation around your brand. Re-sharing those mentions
+                  reinforces momentum and social validation.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png"
+                    alt="Audience sharing brand mentions and user-generated posts on social media"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Mentions and UGC make your brand feel active and trusted in public spaces</figcaption>
+                </figure>
+
+                <h2>How To Collect and Display Social Proof Effectively</h2>
+
+                <h3>Encourage Reviews and Testimonials</h3>
+                <p>
+                  Ask customers for feedback after key milestones. Keep requests simple and direct,
+                  then publish approved quotes where buying decisions happen.
+                </p>
+
+                <h3>Leverage Influencer Partnerships</h3>
+                <p>
+                  Partner with creators who already speak to your target audience. Give them enough creative space
+                  to keep the endorsement authentic.
+                </p>
+
+                <h3>Create Practical Case Studies</h3>
+                <p>
+                  Turn wins into structured stories with challenge, action, and measurable result.
+                  This format is easier for prospects to trust and remember.
+                </p>
+
+                <h3>Promote User-Generated Content</h3>
+                <p>
+                  Run campaigns that invite customers to post and tag your brand. Re-share the strongest content
+                  and credit original creators.
+                </p>
+
+                <h3>Monitor and Share Mentions</h3>
+                <p>
+                  Use monitoring workflows to catch and re-use social mentions quickly.
+                  Fresh social proof performs better than outdated examples.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-mydrop-partners.webp"
+                    alt="Influencer and brand collaboration workflow planned in a shared campaign board"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Consistent collection workflows make social proof easier to scale</figcaption>
+                </figure>
+
+                <h2>Leveraging Mydrop for Social Proof</h2>
+
+                <h3>Unified Calendar</h3>
+                <p>
+                  Use a unified calendar to plan social proof campaigns across multiple channels and keep timing consistent.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    alt="Unified social calendar scheduling social proof posts across several platforms"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>A unified schedule helps social proof content land at the right time</figcaption>
+                </figure>
+
+                <h3>Multi-Profile Posting</h3>
+                <p>
+                  Distribute testimonials, case studies, and influencer assets across all active profiles without manual duplication.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    alt="Cross-platform publishing panel for sharing proof content to multiple profiles"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Multi-profile posting expands proof visibility with less manual work</figcaption>
+                </figure>
+
+                <h3>AI-Powered Content Generation</h3>
+                <p>
+                  Repurpose reviews and UGC into captions, visuals, and post variants quickly while keeping your message consistent.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-media-editor.png"
+                    alt="AI content creation workspace converting testimonials into campaign-ready posts"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>AI tools make it faster to transform social proof into publishable assets</figcaption>
+                </figure>
+
+                <h3>Media Organization</h3>
+                <p>
+                  Keep testimonials, case studies, creator assets, and UGC organized in one library so teams can ship faster.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+                    alt="Media library dashboard organizing social proof assets by campaign and format"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Centralized media organization improves campaign speed and consistency</figcaption>
+                </figure>
+
+                <h3>Reusable Templates</h3>
+                <p>
+                  Use template systems to keep branding consistent while producing social proof posts at scale.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-posts-design.png"
+                    alt="Reusable social template layout for customer review and testimonial posts"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Reusable templates keep social proof content visually consistent</figcaption>
+                </figure>
+
+                <h2>Conclusion</h2>
+                <p>
+                  Social proof is one of the most effective ways to build trust, improve engagement,
+                  and increase campaign performance.
+                </p>
+
+                <p>
+                  By combining reviews, creator endorsements, case studies, user-generated content,
+                  and social mentions, you can make your marketing message far more credible.
+                </p>
+
+                <p>
+                  Ready to improve your social proof workflow? Sign up for Mydrop today and streamline how
+                  you collect, organize, and publish social proof across your channels.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    alt="Social media management interface used to plan and publish trust-building campaigns"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Mydrop helps teams turn social proof into a repeatable marketing system</figcaption>
+                </figure>
+
+                <p>
+                  <Button asChild size="lg">
+                    <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                      Start with Mydrop today
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </p>
+              </>
+            )}
+
+            {isTikTokFollowersPost && (
+              <>
+                <p itemProp="description">
+                  TikTok has become one of the most influential social media platforms, giving brands and
+                  creators a major opportunity to build visibility fast. If you want to grow your follower
+                  count with a practical system, this guide is for you.
+                </p>
+
+                <p>
+                  You will learn how to work with trends, improve content quality, build stronger engagement,
+                  and use Mydrop AI to execute a consistent growth strategy.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    alt="Content planning workspace for short-form social media campaigns"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Follower growth improves when creative direction and execution stay aligned</figcaption>
+                </figure>
+
+                <h2>Understanding the TikTok Landscape</h2>
+                <p>
+                  TikTok is not just another social app. It is a discovery engine where creativity,
+                  trend timing, and engagement velocity shape reach.
+                </p>
+
+                <h3>Why TikTok Is a Game-Changer</h3>
+                <p>
+                  TikTok can push content from new accounts when videos hook attention early.
+                  This gives smaller creators and brands a real chance to grow quickly.
+                </p>
+
+                <h3>The Importance of Trends</h3>
+                <p>
+                  Trend participation increases discoverability. Track trending sounds, hashtags,
+                  and formats regularly so your content stays relevant.
+                </p>
+
+                <h3>Audience Engagement</h3>
+                <p>
+                  Comments, shares, rewatches, and saves signal quality. Build habit loops by replying,
+                  asking questions, and creating videos that invite response.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+                    alt="Trend tracking dashboard for TikTok sounds hashtags and content formats"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Trend awareness helps content reach the right audience faster</figcaption>
+                </figure>
+
+                <h2>Crafting Compelling Content</h2>
+                <h3>Know Your Audience</h3>
+                <p>
+                  Define your audience by interests, problems, and content preferences. This improves hooks,
+                  storytelling, and retention across your videos.
+                </p>
+
+                <h3>High-Quality Production</h3>
+                <p>
+                  TikTok supports raw content, but better lighting, framing, and audio usually improve watch time.
+                </p>
+
+                <h3>Storytelling Techniques</h3>
+                <p>
+                  Story-driven content performs well. Use quick setups, clear tension, and practical takeaways
+                  to keep viewers watching.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png"
+                    alt="High-quality short-form video production setup with lighting and framing"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Small production upgrades can significantly improve perceived content quality</figcaption>
+                </figure>
+
+                <h2>Leveraging Hashtags and Challenges</h2>
+                <h3>Use Relevant Hashtags</h3>
+                <p>
+                  Use niche and intent-aligned hashtags rather than generic high-volume tags.
+                  Relevance beats volume in most growth stages.
+                </p>
+
+                <h3>Participate in Challenges</h3>
+                <p>
+                  Join challenges that fit your positioning. You can also launch branded challenges
+                  to increase UGC and recognition.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+                    alt="Performance trends from hashtag experiments and challenge-based TikTok posts"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Hashtag and challenge testing helps improve discoverability over time</figcaption>
+                </figure>
+
+                <h2>Consistency Is Key</h2>
+                <h3>Set a Posting Schedule</h3>
+                <p>
+                  Keep a realistic rhythm you can sustain. Consistency trains both your audience and the algorithm.
+                </p>
+
+                <h3>Batch Content Creation</h3>
+                <p>
+                  Film in batches to reduce stress and improve throughput. One production session can feed
+                  multiple days of publishing.
+                </p>
+
+                <h3>Manage Time Efficiently</h3>
+                <p>
+                  Use centralized planning tools so execution does not depend on daily manual posting.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    alt="Weekly TikTok posting schedule planned in a content calendar"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Batching and scheduling help maintain consistent TikTok output</figcaption>
+                </figure>
+
+                <h2>Engaging With Your Audience</h2>
+                <h3>Respond to Comments</h3>
+                <p>
+                  Fast, thoughtful replies make followers feel seen and encourage repeat interaction.
+                </p>
+
+                <h3>Collaborations and Duets</h3>
+                <p>
+                  Creator collaborations and duets can expose your content to new audience clusters quickly.
+                </p>
+
+                <h3>Live Sessions</h3>
+                <p>
+                  Live content strengthens trust because interactions happen in real time and feel more personal.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-how-to-become-a-community-manager.png"
+                    alt="Community manager engaging with audience comments and creator interactions"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Active community interaction helps convert viewers into long-term followers</figcaption>
+                </figure>
+
+                <h2>Utilizing Analytics</h2>
+                <h3>Monitor Performance</h3>
+                <p>
+                  Track views, watch time, comments, shares, and saves to identify what is driving growth.
+                </p>
+
+                <h3>Adjust Your Strategy</h3>
+                <p>
+                  Double down on formats that outperform and quickly replace content patterns that stall.
+                </p>
+
+                <h3>Set Clear Goals</h3>
+                <p>
+                  Define measurable goals such as follower growth rate, average watch duration,
+                  and engagement per post.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-analytics.webp"
+                    alt="TikTok analytics dashboard showing follower growth and engagement metrics"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Analytics-driven iteration is essential for sustainable TikTok growth</figcaption>
+                </figure>
+
+                <h2>Cross-Promoting Content</h2>
+                <h3>Share on Instagram and Facebook</h3>
+                <p>
+                  Republish top TikTok clips on Instagram Reels and Facebook to attract new viewers into your funnel.
+                </p>
+
+                <h3>Embed Videos on Your Website</h3>
+                <p>
+                  Embedding videos can convert website traffic into TikTok followers.
+                </p>
+
+                <h3>Use Email Marketing</h3>
+                <p>
+                  Add short TikTok highlights in newsletters to activate your existing audience.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    alt="Cross-platform distribution workflow for TikTok videos"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Cross-promotion expands reach beyond TikTok alone</figcaption>
+                </figure>
+
+                <h2>The Role of Mydrop AI</h2>
+                <h3>Streamline Content Creation</h3>
+                <p>
+                  Use AI-assisted tools to speed up ideation, editing, and post preparation.
+                </p>
+
+                <h3>Centralize Management</h3>
+                <p>
+                  Manage planning and scheduling from one dashboard across platforms.
+                </p>
+
+                <h3>Enhance Engagement Operations</h3>
+                <p>
+                  Combine analytics and response workflows to keep your audience active and your strategy adaptive.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+                    alt="Centralized social media dashboard used to schedule and optimize TikTok content"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Mydrop AI helps teams execute faster with less manual overhead</figcaption>
+                </figure>
+
+                <h2>Conclusion</h2>
+                <p>
+                  Growing TikTok followers requires a strategic approach, consistent publishing,
+                  and meaningful audience interaction.
+                </p>
+
+                <p>
+                  With strong creative execution, trend awareness, and data-based iteration,
+                  brands and creators can build steady growth and stronger influence.
+                </p>
+
+                <p>
+                  Ready to scale your TikTok workflow? Sign up for Mydrop AI and streamline how you create,
+                  schedule, and optimize social content.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+                    alt="Social media management platform supporting TikTok growth planning"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Centralized workflows make TikTok growth easier to sustain long term</figcaption>
+                </figure>
+
+                <p>
+                  <Button asChild size="lg">
+                    <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                      Start with Mydrop today
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </p>
+              </>
+            )}
+
+            {isTopSchedulingToolsPost && (
+              <>
+                <p itemProp="description">
+                  In today&apos;s digital environment, a strong social media presence is essential, but managing
+                  multiple channels can quickly become overwhelming. Scheduling tools help teams stay consistent,
+                  save time, and publish with more control.
+                </p>
+
+                <p>
+                  This guide explains what social media scheduling tools do, why they matter, and how Mydrop AI
+                  can improve execution for small businesses, community managers, social media managers,
+                  and content creators.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+                    alt="Social media content calendar filled with scheduled posts across channels"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Scheduling tools help teams maintain consistency across every platform</figcaption>
+                </figure>
+
+                <h2>Understanding Social Media Scheduling Tools</h2>
+
+                <h3>What Are Social Media Scheduling Tools?</h3>
+                <p>
+                  Social media scheduling tools let you plan, create, and publish posts in advance from a single dashboard.
+                  Instead of logging into each network manually, you can manage your calendar in one workflow.
+                </p>
+
+                <h3>Why Use Scheduling Tools?</h3>
+                <p>
+                  They support consistent posting, make campaign planning easier, and reduce day-to-day operational friction.
+                  Most also include analytics so you can refine timing and content strategy over time.
+                </p>
+
+                <h3>Key Features To Look For</h3>
+                <p>
+                  Prioritize multi-platform support, unified calendars, content creation assistance,
+                  media management, and analytics reporting.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-dashboards-design.png"
+                    alt="Social media management dashboard showing scheduling and campaign overview"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>A centralized dashboard reduces context switching and planning errors</figcaption>
+                </figure>
+
+                <h2>The Benefits of Using Scheduling Tools</h2>
+
+                <h3>Time Efficiency</h3>
+                <p>
+                  Batch scheduling saves hours each week and creates space for strategy, creative direction,
+                  and community engagement.
+                </p>
+
+                <h3>Enhanced Engagement</h3>
+                <p>
+                  Scheduling at high-performance times helps increase reach and interaction.
+                  Consistent publishing also improves audience expectations and retention.
+                </p>
+
+                <h3>Streamlined Workflow</h3>
+                <p>
+                  Centralized workflows reduce missed posts, inconsistent messaging, and fragmented team execution.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-high-organic-reach-counter.webp"
+                    alt="Organic reach growth indicators linked to consistent posting workflows"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Consistent scheduling is closely tied to stronger reach and engagement</figcaption>
+                </figure>
+
+                <h2>Top Scheduling Tools for Social Media: Introducing Mydrop AI</h2>
+
+                <h3>What Is Mydrop AI?</h3>
+                <p>
+                  Mydrop AI is a social media management platform built to centralize content creation,
+                  scheduling, and optimization across Instagram, Facebook, LinkedIn, TikTok, YouTube,
+                  and other networks.
+                </p>
+
+                <h3>Key Features of Mydrop AI</h3>
+
+                <h4>Unified Calendar</h4>
+                <p>
+                  Schedule posts across up to 10 platforms in one place and keep your full strategy visible.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+                    alt="Unified calendar view used to schedule social posts across many platforms"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>One calendar view makes planning and adjustments much easier</figcaption>
+                </figure>
+
+                <h4>Multi-Profile Posting</h4>
+                <p>
+                  Publish to multiple profiles simultaneously to keep campaigns aligned and save execution time.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    alt="Multi-profile publishing workflow for social campaigns"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Multi-profile posting improves scale without adding manual overhead</figcaption>
+                </figure>
+
+                <h4>AI-Powered Content Generation</h4>
+                <p>
+                  Generate copy and visuals faster to keep content pipelines moving without sacrificing quality.
+                </p>
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-media-editor.png"
+                    alt="AI-assisted editor for creating social media visuals and captions"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>AI generation reduces content production bottlenecks</figcaption>
+                </figure>
+
+                <h2>Supported Networks and Functionalities</h2>
+                <p>
+                  Mydrop AI supports practical publishing workflows across key channels:
+                </p>
+                <ul>
+                  <li><strong>Facebook:</strong> Images, text, reels, location tags, and first comments.</li>
+                  <li><strong>Instagram:</strong> Photos, stories, carousels, reels, and first comments.</li>
+                  <li><strong>LinkedIn:</strong> Text, images, videos, PDFs, and first comments.</li>
+                  <li><strong>TikTok:</strong> Direct video scheduling and publishing.</li>
+                  <li><strong>Google My Business:</strong> Standard posts, events, and offers.</li>
+                  <li><strong>YouTube:</strong> Videos, shorts, and thumbnail workflows.</li>
+                  <li><strong>X (Twitter):</strong> Scheduled posting for consistent activity.</li>
+                  <li><strong>Pinterest:</strong> Scheduled pins and board management support.</li>
+                  <li><strong>Reddit:</strong> Scheduled posting for communities and brand subreddits.</li>
+                </ul>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-posts-design.png"
+                    alt="Multi-network publishing layout showing channel-specific post formats"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Channel-specific support helps teams publish effectively across platforms</figcaption>
+                </figure>
+
+                <h2>How Mydrop AI Enhances Your Social Media Strategy</h2>
+
+                <h3>Automation and Efficiency</h3>
+                <p>
+                  Automate recurring publishing tasks so your team can focus on higher-value work.
+                </p>
+
+                <h3>Advanced Media Editing</h3>
+                <p>
+                  Edit and optimize visual assets before publishing to improve quality and consistency.
+                </p>
+
+                <h3>Customizable Calendar Filters</h3>
+                <p>
+                  Filter by profile groups, platform, or post type to manage large content calendars more easily.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+                    alt="Continuous improvement loop for planning publishing and optimization"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Automation plus iteration improves strategic performance over time</figcaption>
+                </figure>
+
+                <h2>Practical Tips for Using Mydrop AI</h2>
+
+                <h3>Organize Your Media</h3>
+                <p>
+                  Use folders, favorites, and clear descriptions to find content quickly.
+                </p>
+
+                <h3>Utilize Reusable Templates</h3>
+                <p>
+                  Save recurring post formats to speed up execution and maintain brand consistency.
+                </p>
+
+                <h3>Group Profiles for Efficient Posting</h3>
+                <p>
+                  Group related accounts to simplify publishing for multi-brand or multi-client workflows.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+                    alt="Organized media and grouped profile workflow in a social dashboard"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Well-organized assets and grouped profiles improve execution speed</figcaption>
+                </figure>
+
+                <h2>Real-World Examples of Mydrop AI in Action</h2>
+
+                <h3>Small Business Owners</h3>
+                <p>
+                  Plan weeks ahead, reduce manual posting, and stay visible without hiring a large team.
+                </p>
+
+                <h3>Community Managers</h3>
+                <p>
+                  Keep engagement active with consistent publishing and faster response workflows.
+                </p>
+
+                <h3>Social Media Managers</h3>
+                <p>
+                  Manage multiple accounts from one dashboard and keep campaign execution aligned.
+                </p>
+
+                <h3>Content Creators</h3>
+                <p>
+                  Produce, schedule, and repurpose content quickly to maintain growth momentum.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-mydrop-partners.webp"
+                    alt="Teams and creators coordinating multi-account publishing workflows"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Mydrop supports different user profiles with one scalable workflow</figcaption>
+                </figure>
+
+                <h2>Conclusion</h2>
+                <p>
+                  Social media scheduling tools are essential for brands that want consistent presence,
+                  better engagement, and more predictable execution.
+                </p>
+
+                <p>
+                  Mydrop AI combines unified scheduling, AI content support, and operational structure to help
+                  teams publish better with less effort.
+                </p>
+
+                <p>
+                  Start using Mydrop AI today and take your social strategy to the next level.
+                  Get your first month free now.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    alt="Comprehensive social media management platform used for scheduled publishing"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Mydrop AI helps convert social media execution into a repeatable system</figcaption>
+                </figure>
+
+                <p>
+                  <Button asChild size="lg">
+                    <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                      Start with Mydrop today
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </p>
+              </>
+            )}
+
+            {isWhatAreSocialMediaToolsPost && (
+              <>
+                <p itemProp="description">
+                  In today&apos;s digital age, building a robust social media presence is crucial for business growth.
+                  For small business owners, community managers, social media managers, and creators,
+                  social media tools can be a major competitive advantage.
+                </p>
+
+                <p>
+                  This guide explains what social media tools are, why they matter, and how to combine them
+                  into a practical workflow that improves consistency, engagement, and results.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    alt="Business team planning a social media strategy with centralized tools"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Social tools simplify execution so teams can focus on growth</figcaption>
+                </figure>
+
+                <h2>Why Social Media Tools Matter</h2>
+                <p>
+                  Effective social media management requires a full system: content creation, publishing,
+                  engagement, and analysis. Without the right tools, these tasks become fragmented and hard to scale.
+                </p>
+                <p>
+                  Social media tools streamline operations so you can spend more time building relationships,
+                  improving creative quality, and growing brand impact.
+                </p>
+
+                <h2>The Modern Social Workflow</h2>
+                <p>
+                  Think of social media management as a continuous loop with four connected steps.
+                </p>
+
+                <h3>Content Creation</h3>
+                <p>
+                  Strong strategy starts with content that is useful, relevant, and aligned with your audience.
+                  Design and writing tools help teams produce high-quality assets faster.
+                </p>
+
+                <h3>Content Publishing</h3>
+                <p>
+                  Scheduling and automation keep publishing consistent across channels and remove manual bottlenecks.
+                </p>
+
+                <h3>Listening and Engagement</h3>
+                <p>
+                  Listening tools help you track conversations, respond quickly, and stay connected to audience sentiment.
+                </p>
+
+                <h3>Content Analysis</h3>
+                <p>
+                  Analytics reveal what is working and what needs adjustment, allowing data-driven iteration over time.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+                    alt="Continuous social media workflow cycle from creation to analysis"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>A complete workflow loop turns social media into a repeatable process</figcaption>
+                </figure>
+
+                <h2>Types of Social Media Tools</h2>
+
+                <h3>Listening Platforms</h3>
+                <p>
+                  Listening tools help monitor brand mentions, audience conversations, and industry signals.
+                  This keeps your team responsive and relevant.
+                </p>
+
+                <h3>Publishing Platforms</h3>
+                <p>
+                  Publishing platforms centralize planning and scheduling, making consistent distribution easier
+                  across multiple networks.
+                </p>
+
+                <h3>Competitive Analysis Platforms</h3>
+                <p>
+                  Competitive tools compare your performance with market peers, helping you spot opportunities
+                  and adapt strategy faster.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    alt="Publishing and listening tools mapped across a unified social calendar"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Tool categories work best when connected in one workflow</figcaption>
+                </figure>
+
+                <h2>Free Tools vs. Paid Tools</h2>
+
+                <h3>Free Tools</h3>
+                <p>
+                  Free options are a good starting point for small teams. They can support core needs
+                  like basic scheduling and monitoring while budgets are tight.
+                </p>
+
+                <h3>Paid Tools</h3>
+                <p>
+                  Paid platforms generally offer stronger automation, deeper analytics,
+                  and better scalability for growing businesses.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+                    alt="Advanced analytics and listening dashboard available in paid social tools"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Advanced features often become essential as operations grow</figcaption>
+                </figure>
+
+                <h2>Using Social Media Tools Together</h2>
+
+                <h3>Listening and Analytics</h3>
+                <p>
+                  Combining listening and analytics helps you understand both audience conversations
+                  and performance outcomes in one view.
+                </p>
+
+                <h3>Publishing and Analytics</h3>
+                <p>
+                  Connecting publishing schedules to analytics data lets you optimize timing,
+                  format, and message based on measurable results.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    alt="Cross-platform publishing workflow connected to performance measurement"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Integrated tools improve both execution speed and decision quality</figcaption>
+                </figure>
+
+                <h2>Are Social Media Tools Useful for My Business?</h2>
+                <p>
+                  Yes. Social media tools are essential for maintaining strong platform presence,
+                  improving responsiveness, and scaling consistent content output.
+                </p>
+
+                <h3>Facebook</h3>
+                <p>
+                  Tools help manage publishing cadence and audience engagement across large, diverse communities.
+                </p>
+
+                <h3>Twitter / X</h3>
+                <p>
+                  Real-time channels benefit from scheduling and listening workflows that keep your brand timely.
+                </p>
+
+                <h3>Instagram</h3>
+                <p>
+                  Visual planning tools improve feed consistency and help maintain quality publishing frequency.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-smiling-woman-looking-at-phone.png"
+                    alt="Business owner reviewing social engagement metrics on mobile"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Social tools help businesses stay responsive on every major channel</figcaption>
+                </figure>
+
+                <h2>Conclusion</h2>
+                <p>
+                  Incorporating social media tools into your strategy is no longer optional.
+                  It is a foundational part of efficient and sustainable social media growth.
+                </p>
+
+                <p>
+                  If you want to centralize content creation and scheduling across platforms,
+                  Mydrop AI can help you execute faster with less manual effort.
+                </p>
+
+                <p>
+                  Ready to supercharge your social media strategy? Sign up for Mydrop AI today.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    alt="Social media tools interface centralizing publishing and reporting"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>A centralized platform helps convert daily tasks into structured growth</figcaption>
+                </figure>
+
+                <p>
+                  <Button asChild size="lg">
+                    <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                      Start with Mydrop today
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </p>
+              </>
+            )}
+
+            {!isSocialToolsPost && !isSchedulingPost && !isCommunityManagerPost && !isReachImpressionsPost && !isInstagramEngagementPost && !isContentCreation2026Post && !isInfluencerQuestionsPost && !isContentCalendar2026Post && !isSocialProofCampaignsPost && !isTikTokFollowersPost && !isTopSchedulingToolsPost && !isWhatAreSocialMediaToolsPost && (
               <>
                 <p itemProp="description">{post.description}</p>
                 {post.intro.map((paragraph) => (

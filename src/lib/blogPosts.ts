@@ -482,6 +482,93 @@ export const blogPosts: BlogPost[] = [
     ctaLabel: "Sign up for Mydrop today",
     ctaHref: "https://app.mydropai.com/register",
   },
+  {
+    slug: "skyrocket-your-tiktok-followers-with-these-tips-for-brands-creators",
+    title: "How to Skyrocket Your TikTok Followers: Tips for Brands & Creators",
+    description:
+      "Learn practical TikTok growth strategies for brands and creators, including trend execution, consistent publishing, audience engagement, analytics, and cross-platform promotion.",
+    author: "Lena Brooks, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "8 min read",
+    heroImage: "/media/images/original-site/legacy-smiling-man-with-mobile-phone.png",
+    heroImageAlt:
+      "Creator recording a short-form social video with a smartphone",
+    heroCaption:
+      "TikTok growth starts with consistent creative output and audience-focused execution",
+    intro: [
+      "TikTok is one of the most influential social platforms, with huge potential for brands and creators who execute consistently.",
+      "This guide covers practical tactics to grow followers, improve engagement, and use Mydrop AI to streamline the workflow.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "Sustained TikTok growth comes from consistent posting, trend relevance, strong engagement loops, and data-driven iteration.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
+  {
+    slug: "top-scheduling-tools-for-social-media",
+    title: "Master Your Social Media Strategy with These Top Scheduling Tools for Social Media",
+    description:
+      "Explore top social media scheduling tools and learn how Mydrop AI helps teams save time, stay consistent, and scale publishing across platforms.",
+    author: "Nora Ellis, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "9 min read",
+    heroImage: "/media/images/original-site/legacy-dashboards-design.png",
+    heroImageAlt:
+      "Unified social media dashboard with calendar and performance widgets",
+    heroCaption:
+      "Scheduling tools centralize planning and make social media execution more consistent",
+    intro: [
+      "Managing multiple social platforms manually creates unnecessary friction for growing teams and solo operators.",
+      "This guide explains how scheduling tools improve consistency, save time, and strengthen campaign execution, with a spotlight on Mydrop AI.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "The right scheduling platform turns social media from a daily scramble into a structured growth engine.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
+  {
+    slug: "what-are-social-media-tools",
+    title: "Mastering Social Media Tools for Business Success",
+    description:
+      "Learn what social media tools are, why they matter, and how to combine publishing, listening, and analytics workflows to improve business outcomes.",
+    author: "Avery Quinn, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "8 min read",
+    heroImage: "/media/images/original-site/legacy-dashboards-design.png",
+    heroImageAlt:
+      "Social media dashboard with publishing, listening, and analytics modules",
+    heroCaption:
+      "The right tool stack helps teams manage social media with more speed and clarity",
+    intro: [
+      "Building a strong social media presence requires more than publishing random updates.",
+      "This guide explains what social media tools do and how they help businesses improve consistency, engagement, and performance.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "A connected social tool stack can transform daily execution into a repeatable growth process.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {
