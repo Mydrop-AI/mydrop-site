@@ -16,6 +16,7 @@ run({
     "/post/how-to-become-a-good-community-manager",
     "/post/reach-vs-impressions-in-social-media-marketing",
     "/post/how-to-boost-instagram-engagement-in-2026",
+    "/post/10-essential-questions-to-ask-before-working-with-influencers",
     "/privacy-policy",
     "/terms-and-services",
     "/faq",

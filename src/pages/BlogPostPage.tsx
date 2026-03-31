@@ -23,6 +23,7 @@ const COMMUNITY_MANAGER_SLUG = "how-to-become-a-good-community-manager";
 const REACH_IMPRESSIONS_SLUG = "reach-vs-impressions-in-social-media-marketing";
 const INSTAGRAM_ENGAGEMENT_SLUG = "how-to-boost-instagram-engagement-in-2026";
 const CONTENT_CREATION_2026_SLUG = "how-to-get-started-with-content-creation-in-2024";
+const INFLUENCER_QUESTIONS_SLUG = "10-essential-questions-to-ask-before-working-with-influencers";
 
 const BLOG_PUBLISHER = {
   "@type": "Organization",
@@ -85,6 +86,7 @@ export default function BlogPostPage() {
   const isReachImpressionsPost = post.slug === REACH_IMPRESSIONS_SLUG;
   const isInstagramEngagementPost = post.slug === INSTAGRAM_ENGAGEMENT_SLUG;
   const isContentCreation2026Post = post.slug === CONTENT_CREATION_2026_SLUG;
+  const isInfluencerQuestionsPost = post.slug === INFLUENCER_QUESTIONS_SLUG;
 
   return (
     <>
@@ -1654,7 +1656,180 @@ export default function BlogPostPage() {
               </>
             )}
 
-            {!isSocialToolsPost && !isSchedulingPost && !isCommunityManagerPost && !isReachImpressionsPost && !isInstagramEngagementPost && !isContentCreation2026Post && (
+            {isInfluencerQuestionsPost && (
+              <>
+                <p itemProp="description">
+                  Working with influencers is one of the fastest ways to connect with target audiences,
+                  increase brand awareness, and support revenue growth. With influencer marketing now a
+                  multi-billion-dollar channel, careful partner selection matters more than ever.
+                </p>
+
+                <p>
+                  If you plan to collaborate with more creators this year, use these questions before signing
+                  any agreement.
+                </p>
+
+                <p>Here are 10 essential questions to ask before working with influencers.</p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    alt="Influencer campaign briefing workspace with goals and deliverables"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Start influencer partnerships with clear evaluation criteria</figcaption>
+                </figure>
+
+                <h2>1) Why Are You Interested in This Collaboration?</h2>
+                <p>
+                  Understanding motivation is critical. Ask whether the creator genuinely connects with your
+                  product or is only pursuing a fee. Authentic interest usually leads to stronger creative
+                  output and better conversion quality.
+                </p>
+
+                <h2>2) What Is Your Audience Demographic?</h2>
+                <p>
+                  Ask for age, location, interests, and audience behavior data. The best influencer is not the
+                  largest one, it is the one whose audience matches your customer profile.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png"
+                    alt="Audience demographic breakdown used to evaluate influencer fit"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Audience fit is more important than follower count alone</figcaption>
+                </figure>
+
+                <h2>3) Can You Share Your Engagement Metrics?</h2>
+                <p>
+                  Engagement quality matters more than vanity numbers. Ask for recent metrics including comments,
+                  saves, shares, and story interactions. Validate trends over multiple posts, not one highlight.
+                </p>
+
+                <h2>4) How Do You Ensure Authenticity in Your Content?</h2>
+                <p>
+                  Ask how they integrate sponsored content naturally. Creators who use genuine product context,
+                  personal experience, and clear storytelling usually perform better than scripted promotion.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-smiling-vlogger-cooking.png"
+                    alt="Creator producing authentic brand content in a real-life setting"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Authentic storytelling improves trust and campaign performance</figcaption>
+                </figure>
+
+                <h2>5) Have You Worked With Similar Brands Before?</h2>
+                <p>
+                  Prior industry experience can be useful, but too many similar partnerships can reduce novelty.
+                  Review previous collaborations to understand creative overlap and audience fatigue risk.
+                </p>
+
+                <h2>6) What Is Your Content Creation Process?</h2>
+                <p>
+                  Ask how they handle concepting, scripting, approvals, and revisions. A clear process usually
+                  indicates stronger delivery reliability and better brand safety.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-media-editor.png"
+                    alt="Content creation workflow with editing and approval checkpoints"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Structured production workflows reduce execution risk</figcaption>
+                </figure>
+
+                <h2>7) How Do You Handle Negative Feedback?</h2>
+                <p>
+                  Every campaign can attract criticism. Ask how they respond to difficult comments and public
+                  concerns. Their moderation style can directly affect brand reputation.
+                </p>
+
+                <h2>8) Can You Provide Case Studies or Testimonials?</h2>
+                <p>
+                  Request examples from prior partnerships, including campaign goals, outcomes, and lessons learned.
+                  Evidence of measurable impact is a stronger indicator than promises.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-google-rating.webp"
+                    alt="Social proof and campaign outcome indicators from past brand collaborations"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Past performance data helps forecast future collaboration quality</figcaption>
+                </figure>
+
+                <h2>9) What Are Your Rates and Payment Terms?</h2>
+                <p>
+                  Clarify pricing, payment milestones, usage rights, and revision terms early. Transparent
+                  expectations prevent friction later in the campaign cycle.
+                </p>
+
+                <h2>10) How Do You Measure Success?</h2>
+                <p>
+                  Align on success metrics before launch. Define campaign KPIs such as engagement rate,
+                  click-through rate, conversions, or attributed sales so both teams evaluate outcomes consistently.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-analytics.webp"
+                    alt="Campaign KPI dashboard used to evaluate influencer performance"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Shared KPIs keep influencer campaigns measurable and accountable</figcaption>
+                </figure>
+
+                <h2>Wrap-Up and Next Steps</h2>
+                <p>
+                  Influencer collaborations can deliver excellent results when vetting is rigorous. Use this
+                  question set to identify strong-fit creators, reduce execution risk, and improve campaign returns.
+                </p>
+
+                <p>
+                  Ready to scale influencer campaigns with better planning and analytics? Sign up for Mydrop today
+                  and streamline your social media management workflow.
+                </p>
+
+                <p>
+                  By applying these questions consistently, you can build better partnerships and stronger outcomes
+                  across every campaign.
+                </p>
+
+                <figure>
+                  <img
+                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    alt="Social media management platform interface coordinating influencer campaigns"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>A centralized workflow helps manage influencer campaigns efficiently</figcaption>
+                </figure>
+
+                <p>
+                  <Button asChild size="lg">
+                    <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                      Start with Mydrop today
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </p>
+              </>
+            )}
+
+            {!isSocialToolsPost && !isSchedulingPost && !isCommunityManagerPost && !isReachImpressionsPost && !isInstagramEngagementPost && !isContentCreation2026Post && !isInfluencerQuestionsPost && (
               <>
                 <p itemProp="description">{post.description}</p>
                 {post.intro.map((paragraph) => (

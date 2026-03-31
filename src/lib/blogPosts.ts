@@ -396,6 +396,34 @@ export const blogPosts: BlogPost[] = [
     ctaLabel: "Sign up for Mydrop today",
     ctaHref: "https://app.mydropai.com/register",
   },
+  {
+    slug: "10-essential-questions-to-ask-before-working-with-influencers",
+    title: "10 Essential Questions to Ask Before Working With Influencers",
+    description:
+      "Use these 10 influencer vetting questions to choose better partners, protect brand reputation, and improve campaign outcomes.",
+    author: "Noah Rivera, Mydrop Team",
+    publishedAt: "2025-03-24",
+    updatedAt: "2025-03-24",
+    readTime: "6 min read",
+    heroImage: "/media/images/original-site/legacy-design-for-blog-banner-social-tools.png",
+    heroImageAlt:
+      "Influencer collaboration planning board with campaign and audience notes",
+    heroCaption: "Questions that help brands choose the right influencer partners",
+    intro: [
+      "Influencer marketing can accelerate awareness and sales when partner fit is strong.",
+      "These 10 questions help you screen collaborators and avoid expensive mismatches.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Wrap-Up and Next Steps",
+    closingParagraphs: [
+      "Use a repeatable vetting checklist to improve campaign quality and partnership outcomes.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {
