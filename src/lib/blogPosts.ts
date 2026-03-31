@@ -51,6 +51,35 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-get-started-with-content-creation-in-2024",
+    title: "How to Get Started with Content Creation in 2026",
+    description:
+      "Learn how to start content creation in 2026 with a practical step-by-step plan for audience research, platform strategy, SEO, and consistent publishing.",
+    author: "Nina Laurent, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "8 min read",
+    heroImage: "/media/images/original-site/legacy-social-media-blog-intro-banner.png",
+    heroImageAlt:
+      "Content creator planning a multi-platform strategy with AI-assisted workflow tools.",
+    heroCaption:
+      "A practical roadmap for building a consistent content engine in 2026.",
+    intro: [
+      "Content creation is more critical than ever as we head into 2026.",
+      "This guide covers planning, production, distribution, and optimization so you can publish consistently without burnout.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "Use this framework to create content with more consistency, better quality, and clearer business outcomes.",
+    ],
+    ctaLabel: "Start exploring Mydrop",
+    ctaHref: "https://app.mydropai.com/register",
+  },
+  {
     slug: "which-social-media-management-tool-is-best-for-you",
     title: "Which Social Media Management Tool is Best for You?",
     description:
