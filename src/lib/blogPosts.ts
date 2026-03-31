@@ -368,6 +368,34 @@ export const blogPosts: BlogPost[] = [
     ctaLabel: "Sign up for Mydrop today",
     ctaHref: "https://app.mydropai.com/register",
   },
+  {
+    slug: "how-to-boost-instagram-engagement-in-2026",
+    title: "Boost Instagram Engagement in 2026 with These Proven Strategies",
+    description:
+      "Learn practical Instagram engagement tactics for 2026, from better content workflows to hashtags, collaborations, and analytics.",
+    author: "Elena Park, Mydrop Team",
+    publishedAt: "2025-03-18",
+    updatedAt: "2025-03-18",
+    readTime: "7 min read",
+    heroImage: "/media/images/original-site/legacy-boost-your-instagram-engagement-design-for-blog-banner.png",
+    heroImageAlt:
+      "Instagram engagement strategy board with creative and analytics elements",
+    heroCaption: "Proven tactics to increase Instagram engagement in 2026",
+    intro: [
+      "Instagram engagement growth depends on consistent publishing, content quality, and active audience interaction.",
+      "This guide covers practical strategies to strengthen visibility, responses, and repeat interaction.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "Use a consistent process, strong creative, and weekly analysis to grow engagement over time.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {

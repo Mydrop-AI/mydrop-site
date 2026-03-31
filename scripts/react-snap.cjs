@@ -15,6 +15,7 @@ run({
     "/post/how-to-schedule-a-post-on-social-media",
     "/post/how-to-become-a-good-community-manager",
     "/post/reach-vs-impressions-in-social-media-marketing",
+    "/post/how-to-boost-instagram-engagement-in-2026",
     "/privacy-policy",
     "/terms-and-services",
     "/faq",
