@@ -2,7 +2,33 @@ export interface BenefitPoint {
   title: string;
   description: string;
 }
-
+/**
+ * This TypeScript file contains a type declaration for BlogPost objects.
+ * It also exports an array of BlogPost objects, each representing a blog post.
+ *
+ * Each BlogPost object has properties such as:
+ * - slug: A unique identifier for the blog post.
+ * - title: The title of the blog post.
+ * - description: A brief summary of the blog post.
+ * - author: The name of the author or creator of the blog post.
+ * - publishedAt: The date and time when the blog post was published.
+ * - updatedAt: The date and time when the blog post was last updated.
+ * - readTime: The estimated reading time for the blog post in minutes.
+ * - heroImage: The path to the image used as the hero image for the blog post.
+ * - heroImageAlt: The alt text for the hero image.
+ * - heroCaption: A caption describing the hero image.
+ * - intro: An array of paragraphs that introduce the main points of the blog post.
+ * - whyNeed: An array of BenefitPoint objects, each representing a benefit or need the blog post addresses.
+ * - tools: An array of Tool objects, each representing a tool or service mentioned in the blog post.
+ * - comparisonRows: An array of ComparisonRow objects, each representing a comparison between two tools or services.
+ * - decisionPrompts: An array of DecisionPrompt objects, each representing a question and answer about choosing between tools or services.
+ * - closingTitle: The title to use for the conclusion section of the blog post.
+ * - closingParagraphs: An array of paragraphs that provide a conclusion or summary of the blog post.
+ * - ctaLabel: The label for the call-to-action button on the blog post.
+ * - ctaHref: The URL to which the call-to-action button should link.
+ *
+ * The `getBlogPostBySlug` function takes a slug as an argument and returns the corresponding BlogPost object from the blogPosts array.
+ */
 export interface ToolReview {
   name: string;
   perfectFor: string;
@@ -603,3 +629,4 @@ export const blogPosts: BlogPost[] = [
 export function getBlogPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
 }
+
