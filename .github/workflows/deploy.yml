@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
   pages: write
@@ -40,13 +43,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Patch react-snap config for Linux
-        run: node -e "const fs=require('fs'); const p=JSON.parse(fs.readFileSync('package.json','utf8')); p.reactSnap.puppeteerExecutablePath='/usr/bin/google-chrome'; fs.writeFileSync('package.json',JSON.stringify(p,null,2));"
-
       - name: Build
         run: npm run build
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

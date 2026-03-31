@@ -17,6 +17,8 @@ run({
     "/post/reach-vs-impressions-in-social-media-marketing",
     "/post/how-to-boost-instagram-engagement-in-2026",
     "/post/10-essential-questions-to-ask-before-working-with-influencers",
+      "/post/how-to-get-started-with-content-creation-in-2024",
+      "/post/how-to-plan-a-social-media-content-calendar-in-2026",
     "/privacy-policy",
     "/terms-and-services",
     "/faq",

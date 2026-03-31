@@ -424,6 +424,64 @@ export const blogPosts: BlogPost[] = [
     ctaLabel: "Sign up for Mydrop today",
     ctaHref: "https://app.mydropai.com/register",
   },
+  {
+    slug: "how-to-plan-a-social-media-content-calendar-in-2026",
+    title: "How to Plan a Social Media Content Calendar in 2026",
+    description:
+      "Learn how to plan a social media content calendar in 2026 with practical steps for goals, platform selection, scheduling, analytics, and AI-assisted execution.",
+    author: "Iris Morgan, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "8 min read",
+    heroImage: "/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png",
+    heroImageAlt:
+      "Weekly social media planning board with content slots and publishing schedule",
+    heroCaption:
+      "A clear content calendar helps teams stay consistent and focused across platforms",
+    intro: [
+      "In today's digital landscape, a strong social media strategy depends on planning, consistency, and fast execution.",
+      "This guide shows how to build a practical content calendar for 2026, based on the workflow used by the Mydrop team.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "A well-built content calendar turns social media from reactive posting into a repeatable growth system.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
+  {
+    slug: "how-to-use-social-proof-in-your-marketing-campaigns",
+    title: "How to Use Social Proof in Your Marketing Campaigns to Stand Out",
+    description:
+      "Learn how to use social proof in marketing campaigns with reviews, testimonials, influencer content, case studies, and UGC to build trust and improve conversions.",
+    author: "Mila Torres, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "8 min read",
+    heroImage: "/media/images/original-site/legacy-social-proof-ad-campaigns-how-to-design-for-blog-banner.png",
+    heroImageAlt:
+      "Social proof marketing board showing reviews, influencer mentions, and campaign outcomes",
+    heroCaption:
+      "Social proof helps brands build trust faster and stand out in competitive markets",
+    intro: [
+      "Building trust in a crowded market is difficult, especially when attention is limited and buyers are skeptical.",
+      "This guide explains how to use social proof in your campaigns with practical steps and a repeatable workflow.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "A strong social proof strategy can increase trust, improve engagement, and help campaigns convert more consistently.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {
