@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window.lemonSqueezyAffiliateConfig = { store: "mydrop" };
+    </script>
+    <script src="https://lmsqueezy.com/affiliate.js" defer></script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NT9H9RK7");
+    </script>
+    <style>
+      .iub__us-widget,
+      .iubenda-tp-btn.iubenda-cs-preferences-link,
+      .iubenda-tp-btn-container {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NT9H9RK7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let attempts = 0;
+        const maxAttempts = 100;
+        const checkAndClickButton = setInterval(() => {
+          const button = document.querySelector(".iubenda-cs-accept-btn");
+          if (button) {
+            button.click();
+            clearInterval(checkAndClickButton);
+          } else if (attempts >= maxAttempts) {
+            clearInterval(checkAndClickButton);
+          }
+          attempts++;
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
