@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { resolveAssetPath } from "@/lib/paths";
 
 export default function SiteFooter() {
   return (
@@ -7,7 +8,7 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="space-y-3">
             <img
-              src="/images/logo_regular_white.png"
+              src={resolveAssetPath("/images/logo_regular_white.png")}
               alt="MydropAI"
               className="h-9 w-auto"
             />

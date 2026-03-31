@@ -569,6 +569,35 @@ export const blogPosts: BlogPost[] = [
     ctaLabel: "Sign up for Mydrop today",
     ctaHref: "https://app.mydropai.com/register",
   },
+  {
+    slug: "what-is-a-social-media-planner",
+    title: "Your Ultimate Guide to Social Media Planners for Small Business Owners",
+    description:
+      "Learn what a social media planner is, how it saves time and improves consistency, and how Mydrop AI helps automate planning across channels.",
+    author: "Evan Blake, Mydrop Team",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    readTime: "8 min read",
+    heroImage: "/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png",
+    heroImageAlt:
+      "Social media content planner board with scheduled posts and campaign slots",
+    heroCaption:
+      "Social media planners help small teams stay consistent and reduce manual workload",
+    intro: [
+      "Social media planners help businesses schedule content, track metrics, and automate daily tasks.",
+      "This guide explains how planners work, how to choose one, and how Mydrop AI can elevate your workflow.",
+    ],
+    whyNeed: [],
+    tools: [],
+    comparisonRows: [],
+    decisionPrompts: [],
+    closingTitle: "Conclusion",
+    closingParagraphs: [
+      "A strong social media planner turns scattered posting into a structured, measurable growth process.",
+    ],
+    ctaLabel: "Sign up for Mydrop today",
+    ctaHref: "https://app.mydropai.com/register",
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {

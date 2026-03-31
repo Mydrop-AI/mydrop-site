@@ -14,6 +14,7 @@ import {
   SITE_URL,
 } from "@/lib/seo";
 import { getBlogPostBySlug } from "@/lib/blogPosts";
+import { resolveAssetPath } from "@/lib/paths";
 import { Button } from "@/components/ui/button";
 import NotFoundPage from "@/pages/NotFoundPage";
 
@@ -29,6 +30,7 @@ const SOCIAL_PROOF_CAMPAIGNS_SLUG = "how-to-use-social-proof-in-your-marketing-c
 const TIKTOK_FOLLOWERS_SLUG = "skyrocket-your-tiktok-followers-with-these-tips-for-brands-creators";
 const TOP_SCHEDULING_TOOLS_SLUG = "top-scheduling-tools-for-social-media";
 const WHAT_ARE_SOCIAL_MEDIA_TOOLS_SLUG = "what-are-social-media-tools";
+const WHAT_IS_SOCIAL_MEDIA_PLANNER_SLUG = "what-is-a-social-media-planner";
 
 const BLOG_PUBLISHER = {
   "@type": "Organization",
@@ -97,6 +99,7 @@ export default function BlogPostPage() {
   const isTikTokFollowersPost = post.slug === TIKTOK_FOLLOWERS_SLUG;
   const isTopSchedulingToolsPost = post.slug === TOP_SCHEDULING_TOOLS_SLUG;
   const isWhatAreSocialMediaToolsPost = post.slug === WHAT_ARE_SOCIAL_MEDIA_TOOLS_SLUG;
+  const isWhatIsSocialMediaPlannerPost = post.slug === WHAT_IS_SOCIAL_MEDIA_PLANNER_SLUG;
 
   return (
     <>
@@ -146,7 +149,7 @@ export default function BlogPostPage() {
 
             <figure className="blog-hero">
               <img
-                src={post.heroImage}
+                src={resolveAssetPath(post.heroImage)}
                 alt={post.heroImageAlt}
                 className="h-[210px] w-full object-cover md:h-[360px]"
                 loading="eager"
@@ -182,7 +185,7 @@ export default function BlogPostPage() {
                 <h2>Understanding Your Audience</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png")}
                     alt="Audience research board showing demographics, goals, and content preferences"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -202,7 +205,7 @@ export default function BlogPostPage() {
                 <h2>Setting Clear Goals</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner-2.png")}
                     alt="Goal-setting board mapping awareness, leads, and sales objectives"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -219,7 +222,7 @@ export default function BlogPostPage() {
                 <h2>Choosing the Right Platforms</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-choosing-the-right-platform-for-social-media-design-for-blog-banner-2.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-choosing-the-right-platform-for-social-media-design-for-blog-banner-2.webp")}
                     alt="Social platform selection map for content distribution"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -248,7 +251,7 @@ export default function BlogPostPage() {
                 <h2>Creating High-Quality Content</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png")}
                     alt="High-quality content examples including video, graphics, and editorial copy"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -283,7 +286,7 @@ export default function BlogPostPage() {
                 <h2>Analyzing and Adjusting Your Strategy</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics.webp")}
                     alt="Analytics dashboard for engagement, reach, and conversion tracking"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -317,7 +320,7 @@ export default function BlogPostPage() {
                 <h2>Staying Updated with Trends</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png")}
                     alt="Trend monitoring dashboard for social media and content formats"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -414,7 +417,7 @@ export default function BlogPostPage() {
                 <h3>1. Mydrop (The Game-Changer)</h3>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-blog-banner.png")}
                     alt="Mydrop interface on multiple tablets showing scheduling, automation, and contact workflows."
                     className="h-[210px] w-full object-cover md:h-[330px]"
                     loading="lazy"
@@ -462,7 +465,7 @@ export default function BlogPostPage() {
                 <h3>2. Buffer</h3>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-buffer-logo.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-buffer-logo.png")}
                     alt="Buffer logo."
                     className="h-20 w-full object-contain"
                     loading="lazy"
@@ -485,7 +488,7 @@ export default function BlogPostPage() {
                 <h3>3. Hootsuite</h3>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-hootsuite-logo.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-hootsuite-logo.png")}
                     alt="Hootsuite logo with red owl icon and text."
                     className="h-20 w-full object-contain"
                     loading="lazy"
@@ -507,7 +510,7 @@ export default function BlogPostPage() {
                 <h3>4. Sprout Social</h3>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-sprout-social-logo.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-sprout-social-logo.png")}
                     alt="Sprout Social logo with leaf icon."
                     className="h-20 w-full object-contain"
                     loading="lazy"
@@ -528,7 +531,7 @@ export default function BlogPostPage() {
                 <h3>5. Later</h3>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-later-logo-wide.jpg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-later-logo-wide.jpg")}
                     alt="Later logo with colorful social symbols."
                     className="h-20 w-full object-contain"
                     loading="lazy"
@@ -609,7 +612,7 @@ export default function BlogPostPage() {
                 <h2>How to Choose the Right Tool</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-smiling-man-with-mobile-phone.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-smiling-man-with-mobile-phone.png")}
                     alt="Professional reviewing social media channels before choosing a management platform."
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -642,7 +645,7 @@ export default function BlogPostPage() {
                 <h2>Start Managing Your Social Media Like a Pro</h2>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-dashboards-design.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-dashboards-design.png")}
                     alt="Dashboard with social metrics and calendar insights for social media performance tracking."
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -691,7 +694,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-full-of-content.png")}
                     alt="A social content calendar"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -730,7 +733,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-effortless-dashboard2.webp")}
                     alt="Effortless social management tool"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -754,7 +757,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png")}
                     alt="Full content calendar"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -787,7 +790,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-cross-posting.webp")}
                     alt="Cross-post and schedule everywhere"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -822,7 +825,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-dashboard.webp")}
                     alt="Social media dashboard"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -844,7 +847,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-smiling-woman-looking-at-phone.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-smiling-woman-looking-at-phone.png")}
                     alt="Smiling woman"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -879,7 +882,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-how-to-become-a-community-manager.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-how-to-become-a-community-manager.png")}
                     alt="Community manager planning audience engagement activities"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -928,7 +931,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-how-to-become-a-community-manager-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-how-to-become-a-community-manager-2.png")}
                     alt="Essential Skills for a Community Manager"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -988,7 +991,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png")}
                     alt="Editorial calendar used to organize community campaigns"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1044,7 +1047,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-the-continous-improvement-cycle.png")}
                     alt="Performance cycle showing analysis and strategy adjustments"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1095,7 +1098,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-posts-design.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-posts-design.png")}
                     alt="Social planner dashboard with upcoming community posts"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1129,7 +1132,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-high-organic-reach-counter.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-organic-reach-counter.webp")}
                     alt="Analytics card showing unique audience reach for a campaign"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1160,7 +1163,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-optimisation-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-optimisation-design-for-blog-banner.png")}
                     alt="Content optimization board with post timing and targeting notes"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1191,7 +1194,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-total-likes-counter.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-total-likes-counter.webp")}
                     alt="Performance card showing repeated post visibility and interactions"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1221,7 +1224,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png")}
                     alt="Comparison chart illustrating reach and impressions trends"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1251,7 +1254,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-graphs-and-curves-showing-the-benefits-of-mydrop-vs-without-mydrop.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-graphs-and-curves-showing-the-benefits-of-mydrop-vs-without-mydrop.png")}
                     alt="Performance trend lines improving after strategy optimization"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1281,7 +1284,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics.webp")}
                     alt="Analytics dashboard displaying campaign performance by channel"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1311,7 +1314,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-smiling-couple-looking-at-laptop-in-their-small-shop.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-smiling-couple-looking-at-laptop-in-their-small-shop.png")}
                     alt="Small business owners reviewing social campaign performance together"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1339,7 +1342,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools.jpeg")}
                     alt="Team collaborating on social campaign planning and audience engagement"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1409,7 +1412,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-know-your-audience-design-for-blog-banner.png")}
                     alt="Audience research board with persona notes and engagement data"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1429,7 +1432,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-quality-content-design-for-blog-banner.png")}
                     alt="High quality social visuals arranged for Instagram publishing"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1449,7 +1452,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png")}
                     alt="People sharing social content from their phones"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1468,7 +1471,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png")}
                     alt="Content calendar with scheduled Instagram posts"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1487,7 +1490,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-reels-vs-stories-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-reels-vs-stories-design-for-blog-banner.png")}
                     alt="Comparison between Instagram reels and stories formats"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1516,7 +1519,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-partners.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-partners.webp")}
                     alt="Brand partnership workflow for influencer collaboration"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1535,7 +1538,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png")}
                     alt="Social analytics dashboard used to review engagement metrics"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1554,7 +1557,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-proof-ad-campaigns-how-to-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-proof-ad-campaigns-how-to-design-for-blog-banner.png")}
                     alt="Campaign creative promoting giveaway and social proof"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1573,7 +1576,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png")}
                     alt="Hashtag testing and discovery performance trends"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1589,7 +1592,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner.png")}
                     alt="Instagram profile bio optimization checklist"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1605,7 +1608,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-team-building-holding-hands.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-team-building-holding-hands.png")}
                     alt="Team collaboration moment captured behind the scenes"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1621,7 +1624,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-ads-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-ads-design-for-blog-banner.png")}
                     alt="Instagram ad formats shown for campaign testing"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1647,7 +1650,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools-2.jpeg")}
                     alt="Social media management workspace used to plan and optimize Instagram campaigns"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1683,7 +1686,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-blog-intro-banner.png")}
                     alt="Influencer campaign briefing workspace with goals and deliverables"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1706,7 +1709,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png")}
                     alt="Audience demographic breakdown used to evaluate influencer fit"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1728,7 +1731,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-smiling-vlogger-cooking.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-smiling-vlogger-cooking.png")}
                     alt="Creator producing authentic brand content in a real-life setting"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1750,7 +1753,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-media-editor.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-media-editor.png")}
                     alt="Content creation workflow with editing and approval checkpoints"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1772,7 +1775,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-google-rating.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-google-rating.webp")}
                     alt="Social proof and campaign outcome indicators from past brand collaborations"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1794,7 +1797,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics.webp")}
                     alt="Campaign KPI dashboard used to evaluate influencer performance"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1820,7 +1823,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools-2.jpeg")}
                     alt="Social media management platform interface coordinating influencer campaigns"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1855,7 +1858,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-full-of-content.png")}
                     alt="Social content calendar filled with planned posts across multiple dates"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1907,7 +1910,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner-2.png")}
                     alt="Goal planning board with campaign objectives and KPI targets"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1935,7 +1938,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-choosing-the-right-platform-for-social-media-design-for-blog-banner-2.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-choosing-the-right-platform-for-social-media-design-for-blog-banner-2.webp")}
                     alt="Platform selection map showing where different audience segments spend time"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1963,7 +1966,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-quality-content-design-for-blog-banner.png")}
                     alt="Balanced social content mix including educational posts, videos, and promos"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -1990,7 +1993,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-posts-design.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-posts-design.png")}
                     alt="Template-based social post repository organized by campaign themes"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2017,7 +2020,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-dashboard.webp")}
                     alt="Unified social media scheduling dashboard with multi-platform calendar view"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2044,7 +2047,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-how-to-become-a-community-manager-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-how-to-become-a-community-manager-2.png")}
                     alt="Community management workflow with response queues and audience interactions"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2070,7 +2073,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png")}
                     alt="Social media analytics dashboard for monitoring reach engagement and conversions"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2097,7 +2100,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-media-editor.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-media-editor.png")}
                     alt="AI-assisted media editor used to generate social assets quickly"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2123,7 +2126,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-team-building-holding-hands.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-team-building-holding-hands.png")}
                     alt="Content team collaborating on a shared publishing plan"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2149,7 +2152,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png")}
                     alt="Trend monitoring board for social media format and topic experiments"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2175,7 +2178,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools.jpeg")}
                     alt="Social media management tools dashboard used for planning and scheduling"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2208,7 +2211,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-blog-intro-banner.png")}
                     alt="Marketing team reviewing social proof assets and campaign messaging"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2239,7 +2242,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-google-rating.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-google-rating.webp")}
                     alt="Online rating and customer review summary used as trust signals"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2281,7 +2284,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png")}
                     alt="Audience sharing brand mentions and user-generated posts on social media"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2323,7 +2326,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-partners.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-partners.webp")}
                     alt="Influencer and brand collaboration workflow planned in a shared campaign board"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2339,7 +2342,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png")}
                     alt="Unified social calendar scheduling social proof posts across several platforms"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2353,7 +2356,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-cross-posting.webp")}
                     alt="Cross-platform publishing panel for sharing proof content to multiple profiles"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2367,7 +2370,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-media-editor.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-media-editor.png")}
                     alt="AI content creation workspace converting testimonials into campaign-ready posts"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2381,7 +2384,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-effortless-dashboard2.webp")}
                     alt="Media library dashboard organizing social proof assets by campaign and format"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2395,7 +2398,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-posts-design.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-posts-design.png")}
                     alt="Reusable social template layout for customer review and testimonial posts"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2421,7 +2424,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools-2.jpeg")}
                     alt="Social media management interface used to plan and publish trust-building campaigns"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2455,7 +2458,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-blog-intro-banner.png")}
                     alt="Content planning workspace for short-form social media campaigns"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2489,7 +2492,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png")}
                     alt="Trend tracking dashboard for TikTok sounds hashtags and content formats"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2517,7 +2520,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png")}
                     alt="High-quality short-form video production setup with lighting and framing"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2540,7 +2543,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png")}
                     alt="Performance trends from hashtag experiments and challenge-based TikTok posts"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2567,7 +2570,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png")}
                     alt="Weekly TikTok posting schedule planned in a content calendar"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2593,7 +2596,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-how-to-become-a-community-manager.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-how-to-become-a-community-manager.png")}
                     alt="Community manager engaging with audience comments and creator interactions"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2620,7 +2623,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics.webp")}
                     alt="TikTok analytics dashboard showing follower growth and engagement metrics"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2646,7 +2649,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-cross-posting.webp")}
                     alt="Cross-platform distribution workflow for TikTok videos"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2672,7 +2675,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-dashboard.webp")}
                     alt="Centralized social media dashboard used to schedule and optimize TikTok content"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2698,7 +2701,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools.jpeg")}
                     alt="Social media management platform supporting TikTok growth planning"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2733,7 +2736,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-full-of-content.png")}
                     alt="Social media content calendar filled with scheduled posts across channels"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2763,7 +2766,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-dashboards-design.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-dashboards-design.png")}
                     alt="Social media management dashboard showing scheduling and campaign overview"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2792,7 +2795,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-high-organic-reach-counter.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-organic-reach-counter.webp")}
                     alt="Organic reach growth indicators linked to consistent posting workflows"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2817,7 +2820,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png")}
                     alt="Unified calendar view used to schedule social posts across many platforms"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2831,7 +2834,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-cross-posting.webp")}
                     alt="Multi-profile publishing workflow for social campaigns"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2845,7 +2848,7 @@ export default function BlogPostPage() {
                 </p>
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-media-editor.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-media-editor.png")}
                     alt="AI-assisted editor for creating social media visuals and captions"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2871,7 +2874,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-posts-design.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-posts-design.png")}
                     alt="Multi-network publishing layout showing channel-specific post formats"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2898,7 +2901,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-the-continous-improvement-cycle.png")}
                     alt="Continuous improvement loop for planning publishing and optimization"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2925,7 +2928,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-effortless-dashboard2.webp")}
                     alt="Organized media and grouped profile workflow in a social dashboard"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2957,7 +2960,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-mydrop-partners.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-partners.webp")}
                     alt="Teams and creators coordinating multi-account publishing workflows"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -2983,7 +2986,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools-2.jpeg")}
                     alt="Comprehensive social media management platform used for scheduled publishing"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3017,7 +3020,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-blog-intro-banner.png")}
                     alt="Business team planning a social media strategy with centralized tools"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3063,7 +3066,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-the-continous-improvement-cycle.png")}
                     alt="Continuous social media workflow cycle from creation to analysis"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3093,7 +3096,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png")}
                     alt="Publishing and listening tools mapped across a unified social calendar"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3117,7 +3120,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png")}
                     alt="Advanced analytics and listening dashboard available in paid social tools"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3141,7 +3144,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-cross-posting.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-cross-posting.webp")}
                     alt="Cross-platform publishing workflow connected to performance measurement"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3172,7 +3175,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-smiling-woman-looking-at-phone.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-smiling-woman-looking-at-phone.png")}
                     alt="Business owner reviewing social engagement metrics on mobile"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3197,7 +3200,7 @@ export default function BlogPostPage() {
 
                 <figure>
                   <img
-                    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools-2.jpeg")}
                     alt="Social media tools interface centralizing publishing and reporting"
                     className="h-[220px] w-full object-cover md:h-[320px]"
                     loading="lazy"
@@ -3216,7 +3219,255 @@ export default function BlogPostPage() {
               </>
             )}
 
-            {!isSocialToolsPost && !isSchedulingPost && !isCommunityManagerPost && !isReachImpressionsPost && !isInstagramEngagementPost && !isContentCreation2026Post && !isInfluencerQuestionsPost && !isContentCalendar2026Post && !isSocialProofCampaignsPost && !isTikTokFollowersPost && !isTopSchedulingToolsPost && !isWhatAreSocialMediaToolsPost && (
+            {isWhatIsSocialMediaPlannerPost && (
+              <>
+                <p itemProp="description">
+                  Social media planners are practical systems for small business owners, community managers,
+                  content creators, and influencers who need consistency without spending every day posting manually.
+                </p>
+
+                <p>
+                  This guide explains what a social media planner is, how it helps, and why Mydrop AI can be
+                  a strong fit if you want to scale output while keeping quality high.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-full-of-content.png")}
+                    alt="Weekly social media calendar planned in advance with platform-specific content"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Planning ahead keeps publishing consistent and reduces daily pressure</figcaption>
+                </figure>
+
+                <h2>What Is a Social Media Planner?</h2>
+                <p>
+                  A social media planner is a tool that helps you schedule content, track metrics,
+                  and automate repetitive social tasks. It centralizes workflows so you can manage
+                  multiple accounts with less friction.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-posts-design.png")}
+                    alt="Social media planner showing post queue and publishing workflows"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Planners combine creation, scheduling, and review in one interface</figcaption>
+                </figure>
+
+                <h2>The Core Functions of a Social Media Planner</h2>
+
+                <h3>Scheduling Content</h3>
+                <p>
+                  Scheduling lets you prepare days or weeks of content in advance.
+                  This protects consistency and frees time for higher-value work.
+                </p>
+
+                <h3>Tracking Metrics</h3>
+                <p>
+                  A good planner surfaces engagement and reach data so you can identify what performs best
+                  and adjust your strategy quickly.
+                </p>
+
+                <h3>Automating Tasks</h3>
+                <p>
+                  Automation handles recurring tasks like publishing, reminders, and routing engagement actions,
+                  reducing manual workload.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-analytics.webp")}
+                    alt="Social analytics panel tracking mentions hashtags and engagement metrics"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Metrics and automation help teams iterate faster with less effort</figcaption>
+                </figure>
+
+                <h2>Benefits of Using a Social Media Planner</h2>
+
+                <h3>Time-Saving</h3>
+                <p>
+                  Pre-planning and automation reduce repetitive work so you can focus on growth priorities.
+                </p>
+
+                <h3>Improved Consistency</h3>
+                <p>
+                  Regular publishing builds trust with audiences and improves long-term content performance.
+                </p>
+
+                <h3>Enhanced Engagement</h3>
+                <p>
+                  Performance insights help you tailor content to what your audience actually responds to.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-high-organic-reach-counter.webp")}
+                    alt="Engagement growth indicators linked to consistent scheduling workflows"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Consistency and optimization usually lead to better engagement outcomes</figcaption>
+                </figure>
+
+                <h2>How To Choose the Right Social Media Planner</h2>
+
+                <h3>Identify Your Needs</h3>
+                <p>
+                  Decide whether your priority is scheduling scale, analytics depth, automation, or collaboration.
+                </p>
+
+                <h3>Compare Features</h3>
+                <p>
+                  Evaluate tools based on unified scheduling, analytics, workflow automation, and platform support.
+                </p>
+
+                <h3>Consider User Experience</h3>
+                <p>
+                  A planner should be intuitive enough for daily use, especially if multiple users collaborate in it.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-know-your-audience-design-for-blog-banner.png")}
+                    alt="Strategic planning board used to evaluate social media tool requirements"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Choosing the right planner starts with clear operational priorities</figcaption>
+                </figure>
+
+                <h2>Practical Tips for Maximizing Your Social Media Planner</h2>
+
+                <h3>Schedule Ahead</h3>
+                <p>
+                  Batch creation and scheduling each week to avoid reactive, last-minute posting.
+                </p>
+
+                <h3>Monitor Performance</h3>
+                <p>
+                  Review analytics weekly and adjust content types, hooks, and posting times.
+                </p>
+
+                <h3>Automate Routine Tasks</h3>
+                <p>
+                  Use automation for repetitive actions so your team can focus on strategy and creative quality.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png")}
+                    alt="Weekly planner setup for content batching and scheduled publishing"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Batch planning is one of the fastest ways to stabilize output</figcaption>
+                </figure>
+
+                <h2>Maintaining a Strong Online Presence</h2>
+
+                <h3>Consistency Is Key</h3>
+                <p>
+                  Consistent publishing keeps your brand visible and reinforces audience trust.
+                </p>
+
+                <h3>Stay Updated</h3>
+                <p>
+                  Track platform and algorithm changes to keep your strategy relevant.
+                </p>
+
+                <h3>Continual Improvement</h3>
+                <p>
+                  Use your planner&apos;s insights to improve creative direction and campaign performance over time.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-the-continous-improvement-cycle.png")}
+                    alt="Continuous optimization cycle for social planning and execution"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Long-term growth comes from consistent analysis and iteration</figcaption>
+                </figure>
+
+                <h2>Discover Mydrop AI, the Ideal Social Media Planner</h2>
+
+                <h3>AI-Powered Content Generation</h3>
+                <p>
+                  Generate post ideas, visuals, and captions faster when creative bandwidth is limited.
+                </p>
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-media-editor.png")}
+                    alt="AI content creation workspace for social captions and visual assets"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>AI assistance helps teams produce more content with consistent quality</figcaption>
+                </figure>
+
+                <h3>Unified Calendar</h3>
+                <p>
+                  Plan and schedule across multiple platforms from one dashboard, reducing context switching.
+                </p>
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-mydrop-dashboard.webp")}
+                    alt="Unified social calendar dashboard coordinating multiple channel schedules"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>A unified calendar improves control and visibility across all channels</figcaption>
+                </figure>
+
+                <h3>Profiles Grouping</h3>
+                <p>
+                  Group multiple profiles and publish in one action to save time for agencies and multi-brand teams.
+                </p>
+
+                <h2>Conclusion</h2>
+                <p>
+                  Social media planners are indispensable for teams that want consistent publishing,
+                  better performance visibility, and scalable workflows.
+                </p>
+
+                <p>
+                  Mydrop AI combines AI-assisted creation, unified scheduling, and efficient profile management
+                  to help you elevate your social media execution.
+                </p>
+
+                <p>
+                  Ready to improve your social strategy? Sign up for Mydrop AI today and get your first month free.
+                </p>
+
+                <figure>
+                  <img
+                    src={resolveAssetPath("/media/images/original-site/legacy-social-media-management-tools.jpeg")}
+                    alt="Social media planner interface used to centralize posting and optimization"
+                    className="h-[220px] w-full object-cover md:h-[320px]"
+                    loading="lazy"
+                  />
+                  <figcaption>Mydrop AI helps transform social media planning into a repeatable system</figcaption>
+                </figure>
+
+                <p>
+                  <Button asChild size="lg">
+                    <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                      Start with Mydrop today
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </p>
+              </>
+            )}
+
+            {!isSocialToolsPost && !isSchedulingPost && !isCommunityManagerPost && !isReachImpressionsPost && !isInstagramEngagementPost && !isContentCreation2026Post && !isInfluencerQuestionsPost && !isContentCalendar2026Post && !isSocialProofCampaignsPost && !isTikTokFollowersPost && !isTopSchedulingToolsPost && !isWhatAreSocialMediaToolsPost && !isWhatIsSocialMediaPlannerPost && (
               <>
                 <p itemProp="description">{post.description}</p>
                 {post.intro.map((paragraph) => (

@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button";
+import { resolveAssetPath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -15,7 +16,7 @@ export default function SiteHeader() {
         <div className="flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
           <Link to="/" aria-label="MydropAI home" className="inline-flex items-center">
             <img
-              src="/images/logo_regular_white.png"
+              src={resolveAssetPath("/images/logo_regular_white.png")}
               alt="MydropAI"
               className="h-9 w-auto md:h-10"
             />

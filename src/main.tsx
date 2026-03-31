@@ -8,6 +8,7 @@ import "@fontsource/plus-jakarta-sans/600.css";
 import "@fontsource/plus-jakarta-sans/700.css";
 import App from "./App";
 import "./index.css";
+import { getRouterBasename } from "@/lib/paths";
 
 const rootElement = document.getElementById("root");
 
@@ -18,7 +19,7 @@ if (!rootElement) {
 const app = (
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={getRouterBasename()}>
         <App />
       </BrowserRouter>
     </HelmetProvider>

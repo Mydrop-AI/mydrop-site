@@ -21,6 +21,7 @@ import {
   buildWebPageSchema,
   organizationSchema,
 } from "@/lib/seo";
+import { resolveAssetPath } from "@/lib/paths";
 
 type GalleryItem = {
   type: "image" | "video";
@@ -52,8 +53,8 @@ type CtaSignal = {
   icon: LucideIcon;
 };
 
-const arrowLeft = "/media/images/original-site/legacy-arrow-loop-left.webp";
-const arrowRight = "/media/images/original-site/legacy-arrow-loop-right.webp";
+const arrowLeft = resolveAssetPath("/media/images/original-site/legacy-arrow-loop-left.webp");
+const arrowRight = resolveAssetPath("/media/images/original-site/legacy-arrow-loop-right.webp");
 
 const painPoints = [
   "You juggle too many tabs and tools just to publish one campaign.",
@@ -476,7 +477,7 @@ export default function HomePage() {
         title="Social Media Management, Actually Made Easy"
         description={description}
         canonicalUrl="/"
-        image="/images/home/hero-command-center.png"
+        image={resolveAssetPath("/images/home/hero-command-center.png")}
         structuredData={structuredData}
       />
 
@@ -485,7 +486,7 @@ export default function HomePage() {
 
         <div className="hero-floating-zone" aria-hidden>
           {floatingCards.map((item) => (
-            <img key={item.className} src={item.src} alt={item.alt} className={`hero-float ${item.className}`} />
+            <img key={item.className} src={resolveAssetPath(item.src)} alt={item.alt} className={`hero-float ${item.className}`} />
           ))}
         </div>
 
@@ -520,7 +521,7 @@ export default function HomePage() {
           <div className="hero-proof-row mt-8">
             <div className="hero-trust">
               <img
-                src="/images/home/user-headshots.webp"
+                src={resolveAssetPath("/images/home/user-headshots.webp")}
                 alt="Creators and social managers using Mydrop"
                 className="h-9 w-auto object-contain"
                 loading="lazy"
@@ -538,7 +539,7 @@ export default function HomePage() {
             {platformIcons.map((platform) => (
               <li key={platform.name} className="platform-pill" title={platform.name}>
                 <img
-                  src={platform.src}
+                  src={resolveAssetPath(platform.src)}
                   alt={`${platform.name} icon`}
                   className="h-5 w-5 object-contain"
                   loading="lazy"
@@ -552,7 +553,7 @@ export default function HomePage() {
           {floatingCards.map((item) => (
             <img
               key={`mobile-${item.className}`}
-              src={item.src}
+              src={resolveAssetPath(item.src)}
               alt={item.alt}
               className="hero-mobile-float"
               loading="lazy"
@@ -578,7 +579,7 @@ export default function HomePage() {
                   <article key={`row-a-${item.src}-${index}`} className={`gallery-tile gallery-tile--${item.size}`}>
                     {item.type === "video" ? (
                       <video
-                        src={item.src}
+                        src={resolveAssetPath(item.src)}
                         autoPlay
                         muted
                         loop
@@ -587,7 +588,7 @@ export default function HomePage() {
                         aria-label={item.alt}
                       />
                     ) : (
-                      <img src={item.src} alt={item.alt} loading="lazy" />
+                      <img src={resolveAssetPath(item.src)} alt={item.alt} loading="lazy" />
                     )}
                   </article>
                 ))}
@@ -600,7 +601,7 @@ export default function HomePage() {
                   <article key={`row-b-${item.src}-${index}`} className={`gallery-tile gallery-tile--${item.size}`}>
                     {item.type === "video" ? (
                       <video
-                        src={item.src}
+                        src={resolveAssetPath(item.src)}
                         autoPlay
                         muted
                         loop
@@ -609,7 +610,7 @@ export default function HomePage() {
                         aria-label={item.alt}
                       />
                     ) : (
-                      <img src={item.src} alt={item.alt} loading="lazy" />
+                      <img src={resolveAssetPath(item.src)} alt={item.alt} loading="lazy" />
                     )}
                   </article>
                 ))}
@@ -642,7 +643,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <img
-                src="/media/images/original-site/legacy-clients-struggles-chat-bubbles.webp"
+                src={resolveAssetPath("/media/images/original-site/legacy-clients-struggles-chat-bubbles.webp")}
                 alt="Client struggles and message overload"
                 className="feature-media mt-6"
                 loading="lazy"
@@ -660,7 +661,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <img
-                src="/media/images/original-site/legacy-mydrop-solution.webp"
+                src={resolveAssetPath("/media/images/original-site/legacy-mydrop-solution.webp")}
                 alt="Mydrop solution board"
                 className="feature-media mt-6"
                 loading="lazy"
@@ -724,7 +725,7 @@ export default function HomePage() {
 
             <article className="simple-card p-4">
               <img
-                src="/media/images/original-site/legacy-multi-post-selection-of-multiple-profiles-to-cross-post.png"
+                src={resolveAssetPath("/media/images/original-site/legacy-multi-post-selection-of-multiple-profiles-to-cross-post.png")}
                 alt="Multiple profile cross-posting selection"
                 className="feature-media"
                 loading="lazy"
@@ -782,7 +783,7 @@ export default function HomePage() {
                 <article className={`feature-band-media ${isAlt ? "lg:order-1" : ""}`}>
                   <div className="feature-band-media-frame">
                     <img
-                      src={feature.image}
+                      src={resolveAssetPath(feature.image)}
                       alt={feature.alt}
                       className="feature-media feature-band-image"
                       loading="lazy"
@@ -827,7 +828,7 @@ export default function HomePage() {
 
             <article className="dashboard-preview">
               <img
-                src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+                src={resolveAssetPath("/media/images/original-site/legacy-effortless-dashboard2.webp")}
                 alt="Effortless dashboard preview"
                 className="feature-media dashboard-preview-image"
                 loading="lazy"
@@ -890,7 +891,7 @@ export default function HomePage() {
               <div className="mega-cta-media">
                 <article className="mega-cta-media-card">
                   <img
-                    src="/media/images/original-site/legacy-review-13.webp"
+                    src={resolveAssetPath("/media/images/original-site/legacy-review-13.webp")}
                     alt="Customer review card"
                     className="mega-cta-media-image"
                     loading="lazy"
@@ -898,7 +899,7 @@ export default function HomePage() {
                 </article>
                 <article className="mega-cta-media-card mega-cta-media-card--offset">
                   <img
-                    src="/media/images/original-site/legacy-smiling-team-looking-at-ipad.png"
+                    src={resolveAssetPath("/media/images/original-site/legacy-smiling-team-looking-at-ipad.png")}
                     alt="Happy team using Mydrop"
                     className="mega-cta-media-image"
                     loading="lazy"

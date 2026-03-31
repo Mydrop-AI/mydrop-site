@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CalendarDays, Clock3, User2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/blogPosts";
+import { resolveAssetPath } from "@/lib/paths";
 import {
   buildBreadcrumbSchema,
   buildWebPageSchema,
@@ -64,7 +65,7 @@ export default function BlogPage() {
           {featuredPost && (
             <article className="overflow-hidden rounded-[1.5rem] border border-white/15 bg-[linear-gradient(165deg,rgba(29,34,57,0.84),rgba(11,13,25,0.95))] shadow-[0_20px_58px_rgba(4,7,15,0.45)]">
               <img
-                src={featuredPost.heroImage}
+                src={resolveAssetPath(featuredPost.heroImage)}
                 alt={featuredPost.heroImageAlt}
                 className="h-[220px] w-full object-cover md:h-[350px]"
                 loading="lazy"
@@ -112,7 +113,7 @@ export default function BlogPage() {
                   className="overflow-hidden rounded-2xl border border-white/15 bg-white/5"
                 >
                   <img
-                    src={post.heroImage}
+                    src={resolveAssetPath(post.heroImage)}
                     alt={post.heroImageAlt}
                     className="h-44 w-full object-cover"
                     loading="lazy"

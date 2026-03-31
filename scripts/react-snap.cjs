@@ -1,37 +1,140 @@
 const { run } = require("react-snap");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const defaultChromePath =
   process.platform === "darwin"
     ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     : "/usr/bin/google-chrome-stable";
 
-run({
-  source: "dist",
-  include: [
-    "/",
-    "/pricing",
-    "/blog",
-    "/post/which-social-media-management-tool-is-best-for-you",
-    "/post/how-to-schedule-a-post-on-social-media",
-    "/post/how-to-become-a-good-community-manager",
-    "/post/reach-vs-impressions-in-social-media-marketing",
-    "/post/how-to-boost-instagram-engagement-in-2026",
-    "/post/10-essential-questions-to-ask-before-working-with-influencers",
-      "/post/how-to-get-started-with-content-creation-in-2024",
-      "/post/how-to-plan-a-social-media-content-calendar-in-2026",
-      "/post/how-to-use-social-proof-in-your-marketing-campaigns",
-      "/post/skyrocket-your-tiktok-followers-with-these-tips-for-brands-creators",
-      "/post/top-scheduling-tools-for-social-media",
-      "/post/what-are-social-media-tools",
-    "/privacy-policy",
-    "/terms-and-services",
-    "/faq",
-    "/contact",
-  ],
-  inlineCss: false,
-  skipThirdPartyRequests: true,
-  concurrency: 1,
-  puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
-  puppeteerExecutablePath:
-    process.env.PUPPETEER_EXECUTABLE_PATH || defaultChromePath,
+function normalizeBasePath(basePath) {
+  if (!basePath || basePath === "/") {
+    return "/";
+  }
+
+  let normalized = basePath;
+  if (!normalized.startsWith("/")) {
+    normalized = `/${normalized}`;
+  }
+  if (!normalized.endsWith("/")) {
+    normalized = `${normalized}/`;
+  }
+
+  return normalized;
+}
+
+function getBlogPostRoutes() {
+  const blogPostsPath = path.resolve(__dirname, "../src/lib/blogPosts.ts");
+  const source = fs.readFileSync(blogPostsPath, "utf8");
+  const slugMatches = source.matchAll(/slug:\s*"([^"]+)"/g);
+  const slugs = [...slugMatches].map((match) => match[1]);
+
+  return [...new Set(slugs)].map((slug) => `/post/${slug}`);
+}
+
+const staticRoutes = [
+  "/",
+  "/pricing",
+  "/blog",
+  "/privacy-policy",
+  "/terms-and-services",
+  "/faq",
+  "/contact",
+];
+
+function setupBasePathMirror(distDir, basePath) {
+  if (basePath === "/") {
+    return null;
+  }
+
+  const folderName = basePath.slice(1, -1);
+  const mirrorDir = path.join(distDir, folderName);
+  fs.mkdirSync(mirrorDir, { recursive: true });
+
+  const entries = fs.readdirSync(distDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.name === folderName) {
+      continue;
+    }
+
+    const target = path.join(mirrorDir, entry.name);
+    if (fs.existsSync(target)) {
+      continue;
+    }
+
+    const linkTarget = path.join("..", entry.name);
+    fs.symlinkSync(linkTarget, target, entry.isDirectory() ? "dir" : "file");
+  }
+
+  return mirrorDir;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function rewriteHrefsForBasePath(distDir, basePath) {
+  if (basePath === "/") {
+    return;
+  }
+
+  const baseSegment = basePath.slice(1, -1);
+  const rootHrefPattern = new RegExp(
+    `href=\"\/(?!${escapeRegExp(baseSegment)}(?:\/|\"))`,
+    "g"
+  );
+
+  const stack = [distDir];
+  while (stack.length > 0) {
+    const currentDir = stack.pop();
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(currentDir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(fullPath);
+        continue;
+      }
+
+      if (!entry.isFile() || !entry.name.endsWith(".html")) {
+        continue;
+      }
+
+      const html = fs.readFileSync(fullPath, "utf8");
+      const rewritten = html.replace(rootHrefPattern, `href=\"${basePath}`);
+      if (rewritten !== html) {
+        fs.writeFileSync(fullPath, rewritten);
+      }
+    }
+  }
+}
+
+async function main() {
+  const basePath = normalizeBasePath(process.env.BASE_PATH);
+  const distDir = path.resolve(__dirname, "../dist");
+  const mirrorDir = setupBasePathMirror(distDir, basePath);
+
+  try {
+    await run({
+      source: "dist",
+      include: [...staticRoutes, ...getBlogPostRoutes()],
+      inlineCss: false,
+      skipThirdPartyRequests: true,
+      concurrency: 1,
+      puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
+      puppeteerExecutablePath:
+        process.env.PUPPETEER_EXECUTABLE_PATH || defaultChromePath,
+    });
+
+    rewriteHrefsForBasePath(distDir, basePath);
+  } finally {
+    if (mirrorDir) {
+      fs.rmSync(mirrorDir, { recursive: true, force: true });
+    }
+  }
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
 });
