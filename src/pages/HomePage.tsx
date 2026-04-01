@@ -13,6 +13,7 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -50,6 +51,12 @@ type DashboardFeature = {
 
 type CtaSignal = {
   label: string;
+  icon: LucideIcon;
+};
+
+type AgentCapability = {
+  title: string;
+  description: string;
   icon: LucideIcon;
 };
 
@@ -268,6 +275,73 @@ const ctaSignals: CtaSignal[] = [
   { label: "Daily output without daily chaos", icon: Sparkles },
 ];
 
+const agentTypingSuffixes = [
+  "create your posts",
+  "build your brand voice",
+  "automate your content creation",
+  "plan your whole month",
+  "check drafts before posting",
+  "ask you before publishing",
+  "analyze your results",
+  "find fresh winning trends",
+  "create branded images and videos",
+];
+
+const agentCapabilities: AgentCapability[] = [
+  {
+    title: "Reads your context first",
+    description: "Looks at your profiles, brand voice, and recent content first.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Plans before it writes",
+    description: "Uses a clear flow: load, draft, verify, approve, apply.",
+    icon: Workflow,
+  },
+  {
+    title: "Drafts full post objects",
+    description: "Creates ready-to-post captions and structure for your channels.",
+    icon: Wand2,
+  },
+  {
+    title: "Builds media directions",
+    description: "Suggests image and video directions that match your angle.",
+    icon: Layers3,
+  },
+  {
+    title: "Verifies before go-live",
+    description: "Checks drafts so common mistakes are caught early.",
+    icon: CheckCircle2,
+  },
+  {
+    title: "Waits for your yes",
+    description: "Nothing is applied until you approve.",
+    icon: Rocket,
+  },
+  {
+    title: "Streams live progress",
+    description: "Shows live status while it works.",
+    icon: LineChart,
+  },
+  {
+    title: "Uses web + results",
+    description: "Uses web search and your recent results to sharpen drafts.",
+    icon: CalendarClock,
+  },
+];
+
+const pickDifferentRandomIndex = (length = 0, previousIndex = -1) => {
+  if (length <= 1) {
+    return length ? 0 : -1;
+  }
+
+  let nextIndex = Math.floor(Math.random() * length);
+  if (nextIndex === previousIndex) {
+    nextIndex = (nextIndex + 1 + Math.floor(Math.random() * (length - 1))) % length;
+  }
+  return nextIndex;
+};
+
 const faqIcons: LucideIcon[] = [ShieldCheck, Sparkles, CalendarClock, Users2, Workflow, LineChart];
 
 const faqItems = [
@@ -427,6 +501,53 @@ const aiGalleryItems: GalleryItem[] = [
 export default function HomePage() {
   const description =
     "Mydrop helps overloaded solo social managers create, schedule, and scale content with one clear workflow. Save hours every week and stay consistent across every platform.";
+  const [agentTypingSuffix, setAgentTypingSuffix] = useState(
+    agentTypingSuffixes[0] ? `${agentTypingSuffixes[0]}...` : "",
+  );
+
+  useEffect(() => {
+    let isActive = true;
+    let lastIndex = -1;
+
+    const wait = (ms = 0) =>
+      new Promise<void>((resolve) => {
+        window.setTimeout(resolve, ms);
+      });
+
+    const runTypingLoop = async () => {
+      while (isActive) {
+        const nextIndex = pickDifferentRandomIndex(agentTypingSuffixes.length, lastIndex);
+        lastIndex = nextIndex;
+        const nextSuffix = `${agentTypingSuffixes[nextIndex] || ""}...`;
+
+        for (let index = 0; index <= nextSuffix.length; index += 1) {
+          if (!isActive) {
+            return;
+          }
+          setAgentTypingSuffix(nextSuffix.slice(0, index));
+          await wait(22);
+        }
+
+        await wait(2000);
+
+        for (let index = nextSuffix.length; index >= 0; index -= 1) {
+          if (!isActive) {
+            return;
+          }
+          setAgentTypingSuffix(nextSuffix.slice(0, index));
+          await wait(14);
+        }
+
+        await wait(180);
+      }
+    };
+
+    void runTypingLoop();
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -492,10 +613,10 @@ export default function HomePage() {
         </div>
 
         <div className="site-container hero-core">
-            <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/50 px-4 py-2 border border-slate-700">
-              <Rocket className="h-4 w-4 text-rose-500" />
-                  <p className="section-kicker">Join the #1 fastest-growing social management app</p>
-            </div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-2">
+            <Rocket className="h-4 w-4 text-rose-500" />
+            <p className="section-kicker">Join the #1 fastest-growing social management app</p>
+          </div>
 
           <h1 className="hero-title">
             Stop drowning with social.<br></br>
@@ -553,16 +674,92 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <div className="site-container hero-mobile-float-grid">
-          {floatingCards.map((item) => (
-            <img
-              key={`mobile-${item.className}`}
-              src={resolveAssetPath(item.src)}
-              alt={item.alt}
-              className="hero-mobile-float"
-              loading="lazy"
-            />
-          ))}
+      </section>
+
+      <section className="section-shell agent-story-shell">
+        <div className="hero-backdrop-grid agent-story-backdrop" aria-hidden />
+
+        <div className="site-container section-content section-content--compact agent-story-content">
+          <div className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr]">
+            <article className="simple-card p-6">
+              <p className="section-kicker">AI Chat Agent</p>
+              <h2 className="section-title agent-story-title">
+                Your first Social Agent to <br></br><span className="hero-highlight">{agentTypingSuffix}</span>
+                <span className="ml-1 inline-block h-7 w-[2px] animate-pulse rounded-full bg-fuchsia-300 align-middle" aria-hidden />
+              </h2>
+
+              <p className="section-copy mt-4">
+                Say one sentence. It builds the work, checks the draft, and asks before posting.
+              </p>
+
+              <ul className="mt-5 space-y-3">
+                <li className="flex items-start gap-3 text-slate-200">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">1</span>
+                  <span>Tell it what you want to post.</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-200">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">2</span>
+                  <span>It writes captions and media directions for you.</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-200">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">3</span>
+                  <span>It checks quality, then waits for your approval.</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-200">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">4</span>
+                  <span>You approve once. It handles the busywork.</span>
+                </li>
+              </ul>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200">
+                  Save hours every week
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200">
+                  Stay consistent without burnout
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200">
+                  Look like a full team, solo
+                </span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button asChild>
+                  <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                    Try the AI Agent free
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to="/contact">Show me my workflow</Link>
+                </Button>
+              </div>
+            </article>
+
+            <article className="simple-card p-6">
+              <h3 className="text-2xl font-semibold text-white">What it handles for you</h3>
+              <p className="mt-2 text-slate-300">Everything below is automatic unless you say otherwise.</p>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {agentCapabilities.map((capability) => {
+                  const CapabilityIcon = capability.icon;
+
+                  return (
+                    <article key={capability.title} className="rounded-xl border border-white/10 bg-white/5 p-3.5">
+                      <div className="flex items-start gap-2.5">
+                        <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#1d9bf0]/20 text-[#7fc6ff]">
+                          <CapabilityIcon className="h-3.5 w-3.5" />
+                        </span>
+                        <div>
+                          <p className="text-sm font-semibold text-white">{capability.title}</p>
+                          <p className="mt-1 text-xs leading-relaxed text-slate-300">{capability.description}</p>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
