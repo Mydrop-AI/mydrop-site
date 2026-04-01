@@ -2,10 +2,20 @@ const { run } = require("react-snap");
 const fs = require("node:fs");
 const path = require("node:path");
 
+const packageJsonPath = path.resolve(__dirname, "../package.json");
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+const packageReactSnapConfig = packageJson.reactSnap ?? {};
+
+const linuxChromeCandidates = [
+  "/usr/bin/google-chrome",
+  "/usr/bin/google-chrome-stable",
+];
+
 const defaultChromePath =
   process.platform === "darwin"
     ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    : "/usr/bin/google-chrome-stable";
+    : linuxChromeCandidates.find((candidate) => fs.existsSync(candidate)) ||
+      "/usr/bin/google-chrome";
 
 function normalizeBasePath(basePath) {
   if (!basePath || basePath === "/") {
@@ -116,14 +126,19 @@ async function main() {
 
   try {
     await run({
-      source: "dist",
+      source: packageReactSnapConfig.source ?? "dist",
       include: [...staticRoutes, ...getBlogPostRoutes()],
-      inlineCss: false,
-      skipThirdPartyRequests: true,
-      concurrency: 1,
-      puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
+      inlineCss: packageReactSnapConfig.inlineCss ?? false,
+      skipThirdPartyRequests: packageReactSnapConfig.skipThirdPartyRequests ?? true,
+      concurrency: packageReactSnapConfig.concurrency ?? 1,
+      puppeteerArgs: packageReactSnapConfig.puppeteerArgs ?? [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+      ],
       puppeteerExecutablePath:
-        process.env.PUPPETEER_EXECUTABLE_PATH || defaultChromePath,
+        process.env.PUPPETEER_EXECUTABLE_PATH ||
+        packageReactSnapConfig.puppeteerExecutablePath ||
+        defaultChromePath,
     });
 
     rewriteHrefsForBasePath(distDir, basePath);

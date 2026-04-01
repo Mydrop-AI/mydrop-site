@@ -8,7 +8,9 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/blog", label: "Blog" },
   { to: "/faq", label: "FAQ" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function SiteHeader() {

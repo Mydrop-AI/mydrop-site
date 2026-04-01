@@ -478,6 +478,7 @@ export default function HomePage() {
         description={description}
         canonicalUrl="/"
         image={resolveAssetPath("/images/home/hero-command-center.png")}
+        imageAlt="MydropAI dashboard with AI content creation, scheduling, analytics, and multi-platform publishing"
         structuredData={structuredData}
       />
 
@@ -491,7 +492,10 @@ export default function HomePage() {
         </div>
 
         <div className="site-container hero-core">
-          <p className="section-kicker">Social Media Management, Actually Made Easy</p>
+            <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/50 px-4 py-2 border border-slate-700">
+              <Rocket className="h-4 w-4 text-rose-500" />
+                  <p className="section-kicker">Join the #1 fastest-growing social management app</p>
+            </div>
 
           <h1 className="hero-title">
             Stop drowning with social.<br></br>
@@ -526,7 +530,7 @@ export default function HomePage() {
                 className="h-9 w-auto object-contain"
                 loading="lazy"
               />
-              <span className="text-sm text-slate-200">Trusted by 57,000+ creators</span>
+              <span className="text-sm text-slate-200">Trusted by 57,000+ creators and growing</span>
               <span className="inline-flex items-center gap-1" aria-label="5 stars">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={`star-${index}`} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
@@ -586,6 +590,7 @@ export default function HomePage() {
                         playsInline
                         preload="metadata"
                         aria-label={item.alt}
+                        title={item.alt}
                       />
                     ) : (
                       <img src={resolveAssetPath(item.src)} alt={item.alt} loading="lazy" />
@@ -608,6 +613,7 @@ export default function HomePage() {
                         playsInline
                         preload="metadata"
                         aria-label={item.alt}
+                        title={item.alt}
                       />
                     ) : (
                       <img src={resolveAssetPath(item.src)} alt={item.alt} loading="lazy" />

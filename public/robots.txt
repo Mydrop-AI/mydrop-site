@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /about
+Disallow: /affiliates
+Disallow: /partnerships
+
+Sitemap: https://www.mydropai.com/sitemap.xml

@@ -108,6 +108,10 @@ export default function BlogPostPage() {
         description={post.description}
         canonicalUrl={canonicalPath}
         image={post.heroImage}
+        imageAlt={post.heroImageAlt}
+        ogType="article"
+        publishedTime={post.publishedAt}
+        modifiedTime={post.updatedAt}
         structuredData={structuredData}
       />
 
