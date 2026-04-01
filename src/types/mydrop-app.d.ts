@@ -1,4 +1,4 @@
-declare module "@mydrop-app/static/js/agent/publicPreviewShared.js" {
+declare module "@/vendor/mydrop-agent/js/publicPreviewShared.js" {
   export function autoResizePromptElement(element: HTMLTextAreaElement | null): void;
   export function createAiErrorMessageHtml(message: string): string;
   export function createBrandArtifactMessageHtml(brandDraft?: Record<string, unknown>): string;

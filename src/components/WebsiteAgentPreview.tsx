@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import { marked } from "marked";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "@mydrop-app/static/css/agent/chat-shell.css";
-import "@mydrop-app/static/css/agent/agent.css";
-import agentSurfaceSource from "@mydrop-app/static/js/agent/surface.js?raw";
-import agentContractsSource from "@mydrop-app/static/js/agent/contracts.js?raw";
-import agentRuntimeSource from "@mydrop-app/static/js/agent/runtime.js?raw";
-import agentChatSource from "@mydrop-app/static/js/agent/chat.js?raw";
+import "@/vendor/mydrop-agent/css/chat-shell.css";
+import "@/vendor/mydrop-agent/css/agent.css";
+import agentSurfaceSource from "@/vendor/mydrop-agent/js/surface.js?raw";
+import agentContractsSource from "@/vendor/mydrop-agent/js/contracts.js?raw";
+import agentRuntimeSource from "@/vendor/mydrop-agent/js/runtime.js?raw";
+import agentChatSource from "@/vendor/mydrop-agent/js/chat.js?raw";
 import {
   autoResizePromptElement,
   createAiErrorMessageHtml,
@@ -24,7 +24,7 @@ import {
   normalizeAiArtifactBundles,
   promptLikelyNeedsArtifact,
   sanitizeAiNextSteps,
-} from "@mydrop-app/static/js/agent/publicPreviewShared.js";
+} from "@/vendor/mydrop-agent/js/publicPreviewShared.js";
 import "./WebsiteAgentPreview.css";
 
 type PreviewConversationTurn = {
