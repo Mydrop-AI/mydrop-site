@@ -1989,6 +1989,14 @@
     color: var(--font-gray-clair);
 }
 
+@media (hover: none) and (pointer: coarse) {
+    .agent-home-chat-surface .ai-prompt[data-value="default"],
+    .ai-prompt,
+    #ai-prompt-default {
+        font-size: 16px;
+    }
+}
+
 .agent-home-chat-surface .attachments-tab {
     margin-top: 10px;
 }

@@ -728,6 +728,13 @@
     color: var(--font-gray-clair);
 }
 
+@media (hover: none) and (pointer: coarse) {
+    #ai-prompt-default,
+    .ai-prompt {
+        font-size: 16px;
+    }
+}
+
 #ai-buttons-div,
 .ai-buttons-div {
     display: flex;

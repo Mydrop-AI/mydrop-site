@@ -1060,20 +1060,24 @@ export default function WebsiteAgentPreview() {
       ) {
         event.preventDefault();
         if (sendButton.classList.contains("generating")) {
-          cancelActiveRun();
           return;
         }
         void submitPrompt();
       }
     };
 
-    const handleSendClick = () => {
+    const handleSendClick = (event: MouseEvent) => {
       if (sendButton.classList.contains("disabled") && !sendButton.classList.contains("generating")) {
         return;
       }
 
       if (sendButton.classList.contains("generating")) {
-        cancelActiveRun();
+        const clickedStopIcon = event.target instanceof Element
+          && !!event.target.closest(".ai-chat-generating-icon");
+
+        if (clickedStopIcon) {
+          cancelActiveRun();
+        }
         return;
       }
 
