@@ -12,7 +12,7 @@ export default function PageScaffold({
   children,
 }: PageScaffoldProps) {
   return (
-    <section className="surface-card space-y-5 p-6 md:p-8">
+    <section className="surface-card mx-auto my-12 max-w-6xl space-y-5 p-6 md:p-8">
       <header className="space-y-3">
         <h1 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
           {title}

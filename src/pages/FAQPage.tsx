@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
@@ -144,8 +145,14 @@ const faqCategories: FaqCategory[] = [
 const faqItems = faqCategories.flatMap((category) => category.items);
 
 export default function FAQPage() {
+  const [openQuestionKeys, setOpenQuestionKeys] = useState<Record<string, boolean>>({});
+
   const description =
     "Find complete answers about Mydrop features, integrations, collaboration, workflows, and pricing.";
+
+  const toggleFaqItem = (key: string) => {
+    setOpenQuestionKeys((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const structuredData = [
     organizationSchema,
@@ -203,19 +210,47 @@ export default function FAQPage() {
                     {category.title}
                   </p>
                   <div className="grid gap-3 md:grid-cols-2">
-                    {category.items.map((item) => (
-                      <article
-                        key={item.question}
-                        className="rounded-[24px] bg-white/[0.055] p-6"
-                      >
-                        <h3 className="text-base font-semibold text-white">
-                          {item.question}
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                          {item.answer}
-                        </p>
-                      </article>
-                    ))}
+                    {category.items.map((item) => {
+                      const itemKey = `${category.title}__${item.question}`;
+                      const isOpen = !!openQuestionKeys[itemKey];
+
+                      return (
+                        <article
+                          key={item.question}
+                          className="rounded-[24px] bg-white/[0.055] p-1"
+                        >
+                          <button
+                            type="button"
+                            onClick={() => toggleFaqItem(itemKey)}
+                            aria-expanded={isOpen}
+                            className="w-full rounded-[22px] bg-slate-900/40 px-4 py-4 text-left transition hover:bg-slate-900/60"
+                          >
+                            <div className="flex items-center justify-between gap-3">
+                              <span className="text-base font-semibold text-white">
+                                {item.question}
+                              </span>
+                              <span className="text-slate-300">
+                                {isOpen ? (
+                                  <ChevronUp className="h-4 w-4" />
+                                ) : (
+                                  <ChevronDown className="h-4 w-4" />
+                                )}
+                              </span>
+                            </div>
+                          </button>
+
+                          <div
+                            className={`overflow-hidden transition-all duration-200 ${
+                              isOpen ? "max-h-64" : "max-h-0"
+                            }`}
+                          >
+                            <p className="px-4 pb-4 pt-3 text-sm leading-relaxed text-slate-300">
+                              {item.answer}
+                            </p>
+                          </div>
+                        </article>
+                      );
+                    })}
                   </div>
                 </div>
               ))}

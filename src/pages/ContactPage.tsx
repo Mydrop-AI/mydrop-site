@@ -1,5 +1,4 @@
 import SEO from "@/components/SEO";
-import PageScaffold from "@/components/layout/PageScaffold";
 import { Button } from "@/components/ui/button";
 import {
   buildBreadcrumbSchema,
@@ -35,21 +34,17 @@ export default function ContactPage() {
         canonicalUrl="/contact"
         structuredData={structuredData}
       />
-      <PageScaffold
-        title="Contact"
-        description="Contact page scaffold is ready for your form copy, trust points, and support channels."
-      >
-        <div className="flex flex-wrap gap-3">
-          <Button asChild>
-            <a href="mailto:contact@mydropai.com">Email Us</a>
-          </Button>
-          <Button asChild variant="outline">
-            <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
-              Create Account
-            </a>
+      <main className="flex min-h-[70vh] items-center justify-center bg-transparent px-4 py-20">
+        <div className="mx-auto w-full max-w-xl text-center">
+          <h2 className="text-4xl font-bold text-white">Get in touch</h2>
+          <p className="mt-4 text-lg text-slate-300">
+            Email us and we’ll reply the same business day.
+          </p>
+          <Button asChild className="mt-8">
+            <a href="mailto:contact@mydropai.com">Email contact@mydropai.com</a>
           </Button>
         </div>
-      </PageScaffold>
+      </main>
     </>
   );
 }

@@ -27,6 +27,9 @@ export default function SiteFooter() {
             <Link to="/faq" className="hover:text-white">
               FAQ
             </Link>
+            <Link to="/contact" className="hover:text-white">
+              Contact
+            </Link>
             <Link to="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>
