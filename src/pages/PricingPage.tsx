@@ -19,7 +19,7 @@ import {
 } from "@/lib/seo";
 
 type BillingCycle = "monthly" | "yearly";
-type PlanKey = "freelance" | "manager" | "business";
+type PlanKey = "free" | "freelance" | "manager" | "business";
 type FeatureValue = string | boolean;
 
 interface Plan {
@@ -39,13 +39,22 @@ interface ComparisonGroup {
 
 const plans: Plan[] = [
   {
+    key: "free",
+    name: "Free",
+    prices: { monthly: "$0", yearly: "$0" },
+    hint: "Start using Mydrop without paying upfront.",
+    icon: Sparkles,
+    featured: false,
+    highlights: ["10 posts / month", "3 automations", "1 team member", "1 GB storage"],
+  },
+  {
     key: "freelance",
     name: "Freelancer",
     prices: { monthly: "$9", yearly: "$8" },
     hint: "Perfect when you run social solo.",
     icon: UserRound,
     featured: false,
-    highlights: ["50 posts / month", "5 automations", "1 team member", "4 GB storage"],
+    highlights: ["50 posts / month", "5 automations", "20 AI images · 10 AI videos", "1 team member", "4 GB storage"],
   },
   {
     key: "manager",
@@ -54,7 +63,7 @@ const plans: Plan[] = [
     hint: "Best for multi-account social managers.",
     icon: Users,
     featured: true,
-    highlights: ["200 posts / month", "10 automations", "5 team members", "8 GB storage"],
+    highlights: ["200 posts / month", "10 automations", "40 AI images · 15 AI videos", "5 team members", "8 GB storage"],
   },
   {
     key: "business",
@@ -63,7 +72,7 @@ const plans: Plan[] = [
     hint: "Built for teams that need max output.",
     icon: Building2,
     featured: false,
-    highlights: ["Unlimited posts", "Unlimited automations", "Unlimited team members", "15 GB storage"],
+    highlights: ["Unlimited posts", "Unlimited automations", "50 AI images · 30 AI videos", "Unlimited team members", "15 GB storage"],
   },
 ];
 
@@ -71,43 +80,44 @@ const comparisonGroups: ComparisonGroup[] = [
   {
     label: "Usage",
     rows: [
-      { label: "Posts per month", values: { freelance: "50", manager: "200", business: "Unlimited" } },
-      { label: "Automations", values: { freelance: "5", manager: "10", business: "Unlimited" } },
-      { label: "Team members", values: { freelance: "1", manager: "5", business: "Unlimited" } },
-      { label: "Storage", values: { freelance: "4 GB", manager: "8 GB", business: "15 GB" } },
-      { label: "Profiles", values: { freelance: "Unlimited", manager: "Unlimited", business: "Unlimited" } },
-      { label: "Forms", values: { freelance: "Unlimited", manager: "Unlimited", business: "Unlimited" } },
+      { label: "Posts per month", values: { free: "10", freelance: "50", manager: "200", business: "Unlimited" } },
+      { label: "Automations", values: { free: "3", freelance: "5", manager: "10", business: "Unlimited" } },
+      { label: "Team members", values: { free: "1", freelance: "1", manager: "5", business: "Unlimited" } },
+      { label: "Storage", values: { free: "1 GB", freelance: "4 GB", manager: "8 GB", business: "15 GB" } },
+      { label: "Profiles", values: { free: "Unlimited", freelance: "Unlimited", manager: "Unlimited", business: "Unlimited" } },
+      { label: "Forms", values: { free: "Unlimited", freelance: "Unlimited", manager: "Unlimited", business: "Unlimited" } },
     ],
   },
   {
     label: "Publishing",
     rows: [
-      { label: "Cross-post", values: { freelance: true, manager: true, business: true } },
-      { label: "Schedule in bulk", values: { freelance: true, manager: true, business: true } },
-      { label: "Post first comment", values: { freelance: true, manager: true, business: true } },
-      { label: "Posts drafting", values: { freelance: true, manager: true, business: true } },
-      { label: "Profiles grouping", values: { freelance: true, manager: true, business: true } },
+      { label: "Cross-post", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Schedule in bulk", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Post first comment", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Posts drafting", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Profiles grouping", values: { free: true, freelance: true, manager: true, business: true } },
     ],
   },
   {
     label: "AI",
     rows: [
-      { label: "AI text generation", values: { freelance: true, manager: true, business: true } },
-      { label: "AI suggestions", values: { freelance: true, manager: true, business: true } },
-      { label: "AI image generation", values: { freelance: true, manager: true, business: true } },
-      { label: "Prompts library", values: { freelance: true, manager: true, business: true } },
+      { label: "AI text generation", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "AI suggestions", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "AI image generation", values: { free: "10 / month", freelance: "20 / month", manager: "40 / month", business: "50 / month" } },
+      { label: "AI video generation", values: { free: "3 / month", freelance: "10 / month", manager: "15 / month", business: "30 / month" } },
+      { label: "Prompts library", values: { free: true, freelance: true, manager: true, business: true } },
     ],
   },
   {
     label: "Content & integrations",
     rows: [
-      { label: "Content gallery", values: { freelance: true, manager: true, business: true } },
-      { label: "Media editor", values: { freelance: true, manager: true, business: true } },
-      { label: "Templates saving", values: { freelance: true, manager: true, business: true } },
-      { label: "Analytics", values: { freelance: true, manager: true, business: true } },
-      { label: "Canva integration", values: { freelance: true, manager: true, business: true } },
-      { label: "Google Photos", values: { freelance: true, manager: true, business: true } },
-      { label: "Google Drive", values: { freelance: true, manager: true, business: true } },
+      { label: "Content gallery", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Media editor", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Templates saving", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Analytics", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Canva integration", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Google Photos", values: { free: true, freelance: true, manager: true, business: true } },
+      { label: "Google Drive", values: { free: true, freelance: true, manager: true, business: true } },
     ],
   },
 ];
@@ -196,7 +206,7 @@ export default function PricingPage() {
             </div>
 
             {/* ── Plan cards ────────────────────────────────────── */}
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {plans.map((plan) => {
                 const PlanIcon = plan.icon;
                 return (
@@ -234,12 +244,18 @@ export default function PricingPage() {
                         <span className="text-5xl font-bold tracking-tight text-white">
                           {plan.prices[billingCycle]}
                         </span>
-                        <span className="mb-1.5 text-base font-medium text-slate-400">/mo</span>
+                        {plan.key !== "free" ? (
+                          <span className="mb-1.5 text-base font-medium text-slate-400">/mo</span>
+                        ) : null}
                       </div>
-                      <p className="mt-1.5 flex items-center gap-1.5 text-xs text-slate-400">
-                        <Clock3 className="h-3.5 w-3.5" />
-                        {billingCycle === "monthly" ? "Billed monthly" : "Billed yearly — 15% off"}
-                      </p>
+                      {plan.key !== "free" ? (
+                        <p className="mt-1.5 flex items-center gap-1.5 text-xs text-slate-400">
+                          <Clock3 className="h-3.5 w-3.5" />
+                          {billingCycle === "monthly" ? "Billed monthly" : "Billed yearly — 15% off"}
+                        </p>
+                      ) : (
+                        <p className="mt-1.5 text-xs text-slate-400">No billing</p>
+                      )}
                     </div>
 
                     {/* hint */}
@@ -287,10 +303,11 @@ export default function PricingPage() {
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[660px] table-fixed border-collapse">
                   <colgroup>
-                    <col className="w-[37%]" />
-                    <col className="w-[21%]" />
-                    <col className="w-[21%]" />
-                    <col className="w-[21%]" />
+                    <col className="w-[26%]" />
+                    <col className="w-[18.5%]" />
+                    <col className="w-[18.5%]" />
+                    <col className="w-[18.5%]" />
+                    <col className="w-[18.5%]" />
                   </colgroup>
 
                   <thead>
@@ -311,7 +328,11 @@ export default function PricingPage() {
                             </div>
                             <p className="mt-1 text-base font-bold tabular-nums text-slate-200">
                               {plan.prices[billingCycle]}
-                              <span className="text-xs font-normal text-slate-400">/mo</span>
+                              {plan.key !== "free" ? (
+                                <span className="text-xs font-normal text-slate-400">/mo</span>
+                              ) : (
+                                <span className="ml-2 text-xs font-normal text-slate-400">No billing</span>
+                              )}
                             </p>
                           </th>
                         );
@@ -328,7 +349,7 @@ export default function PricingPage() {
                           className="border-t border-white/[0.07] bg-white/[0.02]"
                         >
                           <td
-                            colSpan={4}
+                            colSpan={5}
                             className="px-6 py-2.5 text-[11px] font-semibold uppercase tracking-widest text-fuchsia-300/70"
                           >
                             {group.label}

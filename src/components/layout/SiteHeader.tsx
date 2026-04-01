@@ -1,23 +1,51 @@
 import { Link, NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button";
 import { resolveAssetPath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/pricing", label: "Pricing" },
-  { to: "/blog", label: "Blog" },
   { to: "/faq", label: "FAQ" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isHeroActive, setIsHeroActive] = useState(true);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  useEffect(() => {
+    if (!isHome) {
+      setIsHeroActive(false);
+      return undefined;
+    }
+
+    const handleScroll = () => {
+      setIsHeroActive(window.scrollY < Math.max(120, window.innerHeight * 0.35));
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isHome]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#111525]/82 backdrop-blur-md">
+    <header
+      className={cn(
+        "top-0 left-0 right-0 z-40",
+        isHome ? "fixed" : "sticky",
+        isHome && isHeroActive
+          ? "bg-transparent border-b border-transparent backdrop-blur-none"
+          : "border-b border-white/10 bg-[#111525]/82 backdrop-blur-md",
+      )}
+    >
       <div className="site-container">
         <div className="flex items-center justify-between py-4">
           <Link to="/" aria-label="MydropAI home" className="inline-flex items-center">
@@ -28,8 +56,8 @@ export default function SiteHeader() {
             />
           </Link>
 
-          <div className="hidden items-center gap-6 lg:flex">
-            <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+          <div className="hidden flex-1 items-center lg:flex">
+            <nav className="mx-auto flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
               {navItems.map((item) => (
                 <NavLink
                   key={item.to}

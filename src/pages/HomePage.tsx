@@ -16,6 +16,7 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import WebsiteAgentPreview from "@/components/WebsiteAgentPreview";
 import { Button } from "@/components/ui/button";
 import {
   buildBreadcrumbSchema,
@@ -606,90 +607,108 @@ export default function HomePage() {
       <section className="hero-full">
         <div className="hero-backdrop-grid" aria-hidden />
 
+        <div className="site-container hero-core">
+          <div className="hero-copy">
+            <h1 className="hero-title">
+              Your first Social Agent to <br></br>
+              <span className="hero-highlight">{agentTypingSuffix}</span>
+              <span className="ml-1 inline-block h-9 w-[3px] animate-pulse rounded-full bg-fuchsia-300 align-middle" aria-hidden />
+            </h1>
+
+            <p className="hero-subcopy">
+              Say one sentence. It builds the work, checks the draft, and asks before posting.
+            </p>
+          </div>
+
+          <div className="hero-agent-stage">
+            <WebsiteAgentPreview />
+          </div>
+        </div>
+
+      </section>
+
+      <section className="section-shell agent-story-shell">
+        <div className="section-backdrop-grid agent-story-backdrop" aria-hidden />
         <div className="hero-floating-zone" aria-hidden>
           {floatingCards.map((item) => (
             <img key={item.className} src={resolveAssetPath(item.src)} alt={item.alt} className={`hero-float ${item.className}`} />
           ))}
         </div>
 
-        <div className="site-container hero-core">
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-2">
-            <Rocket className="h-4 w-4 text-rose-500" />
-            <p className="section-kicker">Join the #1 fastest-growing social management app</p>
-          </div>
-
-          <h1 className="hero-title">
-            Stop drowning with social.<br></br>
-            <span className="hero-highlight"> Let Mydrop do it for you.</span>
-          </h1>
-
-          <p className="hero-subcopy">
-            You are managing multiple accounts alone. Posting manually is killing your time,
-            consistency, and growth. Mydrop turns one brief into post-ready captions, visuals,
-            and videos, then schedules everything across platforms. 57,000+ creators and social
-            managers already switched to this workflow.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg">
-              <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
-                Start for free
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="https://app.mydropai.com/login" target="_blank" rel="noreferrer">
-                Login
-              </a>
-            </Button>
-          </div>
-
-          <div className="hero-proof-row mt-8">
-            <div className="hero-trust">
-              <img
-                src={resolveAssetPath("/images/home/user-headshots.webp")}
-                alt="Creators and social managers using Mydrop"
-                className="h-9 w-auto object-contain"
-                loading="lazy"
-              />
-              <span className="text-sm text-slate-200">Trusted by 57,000+ creators and growing</span>
-              <span className="inline-flex items-center gap-1" aria-label="5 stars">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={`star-${index}`} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </span>
+        <div className="site-container section-content section-content--compact agent-story-content">
+          <div className="flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-2">
+              <Rocket className="h-4 w-4 text-rose-500" />
+              <p className="section-kicker">Join the #1 fastest-growing social management app</p>
             </div>
-          </div>
 
-          <ul className="platform-row mt-6">
-            {platformIcons.map((platform) => (
-              <li key={platform.name} className="platform-pill" title={platform.name}>
+            <h2 className="hero-title">
+              Stop drowning with social.<br></br>
+              <span className="hero-highlight"> Let Mydrop do it for you.</span>
+            </h2>
+
+            <p className="hero-subcopy">
+              You are managing multiple accounts alone. Posting manually is killing your time,
+              consistency, and growth. Mydrop turns one brief into post-ready captions, visuals,
+              and videos, then schedules everything across platforms. 57,000+ creators and social
+              managers already switched to this workflow.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Button asChild size="lg">
+                <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
+                  Start for free
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="https://app.mydropai.com/login" target="_blank" rel="noreferrer">
+                  Login
+                </a>
+              </Button>
+            </div>
+
+            <div className="hero-proof-row mt-8">
+              <div className="hero-trust">
                 <img
-                  src={resolveAssetPath(platform.src)}
-                  alt={`${platform.name} icon`}
-                  className="h-5 w-5 object-contain"
+                  src={resolveAssetPath("/images/home/user-headshots.webp")}
+                  alt="Creators and social managers using Mydrop"
+                  className="h-9 w-auto object-contain"
                   loading="lazy"
                 />
-              </li>
-            ))}
-          </ul>
-        </div>
+                <span className="text-sm text-slate-200">Trusted by 57,000+ creators and growing</span>
+                <span className="inline-flex items-center gap-1" aria-label="5 stars">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={`star-${index}`} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </span>
+              </div>
+            </div>
 
+            <ul className="platform-row mt-6">
+              {platformIcons.map((platform) => (
+                <li key={platform.name} className="platform-pill" title={platform.name}>
+                  <img
+                    src={resolveAssetPath(platform.src)}
+                    alt={`${platform.name} icon`}
+                    className="h-5 w-5 object-contain"
+                    loading="lazy"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="section-shell agent-story-shell">
-        <div className="hero-backdrop-grid agent-story-backdrop" aria-hidden />
+        <div className="section-backdrop-grid agent-story-backdrop" aria-hidden />
 
         <div className="site-container section-content section-content--compact agent-story-content">
           <div className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr]">
             <article className="simple-card p-6">
-              <p className="section-kicker">AI Chat Agent</p>
-              <h2 className="section-title agent-story-title">
-                Your first Social Agent to <br></br><span className="hero-highlight">{agentTypingSuffix}</span>
-                <span className="ml-1 inline-block h-7 w-[2px] animate-pulse rounded-full bg-fuchsia-300 align-middle" aria-hidden />
-              </h2>
-
-              <p className="section-copy mt-4">
-                Say one sentence. It builds the work, checks the draft, and asks before posting.
+              <h3 className="text-2xl font-semibold text-white">How the workflow feels</h3>
+              <p className="mt-2 text-slate-300">
+                Keep the brief simple. The agent handles the heavy first pass, then waits for your call.
               </p>
 
               <ul className="mt-5 space-y-3">
@@ -726,7 +745,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild>
                   <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
-                    Try the AI Agent free
+                    Open the full AI Agent
                   </a>
                 </Button>
                 <Button asChild variant="outline">

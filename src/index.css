@@ -122,39 +122,56 @@ video {
 
 .hero-full {
   position: relative;
-  min-height: calc(100vh - 84px);
+  height: max(680px, 100svh);
   width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-backdrop-grid {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 14% 14%, rgba(230, 52, 108, 0.24), transparent 33%),
-    radial-gradient(circle at 86% 13%, rgba(192, 0, 245, 0.24), transparent 36%),
-    radial-gradient(circle at 80% 84%, rgba(29, 155, 240, 0.2), transparent 42%),
-    linear-gradient(165deg, rgba(20, 23, 40, 0.98), rgba(14, 16, 30, 0.98));
-}
-
-.hero-backdrop-grid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+  background-color: #13141f;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-  background-size: 34px 34px;
-  opacity: 0.38;
+    linear-gradient(to bottom, #13141f 0%, rgba(19, 20, 31, 0.88) 22%, rgba(19, 20, 31, 0) 68%),
+    linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+    radial-gradient(
+      ellipse 80% 66% at 50% 105%,
+      rgba(255, 0, 200, 0.7) 5%,
+      rgba(255, 0, 200, 0.3) 40%,
+      rgba(255, 0, 200, 0.1) 65%,
+      rgba(255, 0, 200, 0) 100%
+    );
+  background-size: auto, 36px 36px, 36px 36px, auto;
 }
 
+.hero-backdrop-grid::before,
 .hero-backdrop-grid::after {
-  content: "";
+  content: none;
+}
+
+.section-backdrop-grid {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.08), transparent 48%),
-    radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.04), transparent 60%);
+  background: radial-gradient(circle at 14% 14%, #e6346c3d, #0000 33%), radial-gradient(circle at 86% 13%, #c000f53d, #0000 36%), radial-gradient(circle at 80% 84%, #1d9bf033, #0000 42%), linear-gradient(165deg, #141728fa, #0e101efa);
+}
+
+.section-backdrop-grid::before {
+  content: "";
+  opacity: 0.38;
+  background-image: linear-gradient(#ffffff0e 1px, #0000 1px), linear-gradient(90deg, #ffffff0e 1px, #0000 1px);
+  background-size: 34px 34px;
+  position: absolute;
+  inset: 0;
+}
+
+.section-backdrop-grid::after {
+  content: "";
+  background: radial-gradient(circle at 50% 22%, #ffffff14, #0000 48%), radial-gradient(circle at 50% 70%, #ffffff0a, #0000 60%);
+  position: absolute;
+  inset: 0;
 }
 
 .agent-story-shell {
@@ -196,14 +213,61 @@ video {
   z-index: 3;
   max-width: 90%;
   margin-inline: auto;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-block: clamp(6.4rem, 12vh, 8rem);
-  padding-top: 170px;
+  padding-block: clamp(4rem, 8vh, 6rem);
+}
+
+.hero-copy {
+  width: 100%;
+  max-height: 26rem;
+  overflow: hidden;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    max-height 220ms ease,
+    margin 220ms ease;
+}
+
+.hero-agent-stage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: 100%;
+  transition: flex 220ms ease, margin 220ms ease;
+}
+
+.hero-full.is-home-chat-active .hero-core {
+  justify-content: flex-start;
+  padding-top: clamp(6.5rem, 11vh, 8.25rem);
+  padding-bottom: clamp(2rem, 5vh, 4rem);
+}
+
+.hero-full.is-home-chat-active .hero-copy {
+  opacity: 0;
+  transform: translateY(-24px);
+  max-height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.hero-full.is-home-chat-active .hero-agent-stage {
+  flex: 1 1 auto;
+  align-items: stretch;
+  min-height: 0;
 }
 
 .hero-title {
   margin: 1rem 0 0;
-  font-size: clamp(2.45rem, 5vw, 4.5rem);
+  font-size: clamp(2.15rem, 4.2vw, 3.9rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
@@ -880,7 +944,6 @@ video {
   }
 
   .hero-full {
-    min-height: auto;
     padding-bottom: 2.5rem;
   }
 
@@ -889,6 +952,10 @@ video {
     padding-top: clamp(8rem, 16vw, 9.5rem);
     max-width: 100%;
     text-align: center;
+  }
+
+  .hero-full.is-home-chat-active .hero-core {
+    padding-top: clamp(7.4rem, 16vw, 9rem);
   }
 
   .hero-title {
@@ -1025,6 +1092,15 @@ video {
 @media (max-width: 640px) {
   .hero-core {
     padding-top: clamp(7.4rem, 18vw, 8.5rem);
+  }
+
+  .hero-copy {
+    max-height: 22rem;
+  }
+
+  .hero-full.is-home-chat-active .hero-core {
+    padding-top: clamp(7.2rem, 18vw, 8.4rem);
+    padding-bottom: 1.5rem;
   }
 
   .hero-float-1 {
@@ -1311,7 +1387,6 @@ video {
   }
 
   .hero-full {
-    min-height: auto;
     padding-top: 1.2rem;
   }
 }
