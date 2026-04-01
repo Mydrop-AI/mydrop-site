@@ -38,8 +38,10 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
-    "@types/node": "^25.5.0",
+    "@emnapi/core": "^1.9.1",
+    "@emnapi/runtime": "^1.9.1",
     "@types/jquery": "^3.5.33",
+    "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
