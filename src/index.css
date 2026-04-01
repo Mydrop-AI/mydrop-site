@@ -64,6 +64,8 @@ video {
 .section-shell {
   position: relative;
   padding-block: clamp(4rem, 7vw, 6.5rem);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 960px;
 }
 
 .section-shell--tint {
