@@ -41,7 +41,7 @@ export default function ContactPage() {
       >
         <div className="flex flex-wrap gap-3">
           <Button asChild>
-            <a href="mailto:hello@mydropai.com">Email Us</a>
+            <a href="mailto:contact@mydropai.com">Email Us</a>
           </Button>
           <Button asChild variant="outline">
             <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
