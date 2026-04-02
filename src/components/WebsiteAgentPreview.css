@@ -42,7 +42,7 @@
   --waiting: #0049ae;
   --warning: #cd6421;
   width: min(100%, 760px);
-  margin: 1.75rem auto 2.5rem;
+  margin: 1.75rem auto 0;
   height: auto;
   max-height: 100%;
   min-height: 0;
@@ -82,7 +82,7 @@
 .website-agent-shell {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   min-height: 0;
 }
 #home-agent-page.is-home-chat-active {    height: calc(100% - 10px);

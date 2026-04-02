@@ -226,7 +226,7 @@ function getPublicAgentBaseUrl() {
       return "https://app.mydropai.com";
     }
 
-    if (host === "127.0.0.1" || host === "localhost") {
+    if (host === "127.0.0.1" || host === "localhost" || host === "0.0.0.0") {
       return "http://127.0.0.1:5000";
     }
   }
@@ -489,7 +489,11 @@ function openPreviewCta() {
   window.open(PREVIEW_APP_CTA_URL, "_blank", "noopener,noreferrer");
 }
 
-export default function WebsiteAgentPreview() {
+type WebsiteAgentPreviewProps = {
+  quickActions?: Array<{ cta: string; prompt: string }>;
+};
+
+export default function WebsiteAgentPreview({ quickActions = [] }: WebsiteAgentPreviewProps) {
   const [mediaViewer, setMediaViewer] = useState<{ kind: "image" | "video"; url: string } | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const resetButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -499,6 +503,7 @@ export default function WebsiteAgentPreview() {
   const mediaPlansRef = useRef<Map<string, PreviewMediaPlan>>(new Map());
   const activeMediaRunIdsRef = useRef<Set<string>>(new Set());
   const previewVersionRef = useRef(0);
+  const submitPromptRef = useRef<((prompt: string) => void) | null>(null);
 
   useEffect(() => {
     const previewRoot = rootRef.current;
@@ -1037,6 +1042,10 @@ export default function WebsiteAgentPreview() {
       }
     };
 
+    submitPromptRef.current = (prompt: string) => {
+      void submitPrompt(prompt);
+    };
+
     invalidatePreviewMediaState();
     clearPreviewMessages();
     turnsRef.current = [];
@@ -1193,7 +1202,18 @@ export default function WebsiteAgentPreview() {
       if (copyCaptionButton) {
         const caption = String(copyCaptionButton.getAttribute("data-caption") || "").trim();
         if (caption) {
-          void copyTextToClipboard(caption);
+          const label = copyCaptionButton.querySelector("p");
+          const originalLabel = label?.textContent || "Copy";
+          void copyTextToClipboard(caption).then((copied) => {
+        if (!copied || !label) {
+          return;
+        }
+
+        label.textContent = "Copied!";
+        window.setTimeout(() => {
+          label.textContent = originalLabel;
+        }, 1200);
+          });
         }
         return;
       }
@@ -1276,6 +1296,7 @@ export default function WebsiteAgentPreview() {
     chatMutationObserver.observe(chatBody, { childList: true, subtree: true });
 
     return () => {
+      submitPromptRef.current = null;
       promptInput.removeEventListener("input", handleInput);
       promptInput.removeEventListener("keydown", handlePromptKeyDown);
       resetButton?.removeEventListener("click", handleResetClick);
@@ -1314,6 +1335,20 @@ export default function WebsiteAgentPreview() {
           data-agent-chat-shell="home"
           data-agent-chat-shell-wrap="true"
         />
+        {quickActions.length ? (
+          <div className="hero-example-actions" aria-label="Try concrete AI examples">
+            {quickActions.map((example) => (
+              <button
+                key={example.cta}
+                type="button"
+                className="hero-example-button"
+                onClick={() => submitPromptRef.current?.(example.prompt)}
+              >
+                <span className="hero-example-label">{example.cta}</span>
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
       {mediaViewer ? (
         <div className="website-media-viewer" role="dialog" aria-modal="true" onClick={() => setMediaViewer(null)}>

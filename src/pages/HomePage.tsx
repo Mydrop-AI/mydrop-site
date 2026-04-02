@@ -61,6 +61,11 @@ type AgentCapability = {
   icon: LucideIcon;
 };
 
+type HeroPromptExample = {
+  cta: string;
+  prompt: string;
+};
+
 const arrowLeft = resolveAssetPath("/media/images/original-site/legacy-arrow-loop-left.webp");
 const arrowRight = resolveAssetPath("/media/images/original-site/legacy-arrow-loop-right.webp");
 
@@ -74,6 +79,24 @@ const solutionPoints = [
   "One workflow to create, approve, schedule, and publish everywhere.",
   "One calendar that keeps every account organized and consistent.",
   "One AI engine that helps you produce more without burning out.",
+];
+
+const heroPromptExamples: HeroPromptExample[] = [
+  {
+    cta: "Launch my serum",
+    prompt:
+      "Create an Instagram + LinkedIn launch post for a skincare brand releasing a vitamin C serum this Friday. Make it premium, clear, and conversion-focused.",
+  },
+  {
+    cta: "Promote my cafe",
+    prompt:
+      "Plan a 3-day promo campaign for a coffee shop with one Reel idea, one Story sequence, and one caption to bring people in this weekend.",
+  },
+  {
+    cta: "Write coach post",
+    prompt:
+      "Write a high-authority LinkedIn post for a business coach about why most founders stay stuck at inconsistent sales, with a strong hook and CTA.",
+  },
 ];
 
 const workflowSteps = [
@@ -618,10 +641,17 @@ export default function HomePage() {
             <p className="hero-subcopy">
               Say one sentence. It builds the work, checks the draft, and asks before posting.
             </p>
+
           </div>
 
           <div className="hero-agent-stage">
-            <WebsiteAgentPreview />
+            <div className="hero-agent-stack">
+              <WebsiteAgentPreview quickActions={heroPromptExamples} />
+              <div className="hero-example-callout" aria-hidden>
+                <span className="hero-example-callout-text">Try it!</span>
+                <img src={arrowRight} alt="Curved arrow right" className="hero-example-callout-arrow" loading="lazy" />
+              </div>
+            </div>
           </div>
         </div>
 

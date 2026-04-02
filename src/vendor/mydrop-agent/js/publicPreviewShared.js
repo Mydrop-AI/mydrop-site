@@ -24,9 +24,9 @@ const usePostIconMarkup = `
 `;
 
 const applyDraftIconMarkup = `
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 20H21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-        <path d="M16.5 3.5C17.3284 2.67157 18.6716 2.67157 19.5 3.5C20.3284 4.32843 20.3284 5.67157 19.5 6.5L9 17L5 18L6 14L16.5 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <path d="M8 8.5C8 7.11929 9.11929 6 10.5 6H18C19.1046 6 20 6.89543 20 8V18C20 19.1046 19.1046 20 18 20H10.5C9.11929 20 8 18.8807 8 17.5V8.5Z" stroke="currentColor" stroke-width="1.5"></path>
+        <path d="M5.5 15C4.11929 15 3 13.8807 3 12.5V6C3 4.89543 3.89543 4 5 4H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
     </svg>
 `;
 
@@ -299,6 +299,8 @@ export function getPostPrimaryCaption(post = {}) {
 function renderPostPreview(post, type = "chat") {
     const postId = post.postId || generateUniqueId("post");
     let dateTime = String(post?.dateTime || "").trim();
+
+    console.log("Rendering post preview with dateTime:", { dateTime, post });
 
     if (!dateTime) {
         const now = new Date();
@@ -615,9 +617,9 @@ export function createPostArtifactMessageHtml(postDraft = {}) {
                     ${applyDraftIconMarkup}
                     <p>Copy caption</p>
                 </div>
-                <div title="Use post" class="insert-ai-element hover-button" data-action="edit" element-type="ai-post" data-postId="${escapeHtml(postId)}">
+                <div title="Edit post" class="insert-ai-element hover-button" data-action="edit" element-type="ai-post" data-postId="${escapeHtml(postId)}">
                     ${usePostIconMarkup}
-                    <p class="edit-text">Use post</p>
+                    <p class="edit-text">Edit post</p>
                 </div>
             </div>
         </div>

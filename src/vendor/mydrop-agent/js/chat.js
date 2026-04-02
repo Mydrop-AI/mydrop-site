@@ -189,6 +189,7 @@ window.agentChatUI = (() => {
       plan,
       promptText: payload.promptText || '',
       surfaceKey: payload.surfaceKey || 'post',
+      compactRun: !!payload.compactRun,
       generationId: payload.generationId || null,
       effort: payload.effort || 'normal',
       deferAssistantMessage: !!payload.deferAssistantMessage,
@@ -1226,12 +1227,34 @@ window.agentChatUI = (() => {
   }
 
   function buildRunMarkup(run) {
+    const compactRun = !!run.setup?.compactRun;
     const failedClass = run.failed ? ' failed' : '';
     const activityMarkup = buildActivityMarkup(run);
     const showGenerateMedia = !!flattenMediaPlan(run.mediaPlan).length;
     const showFooter = !!run.approval?.required && !run.processItems?.length;
     const isCompleted = !!run.completedAt;
     const showDisclosure = isCompleted && !!activityMarkup;
+    const compactStatus = escapeHtml(run.statusText || (run.failed ? 'Something went wrong.' : 'Generating…'));
+
+    if (compactRun) {
+      if (run.failed) {
+        return `
+          <div class="agent-run-shell${failedClass}">
+            <div class="agent-run-footer"><span class="agent-run-footer-copy">${compactStatus}</span></div>
+          </div>
+        `;
+      }
+
+      if (isCompleted) {
+        return '';
+      }
+
+      return `
+        <div class="agent-run-shell${failedClass}">
+          <div class="agent-run-footer"><span class="agent-run-footer-copy">${compactStatus}</span></div>
+        </div>
+      `;
+    }
 
     if (!activityMarkup && !showGenerateMedia && !showFooter) {
       return '';
