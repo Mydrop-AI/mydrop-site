@@ -70,190 +70,191 @@ const arrowLeft = resolveAssetPath("/media/images/original-site/legacy-arrow-loo
 const arrowRight = resolveAssetPath("/media/images/original-site/legacy-arrow-loop-right.webp");
 
 const painPoints = [
-  "You juggle too many tabs and tools just to publish one campaign.",
-  "Your posting consistency breaks every time client requests stack up.",
-  "You lose hours every day doing manual cross-posting work.",
+  "Every brand has different offers, tone, approvals, and platform rules, but you are expected to hold all of it in your head.",
+  "You keep repeating the same brand context, profile instructions, and campaign notes across chats, docs, and teammates.",
+  "You do not need more generic AI content. You need better judgment on what angle, trend, script, and format is actually worth shipping.",
 ];
 
 const solutionPoints = [
-  "One workflow to create, approve, schedule, and publish everywhere.",
-  "One calendar that keeps every account organized and consistent.",
-  "One AI engine that helps you produce more without burning out.",
+  "One workspace to store brand voice, offers, profile context, and publishing rules where the work actually happens.",
+  "One social agent that helps you think first, then drafts the content, adapts it, verifies it, and waits for approval.",
+  "One operating flow to create, edit, preview, schedule, and publish across every brand and profile you manage.",
 ];
 
 const heroPromptExamples: HeroPromptExample[] = [
   {
-    cta: "Launch my serum",
+    cta: "What should we post?",
     prompt:
-      "Create an Instagram + LinkedIn launch post for a skincare brand releasing a vitamin C serum this Friday. Make it premium, clear, and conversion-focused.",
+      "I manage 4 skincare brands. Which trends and hooks are actually worth testing this week for our vitamin C launch, and which profiles should we push hardest on?",
   },
   {
-    cta: "Promote my cafe",
+    cta: "Write the scripts",
     prompt:
-      "Plan a 3-day promo campaign for a coffee shop with one Reel idea, one Story sequence, and one caption to bring people in this weekend.",
+      "Build 3 short-form scripts for a local cafe promo this weekend. Keep the main brand voice warm, but adapt each script to the Instagram Reel and TikTok profiles.",
   },
   {
-    cta: "Write coach post",
+    cta: "Plan next week",
     prompt:
-      "Write a high-authority LinkedIn post for a business coach about why most founders stay stuck at inconsistent sales, with a strong hook and CTA.",
+      "Plan next week for a founder brand and its company page. I want one authority post, one trend-led video, one product push, and profile-specific angles for each.",
   },
 ];
 
 const workflowSteps = [
   {
-    title: "Drop your brief",
+    title: "Understand the job",
     description:
-      "Type what you sell, who you target, and your tone. Keep it simple. Mydrop does the heavy lifting.",
+      "Start with the goal, the offer, the campaign, or the problem. Mydrop helps clarify the angle before building the actual content.",
   },
   {
-    title: "Shape the output",
+    title: "Adapt by brand and profile",
     description:
-      "Edit, approve, and tune your copy, visuals, and videos so everything stays on-brand.",
+      "Keep brand strategy at the top level, then tailor the copy, creative, and format for the exact profiles that need to publish.",
   },
   {
-    title: "Publish at scale",
+    title: "Approve and ship cleanly",
     description:
-      "Launch across your selected channels and keep posting daily without manual chaos.",
+      "Review the post preview, schedule in bulk, and keep multiple brands moving without scattered docs, DMs, or last-minute chaos.",
   },
 ];
 
 const scaleCapabilities = [
-  "Unlimited profiles and brands",
-  "One-click grouped profile posting",
-  "Built-in media and caption workflows",
-  "Calendar filters by brand, platform, and campaign",
-  "Draft, approval, and publishing flow in one place",
-  "Clear analytics for every account you manage",
+  "Unlimited brands and profiles",
+  "Profile-level adaptation under one brand strategy",
+  "Trend, hook, script, and campaign support before drafting",
+  "Create posts, visuals, and videos in the same workflow",
+  "Calendar filters by brand, profile, platform, and campaign",
+  "Draft, edit, preview, approval, and publishing flow in one place",
+  "Clear visibility across every account you operate",
 ];
 
 const spotlightSections: SpotlightSection[] = [
   {
-    title: "Cross-post & schedule everywhere",
+    title: "Operate brands and profiles cleanly",
     kicker: "Publishing",
     description:
-      "Publish to every selected profile in one move and stop repeating the same upload eight times.",
+      "Brands carry the strategy. Profiles carry the execution. Mydrop helps you adapt the same campaign across the right profiles, then create, schedule, and publish it without losing control.",
     image: "/media/images/original-site/legacy-cross-posting.webp",
     alt: "Cross posting dashboard",
     icon: Rocket,
     highlights: [
-      "One action sends content to multiple platforms.",
-      "Keep formatting clean for each channel automatically.",
-      "Queue full weeks in one planning block.",
+      "Keep one brand direction while tailoring output per profile.",
+      "Cross-post without flattening every channel into the same message.",
+      "Queue full weeks across multiple brands in one planning block.",
     ],
-    cta: "See cross-post flow",
-    ctaSecondary: "Talk setup",
+    cta: "See the publishing flow",
+    ctaSecondary: "Talk through my setup",
   },
   {
-    title: "AI content that humans love to read.",
-    kicker: "AI Content",
+    title: "AI that helps you think before it writes",
+    kicker: "Strategy-First AI",
     description:
-      "Generate first drafts in your tone so you move from idea to publish-ready post in minutes.",
+      "Use Mydrop to figure out what to post, what trend to lean into, what script to shoot, and what angle fits each brand before turning it into real drafts, visuals, and videos.",
     image:
       "/media/images/original-site/legacy-ai-chat-with-brand-voice-options-on-a-centralized-dashboard.webp",
     alt: "AI chat with brand voice",
     icon: Wand2,
     highlights: [
-      "Brand voice memory keeps tone consistent.",
-      "Rewrite instantly for each audience segment.",
-      "Turn one angle into a full weekly batch.",
+      "Ask for trends, hooks, scripts, offers, or campaign ideas, not just captions.",
+      "Keep brand context close so drafts sound intentional, not generic.",
+      "Turn one strong angle into a whole week of profile-specific posts and creative directions.",
     ],
-    cta: "Generate my next week",
-    ctaSecondary: "Ask for examples",
+    cta: "Plan my next week",
+    ctaSecondary: "See strategy examples",
   },
   {
-    title: "Create on auto-pilot",
+    title: "Run recurring workflows without repeating yourself",
     kicker: "Automations",
     description:
-      "Automate repetitive publishing work so your channels stay active even when your day gets chaotic.",
+      "When a workflow repeats every week, Mydrop should not make you rebuild it every week. Keep campaigns, content intake, draft generation, and publishing cadence moving.",
     image: "/media/images/original-site/legacy-automation.webp",
     alt: "Automation workflows",
     icon: Workflow,
     highlights: [
-      "Trigger posting rules based on your plan.",
-      "Reduce manual scheduling across client accounts.",
-      "Keep output consistent without burning out.",
+      "Reduce repetitive admin across client and multi-brand accounts.",
+      "Keep recurring content systems running even when requests pile up.",
+      "Stay consistent without rebuilding the same process from scratch.",
     ],
-    cta: "Automate my posting",
-    ctaSecondary: "Plan my workflow",
+    cta: "Automate my workflow",
+    ctaSecondary: "Map my recurring tasks",
   },
   {
-    title: "Collaborate with your team",
+    title: "Keep stakeholders aligned without approval chaos",
     kicker: "Team",
     description:
-      "Invite teammates or clients, set access by role, and keep approvals moving without bottlenecks.",
+      "When multiple people touch the same brands, you need roles, approvals, previews, and visibility that do not slow the whole machine down.",
     image: "/media/images/original-site/legacy-team-collaboration.webp",
     alt: "Team collaboration board",
     icon: Users2,
     highlights: [
-      "Comment and approve in one shared thread.",
-      "Separate access between creator, reviewer, and admin.",
-      "Stop approval loops in scattered DMs.",
+      "Separate creator, approver, and admin responsibilities clearly.",
+      "Review drafts and previews where the work is created instead of across scattered DMs.",
+      "Keep campaigns moving even when many people are involved.",
     ],
     cta: "Bring my team in",
-    ctaSecondary: "Set permissions",
+    ctaSecondary: "Set up approvals",
   },
   {
-    title: "Manage your brand with authenticity",
+    title: "Store the brand once, execute across every profile",
     kicker: "Brand Identity",
     description:
-      "Keep messaging consistent across all pages so every post still sounds like your brand.",
+      "A brand is not just a logo and a tone line. It is your positioning, offers, audience, rules, and repeatable instincts. Profiles are where that strategy gets adapted, created, and shipped.",
     image: "/media/images/original-site/legacy-brands.png",
     alt: "Brand selector and profiles",
     icon: ShieldCheck,
     highlights: [
-      "Store tone, positioning, and brand rules once.",
-      "Apply brand context before writing starts.",
-      "Protect consistency across every account.",
+      "Store strategy, voice, and campaign context once at the brand level.",
+      "Adapt posts and creative at the profile level without losing consistency.",
+      "Stop re-explaining the same brand rules every time work starts.",
     ],
-    cta: "Lock my brand voice",
-    ctaSecondary: "Set brand rules",
+    cta: "Set my brand system",
+    ctaSecondary: "Define brand rules",
   },
   {
-    title: "Track your success",
+    title: "See what is working, then act on it",
     kicker: "Analytics",
     description:
-      "Monitor what is working, cut what is not, and make every week smarter than the last.",
+      "Operators do not need passive charts. They need signals they can use to make the next campaign smarter across brands and profiles.",
     image: "/media/images/original-site/legacy-analytics.webp",
     alt: "Analytics dashboard",
     icon: LineChart,
     highlights: [
-      "See top-performing themes at a glance.",
-      "Compare platform results without exporting sheets.",
-      "Adjust next week with real performance data.",
+      "Spot winning themes, formats, and hooks faster.",
+      "Compare what is landing across platforms without spreadsheet hopping.",
+      "Use real feedback to guide what to produce next.",
     ],
-    cta: "See real performance",
-    ctaSecondary: "Review my metrics",
+    cta: "Review my performance",
+    ctaSecondary: "See the signals",
   },
   {
-    title: "Customize your calendar",
+    title: "Plan by brand, profile, and campaign",
     kicker: "Calendar",
     description:
-      "Plan by brand and objective with a clear visual calendar that keeps your delivery predictable.",
+      "Your calendar should show the real operating picture: which brand is active, which profiles are publishing, what campaign is running, and what still needs approval or editing.",
     image:
       "/media/images/original-site/legacy-drag-and-rop-of-posts-in-a-calendar-view.png",
     alt: "Custom calendar and drag and drop",
     icon: CalendarClock,
     highlights: [
       "Drag, drop, and rebalance campaigns quickly.",
-      "Filter by account, campaign, or platform.",
+      "Filter by brand, profile, campaign, or platform.",
       "Keep launch timing visible for the full team.",
     ],
     cta: "Plan my month",
-    ctaSecondary: "Map my calendar",
+    ctaSecondary: "Map the calendar",
   },
   {
-    title: "Set, forget, relax.",
+    title: "Keep the machine moving without living in it",
     kicker: "Scheduling",
     description:
-      "Schedule your best slots once and let Mydrop publish on time while you focus on growth work.",
+      "Scheduling should free you up for strategy, editing, approvals, and better creative decisions, not trap you inside daily publishing admin.",
     image:
       "/media/images/original-site/legacy-man-hiking-and-getting-mydrop-notification-of-post-auto-posted-set-forget-relax.png",
     alt: "Set and forget posting",
     icon: Layers3,
     highlights: [
-      "Autopublish keeps cadence stable across channels.",
-      "Status tracking confirms what is live and queued.",
-      "Spend your time on strategy, not posting admin.",
+      "Autopublish keeps cadence stable across brands and channels.",
+      "Status tracking confirms what is live, queued, or waiting.",
+      "Spend your time on judgment, not posting admin.",
     ],
     cta: "Set it and go",
     ctaSecondary: "Build my autopilot",
@@ -262,94 +263,94 @@ const spotlightSections: SpotlightSection[] = [
 
 const dashboardBullets: DashboardFeature[] = [
   {
-    title: "Unlimited profiles",
-    description: "Run all clients and brands from one workspace.",
+    title: "Brand memory",
+    description: "Keep strategy, offers, tone, and rules attached to the right brand.",
     icon: Layers3,
   },
   {
-    title: "Fast creation",
-    description: "Draft captions and media in one clean flow.",
+    title: "Profile clarity",
+    description: "See exactly where content needs to be adapted, edited, and published.",
     icon: Sparkles,
   },
   {
     title: "Approval control",
-    description: "Keep publishing guarded with lightweight approvals.",
+    description: "Keep drafts, previews, and publishing guarded with lightweight approvals.",
     icon: ShieldCheck,
   },
   {
-    title: "Bulk scheduling",
+    title: "Bulk execution",
     description: "Publish campaigns in groups instead of one by one.",
     icon: Workflow,
   },
   {
     title: "Calendar visibility",
-    description: "Track upcoming campaigns without spreadsheet juggling.",
+    description: "Track brands, profiles, and upcoming campaigns without spreadsheet juggling.",
     icon: CalendarClock,
   },
   {
     title: "Performance feedback",
-    description: "See what wins and plan your next week with confidence.",
+    description: "See what wins and plan the next round with more confidence.",
     icon: LineChart,
   },
 ];
 
 const ctaSignals: CtaSignal[] = [
-  { label: "57,000+ creators trust this flow", icon: Users2 },
+  { label: "57,000+ operators, creators, and teams trust this flow", icon: Users2 },
   { label: "No long setup or migration pain", icon: ShieldCheck },
   { label: "Daily output without daily chaos", icon: Sparkles },
 ];
 
 const agentTypingSuffixes = [
-  "create your posts",
-  "build your brand voice",
-  "automate your content creation",
-  "plan your whole month",
-  "check drafts before posting",
-  "ask you before publishing",
-  "analyze your results",
-  "find fresh winning trends",
-  "create branded images and videos",
+  "understand each brand before it works",
+  "adapt strategy to the right profiles",
+  "tell you which trends are worth acting on",
+  "turn ideas into stronger scripts",
+  "plan your content around real campaigns",
+  "check drafts before anything goes live",
+  "learn how each profile should sound",
+  "spot what is landing and what is not",
+  "create branded posts and visuals with context",
 ];
 
 const agentCapabilities: AgentCapability[] = [
   {
-    title: "Reads your context first",
-    description: "Looks at your profiles, brand voice, and recent content first.",
+    title: "Starts with context",
+    description: "Looks at your brand, profiles, and recent work before jumping into output.",
     icon: ShieldCheck,
   },
   {
-    title: "Plans before it writes",
-    description: "Uses a clear flow: load, draft, verify, approve, apply.",
+    title: "Thinks before drafting",
+    description: "Helps with angles, trends, and scripts before it commits to content.",
     icon: Workflow,
   },
   {
-    title: "Drafts full post objects",
-    description: "Creates ready-to-post captions and structure for your channels.",
+    title: "Drafts complete outputs",
+    description: "Creates ready-to-review posts, creative directions, and profile-specific outputs.",
     icon: Wand2,
   },
   {
     title: "Builds media directions",
-    description: "Suggests image and video directions that match your angle.",
+    description: "Suggests and supports image and video directions that fit the chosen angle.",
     icon: Layers3,
   },
   {
-    title: "Verifies before go-live",
-    description: "Checks drafts so common mistakes are caught early.",
+    title: "Checks before go-live",
+    description: "Verifies drafts so obvious mismatches and mistakes are caught early.",
     icon: CheckCircle2,
   },
   {
-    title: "Waits for your yes",
+    title: "Keeps you in control",
     description: "Nothing is applied until you approve.",
     icon: Rocket,
   },
   {
-    title: "Streams live progress",
-    description: "Shows live status while it works.",
+    title: "Shows live progress",
+    description: "Streams status while it works so you can review, edit, and schedule with confidence.",
     icon: LineChart,
   },
   {
-    title: "Uses web + results",
-    description: "Uses web search and your recent results to sharpen drafts.",
+    title: "Connects ideas to signals",
+    description: "Uses available context, live research, and recent results to sharpen drafts.",
     icon: CalendarClock,
   },
 ];
@@ -370,28 +371,28 @@ const faqIcons: LucideIcon[] = [ShieldCheck, Sparkles, CalendarClock, Users2, Wo
 
 const faqItems = [
   {
-    q: "Will automated content feel authentic?",
-    a: "Yes. You define the voice, edit when needed, and keep full control before publishing.",
+    q: "Is this just another AI content generator?",
+    a: "No. Mydrop is built to help you think before you publish, with trends, hooks, scripts, brand context, profile adaptation, and approvals in the same flow.",
   },
   {
-    q: "What if automation makes a mistake?",
-    a: "Use approval flow, drafts, and scheduling checks before anything goes live.",
+    q: "Can it handle one brand with many profiles?",
+    a: "Yes. Store strategy, offers, and voice at the brand level, then adapt execution per profile so every channel stays aligned without becoming identical.",
   },
   {
-    q: "Is setup complicated?",
-    a: "No. Connect profiles, choose your workflow, and publish your first campaign quickly.",
+    q: "What if I manage multiple clients or brands?",
+    a: "That is exactly where Mydrop fits best. Keep brands, profiles, approvals, and publishing work separated but visible from one operating view.",
   },
   {
-    q: "Can I manage multiple clients?",
-    a: "Yes. Separate brands, calendars, permissions, and analytics in one dashboard.",
+    q: "Do I lose control if I use AI and automation?",
+    a: "No. Drafts, approvals, and publishing checks keep you in charge. The goal is faster execution with better judgment, not blind automation.",
   },
   {
-    q: "Can I still post manually?",
-    a: "Absolutely. Use manual posting whenever needed and automation when you want speed.",
+    q: "Can I still work manually when I need to?",
+    a: "Absolutely. Use Mydrop for planning, scripts, and draft support, then stay hands-on wherever the brand needs a human decision.",
   },
   {
-    q: "Do I need a big team?",
-    a: "No. Mydrop is built for solo operators who need enterprise output without extra hires.",
+    q: "Who gets the most value from Mydrop?",
+    a: "The people accountable for what gets posted: brand teams, agencies, freelancers, and operators managing recurring content across many brands or profiles.",
   },
 ];
 
@@ -524,7 +525,7 @@ const aiGalleryItems: GalleryItem[] = [
 
 export default function HomePage() {
   const description =
-    "Mydrop helps overloaded solo social managers create, schedule, and scale content with one clear workflow. Save hours every week and stay consistent across every platform.";
+    "Mydrop helps brand operators, agencies, and multi-brand teams decide what to post, create the content, adapt it to the right profiles, and turn strategy into approved scheduled publishing.";
   const [agentTypingSuffix, setAgentTypingSuffix] = useState(
     agentTypingSuffixes[0] ? `${agentTypingSuffixes[0]}...` : "",
   );
@@ -619,7 +620,7 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Social Media Management, Actually Made Easy"
+        title="The Brand-Aware Social Agent for Teams Running Many Profiles"
         description={description}
         canonicalUrl="/"
         image={resolveAssetPath("/images/home/hero-command-center.png")}
@@ -639,7 +640,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-subcopy">
-              Say one sentence. It builds the work, checks the draft, and asks before posting.
+              Give it the goal. It helps you think, creates the draft, lets you edit and preview it, then checks the output and asks before posting.
             </p>
 
           </div>
@@ -669,19 +670,18 @@ export default function HomePage() {
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-2">
               <Rocket className="h-4 w-4 text-rose-500" />
-              <p className="section-kicker">Join the #1 fastest-growing social management app</p>
+              <p className="section-kicker">Built for the people accountable for what gets posted</p>
             </div>
 
             <h2 className="hero-title">
-              Stop drowning with social.<br></br>
-              <span className="hero-highlight"> Let Mydrop do it for you.</span>
+              Stop carrying every brand in your head.<br></br>
+              <span className="hero-highlight"> Run the whole social operation from one system.</span>
             </h2>
 
             <p className="hero-subcopy">
-              You are managing multiple accounts alone. Posting manually is killing your time,
-              consistency, and growth. Mydrop turns one brief into post-ready captions, visuals,
-              and videos, then schedules everything across platforms. 57,000+ creators and social
-              managers already switched to this workflow.
+              Mydrop is for brands, agencies, and the operators behind many brands. Keep strategy
+              at the brand level, adapt execution at the profile level, and move from idea to
+              created, edited, approved, scheduled content without scattered tabs, briefs, and repeated context.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -705,7 +705,7 @@ export default function HomePage() {
                   className="h-9 w-auto object-contain"
                   loading="lazy"
                 />
-                <span className="text-sm text-slate-200">Trusted by 57,000+ creators and growing</span>
+                <span className="text-sm text-slate-200">Trusted by 57,000+ social operators, creators, and teams</span>
                 <span className="inline-flex items-center gap-1" aria-label="5 stars">
                   {Array.from({ length: 5 }).map((_, index) => (
                     <Star key={`star-${index}`} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
@@ -738,37 +738,37 @@ export default function HomePage() {
             <article className="simple-card p-6">
               <h3 className="text-2xl font-semibold text-white">How the workflow feels</h3>
               <p className="mt-2 text-slate-300">
-                Keep the brief simple. The agent handles the heavy first pass, then waits for your call.
+                Keep the brief simple. Mydrop helps you narrow the direction first, then carries the heavy first pass through drafting, editing, previewing, and scheduling.
               </p>
 
               <ul className="mt-5 space-y-3">
                 <li className="flex items-start gap-3 text-slate-200">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">1</span>
-                  <span>Tell it what you want to post.</span>
+                  <span>Tell it the goal, the offer, or the problem you are trying to solve.</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-200">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">2</span>
-                  <span>It writes captions and media directions for you.</span>
+                  <span>It helps with trends, hooks, scripts, and the right angle before drafting the content.</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-200">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">3</span>
-                  <span>It checks quality, then waits for your approval.</span>
+                  <span>It adapts the work across the right brands and profiles, then gives you drafts, media direction, and preview-ready posts.</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-200">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fuchsia-500/20 text-xs font-semibold text-fuchsia-200">4</span>
-                  <span>You approve once. It handles the busywork.</span>
+                  <span>You approve once. It handles the scheduling and publishing busywork after the thinking is done.</span>
                 </li>
               </ul>
 
               <div className="mt-6 flex flex-wrap gap-2">
                 <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200">
-                  Save hours every week
+                  Reduce repeated context
                 </span>
                 <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200">
-                  Stay consistent without burnout
+                  Keep every brand sounding intentional
                 </span>
                 <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200">
-                  Look like a full team, solo
+                  Draft, preview, and publish in one place
                 </span>
               </div>
 
@@ -786,7 +786,7 @@ export default function HomePage() {
 
             <article className="simple-card p-6">
               <h3 className="text-2xl font-semibold text-white">What it handles for you</h3>
-              <p className="mt-2 text-slate-300">Everything below is automatic unless you say otherwise.</p>
+              <p className="mt-2 text-slate-300">Everything below works together so you can move from strategy into actual execution fast.</p>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {agentCapabilities.map((capability) => {
@@ -815,10 +815,10 @@ export default function HomePage() {
       <section className="section-shell section-shell--deep">
         <div className="site-container section-content section-content--compact">
             <div className="flex flex-col items-center justify-center text-center">
-            <h2 className="section-title">Unlimited <span className="hero-highlight">Viral Content</span></h2>
+            <h2 className="section-title">More than captions. <span className="hero-highlight">A real content engine.</span></h2>
             <p className="section-copy mx-auto mt-4">
-              Trailers, tutorials, ads, entertainment, authority posts. Build a real content
-              engine, not random one-off posts.
+              Trends, scripts, hooks, visuals, offers, campaigns, authority posts, short-form videos,
+              editable drafts, and scheduled publishing. Build repeatable output, not random one-off drafts.
             </p>
           </div>
 
@@ -928,8 +928,8 @@ export default function HomePage() {
           <div className="section-heading">
             <img src={arrowRight} alt="Curved arrow right" className="section-arrow" loading="lazy" />
             <div className="text-center">
-              <p className="section-kicker">How We Make Magic Happen</p>
-              <h2 className="section-title">From idea to published campaign <span className="hero-highlight">in one focused flow.</span></h2>
+              <p className="section-kicker">How The Flow Works</p>
+              <h2 className="section-title">From messy context to scheduled content <span className="hero-highlight">in one focused flow.</span></h2>
             </div>
             <img src={arrowLeft} alt="Curved arrow left" className="section-arrow" loading="lazy" />
           </div>
@@ -948,12 +948,12 @@ export default function HomePage() {
 
       <section className="section-shell section-shell--tint">
         <div className="site-container section-content section-content--compact">
-          <div className="text-center">
-            <p className="section-kicker">Everything You Need</p>
-            <h2 className="section-title">Everything you need to manage social media at scale</h2>
+            <div className="text-center">
+              <p className="section-kicker">Built For Operators</p>
+            <h2 className="section-title">Built for people running many brands, not just making one post</h2>
             <p className="section-copy mx-auto mt-4">
-              Built for overloaded solo managers handling multiple pages and client accounts.
-              Fewer tools, faster output, cleaner execution.
+              Mydrop is for the operator between strategy and publishing. The one coordinating
+              brands, profiles, content requests, creation, approvals, scheduling, and deadlines all at once.
             </p>
           </div>
 
@@ -1053,9 +1053,9 @@ export default function HomePage() {
         <div className="site-container section-content section-content--compact dashboard-band-content">
           <div className="text-center">
             <p className="section-kicker">Command Center</p>
-            <h2 className="section-title">A dashboard built for speed, not busywork.</h2>
+            <h2 className="section-title">A dashboard for operators, not just posters.</h2>
             <p className="section-copy mx-auto mt-4">
-              One place to review workload, approvals, publishing status, and performance without tab chaos.
+              One place to review brands, profiles, workload, drafts, approvals, publishing status, and performance without tab chaos.
             </p>
           </div>
 
@@ -1088,12 +1088,12 @@ export default function HomePage() {
 
               <div className="dashboard-preview-metric">
                 <span>Focus mode</span>
-                <strong>All accounts. One view.</strong>
+                <strong>All brands. All profiles. One view.</strong>
               </div>
 
               <div className="dashboard-preview-metric dashboard-preview-metric--alt">
                 <span>Execution</span>
-                <strong>Plan, approve, publish fast.</strong>
+                <strong>Plan, adapt, approve, publish fast.</strong>
               </div>
             </article>
           </div>
@@ -1106,10 +1106,10 @@ export default function HomePage() {
             <div className="mega-cta-grid">
               <div className="mega-cta-copy">
                 <p className="section-kicker">Ready To Move Faster</p>
-                <h2 className="section-title">Your next month of posts can be done in one focused afternoon.</h2>
+                <h2 className="section-title">Your next month of content can move from idea to approved plan in one focused afternoon.</h2>
                 <p className="section-copy mt-4">
-                  If you keep posting manually, you stay stuck in task mode. Switch to a cleaner workflow and get
-                  your time back.
+                  Stop rebuilding brand context, briefs, and profile instructions every week. Move into a cleaner
+                  operating system that helps you decide faster, create faster, and publish without chaos.
                 </p>
 
                 <div className="mega-cta-signals">
@@ -1128,7 +1128,7 @@ export default function HomePage() {
                 <div className="mega-cta-actions">
                   <Button asChild size="lg" className="mega-cta-primary">
                     <a href="https://app.mydropai.com/register" target="_blank" rel="noreferrer">
-                      See if we are a fit
+                  Start free and test the workflow
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -1137,7 +1137,7 @@ export default function HomePage() {
                   </Button>
                 </div>
 
-                <p className="mega-cta-note">Free account. No credit card. Setup takes minutes.</p>
+                <p className="mega-cta-note">Free account. No credit card. Enough structure to feel the difference fast.</p>
               </div>
 
               <div className="mega-cta-media">
@@ -1167,8 +1167,8 @@ export default function HomePage() {
         <div className="site-container section-content section-content--compact faq-content">
           <div className="text-center">
             <h2 className="section-title">Still unsure? <span className="hero-highlight">Let’s clear things up.</span></h2>
-            <p className="section-copy mx-auto mt-4">
-              Direct answers so you can decide fast and move without guessing.
+              <p className="section-copy mx-auto mt-4">
+              Direct answers for the people deciding whether Mydrop can really carry their brand and profile workload.
             </p>
           </div>
 
@@ -1202,7 +1202,7 @@ export default function HomePage() {
                 <Link to="/contact">Talk with us first</Link>
               </Button>
             </div>
-            <p className="mt-3 text-sm text-slate-300">Free. No engagement. No weird onboarding.</p>
+            <p className="mt-3 text-sm text-slate-300">Free to start. No credit card. No bloated onboarding.</p>
           </div>
         </div>
       </section>

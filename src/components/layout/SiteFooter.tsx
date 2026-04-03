@@ -13,7 +13,7 @@ export default function SiteFooter() {
               className="h-9 w-auto"
             />
             <p className="max-w-sm text-sm text-slate-300">
-              The simple way to create, schedule, and scale your social media with AI.
+              The social operating system for brands, agencies, and teams managing many profiles with one strategy.
             </p>
           </div>
 

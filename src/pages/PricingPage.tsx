@@ -42,7 +42,7 @@ const plans: Plan[] = [
     key: "free",
     name: "Free",
     prices: { monthly: "$0", yearly: "$0" },
-    hint: "Start using Mydrop without paying upfront.",
+    hint: "Test the full workflow on a lighter volume before you scale.",
     icon: Sparkles,
     featured: false,
     highlights: ["10 posts / month", "3 automations", "1 team member", "1 GB storage"],
@@ -51,7 +51,7 @@ const plans: Plan[] = [
     key: "freelance",
     name: "Freelancer",
     prices: { monthly: "$9", yearly: "$8" },
-    hint: "Perfect when you run social solo.",
+    hint: "For solo operators managing one brand or a small client load with real structure.",
     icon: UserRound,
     featured: false,
     highlights: ["50 posts / month", "5 automations", "20 AI images · 10 AI videos", "1 team member", "4 GB storage"],
@@ -60,7 +60,7 @@ const plans: Plan[] = [
     key: "manager",
     name: "Teams",
     prices: { monthly: "$19", yearly: "$16" },
-    hint: "Best for multi-account social managers.",
+    hint: "For multi-brand operators who need more publishing volume, approvals, and team capacity.",
     icon: Users,
     featured: true,
     highlights: ["200 posts / month", "10 automations", "40 AI images · 15 AI videos", "5 team members", "8 GB storage"],
@@ -69,7 +69,7 @@ const plans: Plan[] = [
     key: "business",
     name: "Enterprise",
     prices: { monthly: "$39", yearly: "$33" },
-    hint: "Built for teams that need max output.",
+    hint: "For agencies and in-house teams running high-volume content operations across many brands and profiles.",
     icon: Building2,
     featured: false,
     highlights: ["Unlimited posts", "Unlimited automations", "50 AI images · 30 AI videos", "Unlimited team members", "15 GB storage"],
@@ -137,7 +137,7 @@ export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
   const description =
-    "Choose the Mydrop plan that fits your pace: exact monthly and yearly pricing, full feature comparison, and no lock-in.";
+    "Pricing for brand operators, agencies, and multi-brand teams using Mydrop to plan, create, edit, approve, schedule, and publish at scale.";
 
   const structuredData = [
     organizationSchema,
@@ -151,7 +151,7 @@ export default function PricingPage() {
   return (
     <>
       <SEO
-        title="Pricing"
+        title="Pricing For Operators"
         description={description}
         canonicalUrl="/pricing"
         structuredData={structuredData}
@@ -165,12 +165,12 @@ export default function PricingPage() {
             <div className="text-center">
               <p className="section-kicker">Pricing</p>
               <h1 className="section-title mt-4">
-                Simple pricing.{" "}
-                <span className="hero-highlight">Everything included.</span>
+                Pricing for the people running{" "}
+                <span className="hero-highlight">real social operations.</span>
               </h1>
               <p className="section-copy mx-auto mt-5 text-lg">
-                Every plan ships the full feature set. The only difference is
-                volume, team size, and storage.
+                Every plan includes the same core system. Choose based on how many brands,
+                profiles, posts, automations, collaborators, and publishing volume you need to support.
               </p>
 
               {/* billing toggle */}
@@ -273,7 +273,7 @@ export default function PricingPage() {
                       ))}
                       <li className="flex items-center gap-2.5 text-sm font-medium text-fuchsia-200">
                         <Sparkles className="h-4 w-4 shrink-0" />
-                        All features included
+                        Same core workflow included
                       </li>
                     </ul>
 
@@ -391,12 +391,12 @@ export default function PricingPage() {
                   No lock-in · Cancel anytime
                 </p>
                 <h2 className="section-title">
-                  Start free.{" "}
-                  <span className="hero-highlight">Scale when you're ready.</span>
+                  Start where you are.{" "}
+                  <span className="hero-highlight">Scale when the workload grows.</span>
                 </h2>
                 <p className="section-copy mx-auto">
-                  No credit card required. Pick the plan that fits today and
-                  upgrade only when you outgrow it.
+                  No credit card required. Start with the volume you need now, then upgrade when
+                  your brands, profiles, approvals, or posting cadence demand more room.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3 pt-2">
                   <Button asChild size="lg">

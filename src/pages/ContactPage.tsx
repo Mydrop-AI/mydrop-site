@@ -8,7 +8,7 @@ import {
 
 export default function ContactPage() {
   const description =
-    "Contact MydropAI for sales, partnerships, and support questions related to our AI social media platform.";
+    "Contact MydropAI for sales, partnerships, and support questions about running brands, profiles, and social workflows with Mydrop.";
 
   const structuredData = [
     organizationSchema,
@@ -38,7 +38,7 @@ export default function ContactPage() {
         <div className="mx-auto w-full max-w-xl text-center">
           <h2 className="text-4xl font-bold text-white">Get in touch</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Email us and we’ll reply the same business day.
+            Reach out about your setup, your team, or the brands and profiles you manage. We reply the same business day.
           </p>
           <Button asChild className="mt-8">
             <a href="mailto:contact@mydropai.com">Email contact@mydropai.com</a>
