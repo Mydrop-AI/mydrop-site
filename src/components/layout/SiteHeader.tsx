@@ -106,7 +106,7 @@ export default function SiteHeader() {
         </div>
 
         {mobileOpen && (
-          <div className="lg:hidden border-t border-white/10 pb-4">
+            <div className="lg:hidden border-t border-white/10 bg-[#111525] pb-4">
             <nav className="flex flex-col gap-3 px-2 pt-2 text-sm">
               {navItems.map((item) => (
                 <NavLink
