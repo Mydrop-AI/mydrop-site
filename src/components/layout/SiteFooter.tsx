@@ -40,7 +40,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-sm text-slate-400">
-          © {new Date().getFullYear()} MydropAI. All rights reserved.
+          © {new Date().getFullYear()} MyDrop AI, operated by ADB International LLC. All rights reserved.
         </div>
       </div>
     </footer>
