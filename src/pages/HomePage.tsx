@@ -405,7 +405,9 @@ const platformIcons = [
   { name: "YouTube", src: "/images/platforms/youtube.webp" },
   { name: "Pinterest", src: "/images/platforms/pinterest.webp" },
   { name: "Threads", src: "/images/platforms/threads.webp" },
-  { name: "Google", src: "/images/platforms/google.webp" },
+  { name: "Google My Business", src: "/images/platforms/googleMyBusiness.webp" },
+  { name: "Google Drive", src: "/images/platforms/googleDrive.webp" },
+  { name: "Google Calendar", src: "/images/platforms/googleCalendar.webp" },
   { name: "Canva", src: "/images/platforms/canva.webp" },
 ];
 
