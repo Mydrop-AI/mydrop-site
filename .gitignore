@@ -11,6 +11,7 @@ yarn-error.log*
 !.env.example
 
 /scripts/copilot_blog_batch.py
+/scripts/submit_search_console_sitemap.py
 /google-search-console.json
 /.google-search-console-token.json
 /scripts/__pycache__/
