@@ -72,6 +72,53 @@ function findStaleToneHits(markdown) {
   return hits;
 }
 
+function hasFaqSection(markdown) {
+  return /^(##|###)\s+(faq|common questions)\s*$/gim.test(markdown);
+}
+
+function hasEmptyReferencesSection(markdown) {
+  const lines = markdown.split(/\r?\n/);
+
+  for (let index = 0; index < lines.length; index += 1) {
+    if (!/^(##|###)\s+(sources|references)\s*$/i.test(lines[index].trim())) {
+      continue;
+    }
+
+    let body = "";
+    for (let next = index + 1; next < lines.length; next += 1) {
+      if (/^##\s+/.test(lines[next])) {
+        break;
+      }
+      body += `${lines[next]}\n`;
+    }
+
+    const normalized = body.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    if (normalized === "" || /^(references|sources)$/i.test(normalized)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function findMissingBodyImagePaths(markdown) {
+  const matches = [...markdown.matchAll(/<img[^>]+src="([^"]+)"/g)];
+  const missing = [];
+
+  for (const match of matches) {
+    const src = match[1];
+    if (!src.startsWith("/")) {
+      continue;
+    }
+    const absolutePath = path.join(publicDir, src.replace(/^\/+/, ""));
+    if (!fs.existsSync(absolutePath)) {
+      missing.push(src);
+    }
+  }
+
+  return missing;
+}
+
 function validate() {
   const posts = readBlogPosts();
   const errors = [];
@@ -177,6 +224,21 @@ function validate() {
         .join(", ");
       warnings.push(
         `${post.slug}: stale tone phrases detected, rewrite for a more human voice: ${summary}`,
+      );
+    }
+
+    if (hasFaqSection(post.markdown)) {
+      errors.push(`${post.slug}: body must not include an FAQ or Common Questions section`);
+    }
+
+    if (hasEmptyReferencesSection(post.markdown)) {
+      errors.push(`${post.slug}: empty Sources or References section detected`);
+    }
+
+    const missingBodyImagePaths = findMissingBodyImagePaths(post.markdown);
+    if (missingBodyImagePaths.length > 0) {
+      errors.push(
+        `${post.slug}: body image file does not exist for ${missingBodyImagePaths.join(", ")}`,
       );
     }
 

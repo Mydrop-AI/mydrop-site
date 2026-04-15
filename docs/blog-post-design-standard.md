@@ -125,8 +125,7 @@ Every post should follow this order:
 3. Practical examples, comparison points, or steps
 4. Internal links where relevant
 5. Short conclusion
-6. Optional FAQ
-7. Optional source list
+6. Optional source list only when there are real sources to cite
 
 Recommended section pattern:
 
@@ -136,6 +135,10 @@ Recommended section pattern:
 4. Mistakes or best practices
 5. Tools, workflow, or examples
 6. Conclusion
+
+Do not add a body FAQ section.
+
+Do not add a `Sources` or `References` section unless it contains real source entries.
 
 ## SEO and AI-search rules
 
@@ -282,11 +285,13 @@ Rules:
 - Each body image should sit inside or directly under the relevant section
 - Keep image paths inside `public/`
 - Use only images from `public/images/blogs-images-stocks/` unless the user says otherwise
+- In this folder, only existing files may be used, currently `1.webp` through `80.webp`
 - File names in that folder are numeric, so never use file names as alt text
 - Write a fresh, human alt text for each chosen image, related to social media, content planning, analytics, creators, team workflows, or digital marketing
 - The agent must rotate images and avoid always picking the same few files
 - Simple rotation rule: inspect files already used in `src/content/blog/` and prefer an image number not used recently
 - Body images are not optional for main sections, and they must support the nearby section
+- Before finishing, verify that every referenced image file actually exists
 
 ## Sources
 
@@ -395,6 +400,8 @@ Before stopping, the agent must verify:
 - no heading is repeated accidentally
 - the file does not contain duplicated blocks from a loop
 - no em dashes remain in the article
+- no body FAQ section is present
+- no empty `Sources` or `References` section is present
 - hero image path exists
 - every main `##` section includes one relevant image with alt text
 - alt text is descriptive and not based on the numeric file name
