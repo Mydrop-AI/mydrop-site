@@ -32,7 +32,28 @@
     "label": "Talk to the team",
     "href": "/contact"
   },
-  "faq": [],
+  "FAQ": [
+    {
+      "question": "What is a social media content calendar?",
+      "answer": "A social media content calendar is a planning document or tool that helps you schedule, organize, and track all your upcoming social media posts across platforms. It ensures consistency, saves time, and aligns your content with business goals."
+    },
+    {
+      "question": "How far in advance should I plan my content calendar?",
+      "answer": "Most teams plan their content calendar at least one month in advance, but weekly reviews and adjustments are recommended to stay agile and relevant."
+    },
+    {
+      "question": "What tools can I use to build a content calendar?",
+      "answer": "Popular tools include Mydrop, Google Sheets, Notion, Trello, and dedicated social media management platforms like Buffer or Hootsuite."
+    },
+    {
+      "question": "How do I measure the success of my content calendar?",
+      "answer": "Track metrics such as engagement rate, reach, impressions, click-throughs, and consistency of posting. Use analytics dashboards to review performance and adjust your strategy."
+    },
+    {
+      "question": "How do I keep my content calendar flexible for trends or urgent posts?",
+      "answer": "Leave open slots each week for timely content, and review your calendar regularly to swap in trending topics or urgent updates as needed."
+    }
+  ],
   "sources": [
     "https://buffer.com/library/social-media-scheduling-tools/",
     "https://blog.hootsuite.com/social-media-metrics/",

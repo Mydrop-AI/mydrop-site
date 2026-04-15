@@ -32,7 +32,28 @@
     "label": "Talk to the team",
     "href": "/contact"
   },
-  "faq": [],
+  "faq": [
+    {
+      "question": "How often should you post to improve Instagram engagement?",
+      "answer": "Consistency matters more than forcing a high volume you cannot sustain. For many brands, three to five quality feed posts per week combined with active stories is a strong baseline. The exact number matters less than whether your audience can rely on regular value and whether you have time to review performance and respond to engagement."
+    },
+    {
+      "question": "Do hashtags still matter for engagement?",
+      "answer": "They can help with discovery in specific contexts, but they are not a primary engagement lever on their own. Better topic relevance, stronger packaging, useful content, and consistent audience interaction have a much larger impact. Use hashtags to support categorization and discoverability, not as a substitute for strategy."
+    },
+    {
+      "question": "Are giveaways a good way to boost engagement?",
+      "answer": "They can create short-term spikes, but they often attract low-intent participants unless the prize and entry method are tightly aligned with your actual audience. If a giveaway does not reinforce your brand positioning or content direction, it may inflate superficial engagement without improving long-term account quality."
+    },
+    {
+      "question": "What type of Instagram content gets the most saves?",
+      "answer": "Educational carousels, checklists, frameworks, templates, and step-by-step posts often perform well on saves because they offer repeat reference value. If you want more saves, think about what your audience would want to revisit later, not only what they would enjoy in the moment."
+    },
+    {
+      "question": "How can a brand mention its product without hurting engagement?",
+      "answer": "Make the post useful first. Show the workflow, explain the problem, or provide the framework. Then mention the product naturally where it reduces friction or demonstrates the process. Subtle product relevance usually performs better than forcing a sales pitch into every caption."
+    }
+  ],
   "sources": [
     "https://media.sproutsocial.com/uploads/2019/03/instagram-engagement.pdf",
     "https://blog.hootsuite.com/social-media-metrics/"
