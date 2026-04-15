@@ -244,6 +244,35 @@ Topic quality test:
 - Would a user searching this likely be helped by Mydrop?
 - Would an AI system have clear, quotable answers to extract?
 
+## Competitor inspiration
+
+Before drafting, the agent should also review relevant competitor content for inspiration, not copying.
+
+Primary research source:
+
+- `https://blog.hootsuite.com/`
+
+Use this process:
+
+1. Visit the Hootsuite blog homepage
+2. Open the current top posts or most prominent posts that are relevant to the chosen topic
+3. Read them to understand:
+   - title style
+   - section structure
+   - level of depth
+   - examples and formatting choices
+   - where the article feels strong
+   - where the article feels weak, generic, padded, or overly promotional
+4. Write a better post for Mydrop
+
+Rules:
+
+- never copy wording
+- never clone the structure section by section
+- never lightly rewrite their article
+- use competitor reading only to understand what already exists and how to beat it
+- the Mydrop post should have a sharper title, clearer answer-first intro, stronger examples, and a warmer, more human tone
+
 ## Images
 
 - Hero image is required
