@@ -33,7 +33,11 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://support.tiktok.com/en/using-tiktok/creating-videos/schedule-posts",
+    "https://support.google.com/youtube/answer/1270709",
+    "https://support.buffer.com/hc/en-us/articles/360035587394-Scheduling-posts/"
+  ]
 }
 ---
 
@@ -280,7 +284,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In social media scheduling, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When teams aren't seeing results, the usual reaction is to add more tasks, meetings, dashboards, and content. But that just creates more work, not better outcomes. The real wins come from focusing on what actually moves the needle. For social media scheduling, this means being clear about your goals, making sure your content is strong, planning the right order for your posts, and reviewing your process regularly. These steps might seem simple, but over time, they make a big difference.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

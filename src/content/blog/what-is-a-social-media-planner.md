@@ -33,7 +33,11 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://buffer.com/publish/",
+    "https://support.buffer.com/hc/en-us/articles/360035587394-Scheduling-posts/",
+    "https://buffer.com/library/social-media-scheduling-tools/"
+  ]
 }
 ---
 
@@ -328,7 +332,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In social media planning, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When teams see results drop, the usual reaction is to add more tasks, meetings, dashboards, or content. But that just creates more noise, not real progress. The smarter move is to focus on what actually moves the needle. In social media planning, real improvement comes from clearer goals, better inputs, smarter order of operations, and regular review. These changes might not look flashy, but they add up fast.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

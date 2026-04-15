@@ -127,7 +127,7 @@ function FeatureCell({ value }: { value: FeatureValue }) {
     return value ? (
       <CheckCircle2 className="h-4 w-4 text-fuchsia-300" aria-label="Included" />
     ) : (
-      <span className="text-slate-600">—</span>
+      <span className="text-slate-600">, </span>
     );
   }
   return <span className="text-sm text-slate-200">{value}</span>;
@@ -251,7 +251,7 @@ export default function PricingPage() {
                       {plan.key !== "free" ? (
                         <p className="mt-1.5 flex items-center gap-1.5 text-xs text-slate-400">
                           <Clock3 className="h-3.5 w-3.5" />
-                          {billingCycle === "monthly" ? "Billed monthly" : "Billed yearly — 15% off"}
+                          {billingCycle === "monthly" ? "Billed monthly" : "Billed yearly ,  15% off"}
                         </p>
                       ) : (
                         <p className="mt-1.5 text-xs text-slate-400">No billing</p>

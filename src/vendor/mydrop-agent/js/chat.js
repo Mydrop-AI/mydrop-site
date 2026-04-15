@@ -230,7 +230,7 @@ window.agentChatUI = (() => {
   }
 
   function prepareStreamingMarkdown(value) {
-    let text = String(value || '').replace(/—/g, ', ');
+    let text = String(value || '').replace(/, /g, ', ');
     const fencedBlocks = (text.match(/```/g) || []).length;
     if (fencedBlocks % 2 === 1) {
       text += '\n```';
@@ -266,7 +266,7 @@ window.agentChatUI = (() => {
   }
 
   function cleanStreamingTail(value) {
-    let text = String(value || '').replace(/—/g, ', ');
+    let text = String(value || '').replace(/, /g, ', ');
     text = text.replace(/\[([^\]]*)$/gm, '$1');
     text = text.replace(/\]\(([^)]*)$/gm, '');
     text = text.replace(/```+$/gm, '');
@@ -288,7 +288,7 @@ window.agentChatUI = (() => {
     try {
       return markdownToHtml(preparedTail)
         .replace(/&mdash;|&#8212;/g, ', ')
-        .replace(/—/g, ', ');
+        .replace(/, /g, ', ');
     } catch (error) {
       console.debug('Unable to render streaming tail markdown:', error);
       return `<p>${escapeHtml(tail)}</p>`;
@@ -297,7 +297,7 @@ window.agentChatUI = (() => {
 
   function renderMarkdownHtml(value, streaming = false) {
     if (streaming) {
-      const normalized = String(value || '').replace(/—/g, ', ');
+      const normalized = String(value || '').replace(/, /g, ', ');
       const lastLineBreak = normalized.lastIndexOf('\n');
       const stablePart = lastLineBreak >= 0 ? normalized.slice(0, lastLineBreak + 1) : '';
       const tailPart = lastLineBreak >= 0 ? normalized.slice(lastLineBreak + 1) : normalized;
@@ -308,7 +308,7 @@ window.agentChatUI = (() => {
         try {
           stableHtml = markdownToHtml(preparedStable)
             .replace(/&mdash;|&#8212;/g, ', ')
-            .replace(/—/g, ', ');
+            .replace(/, /g, ', ');
         } catch (error) {
           console.debug('Unable to render stable streamed markdown:', error);
           stableHtml = escapeHtml(stablePart).replace(/\n/g, '<br>');
@@ -320,13 +320,13 @@ window.agentChatUI = (() => {
       return `${stableHtml}${renderStreamingTailHtml(tailPart)}`;
     }
 
-    const sourceText = String(value || '').replace(/—/g, ', ');
+    const sourceText = String(value || '').replace(/, /g, ', ');
 
     if (typeof markdownToHtml === 'function') {
       try {
         return markdownToHtml(sourceText)
           .replace(/&mdash;|&#8212;/g, ', ')
-          .replace(/—/g, ', ');
+          .replace(/, /g, ', ');
       } catch (error) {
         console.debug('Unable to render streamed markdown:', error);
       }

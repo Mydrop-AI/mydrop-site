@@ -196,6 +196,78 @@ function normalizeCta(cta: BlogCta | undefined, fallback: BlogCta) {
   return cta;
 }
 
+function titleFromUrl(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const lastSegment = parsedUrl.pathname.split("/").filter(Boolean).pop();
+
+    if (!lastSegment) {
+      return parsedUrl.hostname.replace(/^www\./, "");
+    }
+
+    return lastSegment
+      .replace(/\.[a-z0-9]+$/i, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\b\w/g, (character) => character.toUpperCase());
+  } catch {
+    return url;
+  }
+}
+
+function normalizeSources(sources: BlogPostFrontmatter["sources"] | string[] | undefined): BlogSourceItem[] {
+  if (!Array.isArray(sources)) {
+    return [];
+  }
+
+  return sources
+    .map((source) => {
+      if (typeof source === "string") {
+        return {
+          title: titleFromUrl(source),
+          url: source,
+        };
+      }
+
+      if (source?.url) {
+        return {
+          title: source.title || titleFromUrl(source.url),
+          url: source.url,
+          publisher: source.publisher,
+        };
+      }
+
+      return null;
+    })
+    .filter((source): source is BlogSourceItem => Boolean(source));
+}
+
+function normalizeFaq(
+  faq: Array<BlogFaqItem | { q?: string; a?: string } | null | undefined> | undefined,
+): BlogFaqItem[] {
+  if (!Array.isArray(faq)) {
+    return [];
+  }
+
+  return faq
+    .map((item) => {
+      const rawItem = item as BlogFaqItem & { q?: string; a?: string };
+      const question = rawItem?.question || rawItem?.q;
+      const answer = rawItem?.answer || rawItem?.a;
+
+      if (!question || !answer) {
+        return null;
+      }
+
+      return {
+        question,
+        answer,
+      };
+    })
+    .filter((item): item is BlogFaqItem => Boolean(item));
+}
+
 function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sourcePath: string): BlogPost {
   if (!frontmatter.slug || !frontmatter.title || !frontmatter.description) {
     throw new Error(`Missing required post metadata in ${sourcePath}`);
@@ -220,8 +292,8 @@ function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sour
     relatedSlugs: frontmatter.relatedSlugs ?? [],
     primaryCta: normalizeCta(frontmatter.primaryCta, DEFAULT_PRIMARY_CTA),
     secondaryCta: normalizeCta(frontmatter.secondaryCta, DEFAULT_SECONDARY_CTA),
-    faq: frontmatter.faq ?? [],
-    sources: frontmatter.sources ?? [],
+    faq: normalizeFaq(frontmatter.faq),
+    sources: normalizeSources(frontmatter.sources),
     canonicalPath: `/post/${frontmatter.slug}`,
     html,
     markdown,

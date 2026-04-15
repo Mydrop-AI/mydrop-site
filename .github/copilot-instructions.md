@@ -12,7 +12,7 @@ Modern web apps built with React, Vue, or Angular are Single Page Applications (
 
 Even though modern Googlebot can execute JavaScript, it:
 - Crawls pages in a render queue with significant delay (days to weeks)
-- Has a limited "crawl budget" per site — slow rendering burns it fast
+- Has a limited "crawl budget" per site ,  slow rendering burns it fast
 - May miss dynamically injected `<title>`, meta tags, og:image, JSON-LD
 - Sees all routes as the same page (duplicate content penalty)
 
@@ -26,7 +26,7 @@ SSR/SSG frameworks like Next.js are the "proper" solution, but:
 - Overkill for marketing sites that don't need server-side logic
 - The owner wants to stay on Vite + React
 
-The solution used here is **react-snap** — a zero-config prerendering tool that crawls your existing SPA after build and saves static HTML snapshots. No framework migration needed.
+The solution used here is **react-snap** ,  a zero-config prerendering tool that crawls your existing SPA after build and saves static HTML snapshots. No framework migration needed.
 
 ---
 
@@ -39,7 +39,7 @@ After `vite build` outputs your app to `/dist`, react-snap:
 2. Visits every route in your app
 3. Waits for the page to fully render (including JavaScript)
 4. Saves the fully-rendered HTML (including `<head>` with SEO tags) as a static file
-5. Result: `dist/pricing/index.html` contains the fully rendered Pricing page HTML — visible to crawlers with zero JS execution required
+5. Result: `dist/pricing/index.html` contains the fully rendered Pricing page HTML ,  visible to crawlers with zero JS execution required
 
 ### What react-helmet-async does
 
@@ -54,7 +54,7 @@ Every route gets its own static HTML file with:
 - Unique JSON-LD structured data schemas
 - Full page body content
 
-Search engines and social media scrapers get real content for every URL — no JavaScript required.
+Search engines and social media scrapers get real content for every URL ,  no JavaScript required.
 
 ---
 
@@ -65,7 +65,7 @@ Search engines and social media scrapers get real content for every URL — no J
 - Vite + React project (TypeScript or JS)
 - React Router for client-side routing
 - Node.js 18+
-- Google Chrome installed on the machine (critical — see Trap #1 below)
+- Google Chrome installed on the machine (critical ,  see Trap #1 below)
 
 ### Step 1: Install dependencies
 
@@ -76,7 +76,7 @@ npm install --save-dev react-snap
 
 ### Step 2: Configure react-snap in package.json
 
-Add the `postbuild` script and the `reactSnap` config block. This is the most critical part — get these settings exactly right:
+Add the `postbuild` script and the `reactSnap` config block. This is the most critical part ,  get these settings exactly right:
 
 ```json
 {
@@ -95,16 +95,16 @@ Add the `postbuild` script and the `reactSnap` config block. This is the most cr
 }
 ```
 
-**Why each setting exists — do not remove any of them:**
+**Why each setting exists ,  do not remove any of them:**
 
 | Setting | Why it's critical |
 |---------|-------------------|
 | `"source": "dist"` | Tells react-snap where Vite outputs the build |
-| `"inlineCss": false` | **Must be false** — setting this to `true` causes react-snap to use `penthouse` to extract "critical" CSS, which strips complex Tailwind utilities like `blur-*`, `backdrop-blur`, gradient opacity variants, and animation classes. The result is broken visual effects on the deployed site. Leave it `false` so the full CSS loads normally via the `<link>` tag. SEO is unaffected. |
-| `"skipThirdPartyRequests": true` | **Critical** — blocks third-party iframes (Calendly, HubSpot, etc.) from making network requests. Without this, react-snap waits for `networkidle0` forever and captures the page before `react-helmet-async` has run, causing all pages to get the homepage's default title |
-| `"concurrency": 1` | **Critical** — renders one page at a time. With higher concurrency (default is 4), pages race and some are captured before Helmet updates `<head>`, resulting in the wrong title/meta on all non-home pages |
+| `"inlineCss": false` | **Must be false** ,  setting this to `true` causes react-snap to use `penthouse` to extract "critical" CSS, which strips complex Tailwind utilities like `blur-*`, `backdrop-blur`, gradient opacity variants, and animation classes. The result is broken visual effects on the deployed site. Leave it `false` so the full CSS loads normally via the `<link>` tag. SEO is unaffected. |
+| `"skipThirdPartyRequests": true` | **Critical** ,  blocks third-party iframes (Calendly, HubSpot, etc.) from making network requests. Without this, react-snap waits for `networkidle0` forever and captures the page before `react-helmet-async` has run, causing all pages to get the homepage's default title |
+| `"concurrency": 1` | **Critical** ,  renders one page at a time. With higher concurrency (default is 4), pages race and some are captured before Helmet updates `<head>`, resulting in the wrong title/meta on all non-home pages |
 | `puppeteerArgs` | Required to run headless Chrome without sandbox in most environments |
-| `puppeteerExecutablePath` | **Critical** — react-snap's bundled Chromium is too old and throws syntax errors on modern JS (optional chaining `?.`, nullish coalescing `??`). Always point to your installed system Chrome |
+| `puppeteerExecutablePath` | **Critical** ,  react-snap's bundled Chromium is too old and throws syntax errors on modern JS (optional chaining `?.`, nullish coalescing `??`). Always point to your installed system Chrome |
 
 **For Linux/CI environments**, change `puppeteerExecutablePath` to:
 ```json
@@ -153,7 +153,7 @@ Your `index.html` should be a **minimal fallback only**. Remove any hardcoded `<
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Fallback title only — overridden per page by react-helmet-async -->
+    <!-- Fallback title only ,  overridden per page by react-helmet-async -->
     <title>Your Site Name</title>
     <meta name="description" content="Fallback description." />
     <!-- Preconnects for performance -->
@@ -167,14 +167,14 @@ Your `index.html` should be a **minimal fallback only**. Remove any hardcoded `<
 </html>
 ```
 
-**Do NOT put JSON-LD in index.html** — it will appear on every page and confuse search engines.
-**Do NOT put OG/Twitter tags in index.html** — they'll override page-specific ones or duplicate them.
+**Do NOT put JSON-LD in index.html** ,  it will appear on every page and confuse search engines.
+**Do NOT put OG/Twitter tags in index.html** ,  they'll override page-specific ones or duplicate them.
 
 ### Step 5: Remove all lazy loading from routes
 
 `React.lazy()` + `Suspense` prevents react-snap from capturing the page content because the dynamic import resolves after react-snap's render snapshot is taken.
 
-**Before (WRONG — breaks react-snap):**
+**Before (WRONG ,  breaks react-snap):**
 ```tsx
 const Pricing = React.lazy(() => import('./pages/Pricing'));
 const About = React.lazy(() => import('./pages/About'));
@@ -185,7 +185,7 @@ const About = React.lazy(() => import('./pages/About'));
 </Suspense>
 ```
 
-**After (CORRECT — eager imports):**
+**After (CORRECT ,  eager imports):**
 ```tsx
 import Pricing from './pages/Pricing';
 import About from './pages/About';
@@ -286,7 +286,7 @@ export default SEO;
 
 ### Step 7: Add SEO to every page
 
-Every page component must call `<SEO>` with **unique, page-specific** content. Do not copy-paste the same title/description across pages — that's duplicate content and will hurt rankings.
+Every page component must call `<SEO>` with **unique, page-specific** content. Do not copy-paste the same title/description across pages ,  that's duplicate content and will hurt rankings.
 
 ```tsx
 // src/pages/Pricing.tsx
@@ -316,7 +316,7 @@ export default function Pricing() {
     <>
       <SEO
         title="Pricing | Event Marketing Packages"
-        description="Three transparent pricing tiers for event marketing. From $9K to $50K — choose the package that matches your growth stage."
+        description="Three transparent pricing tiers for event marketing. From $9K to $50K ,  choose the package that matches your growth stage."
         canonicalUrl="/pricing"
         structuredData={[pricingSchema, breadcrumbSchema]}
       />
@@ -355,7 +355,7 @@ grep -c 'application/ld.json' dist/pricing/index.html   # should be ≥ 2
 
 ---
 
-## TRAPS AND ERRORS — READ BEFORE YOU START
+## TRAPS AND ERRORS ,  READ BEFORE YOU START
 
 These are real errors encountered during implementation. Each cost significant debugging time. Avoid them all upfront.
 
@@ -387,7 +387,7 @@ Find your Chrome path with: `which google-chrome` or `which chromium-browser`
 
 **Symptom:** The build succeeds and all 15 pages are crawled, but when you check the output, every page (pricing, about, contact, etc.) has the same title as the homepage. `data-rh` count is 0 on most pages.
 
-**Cause:** react-snap's default `concurrency: 4` renders 4 pages simultaneously. `react-helmet-async` updates `<head>` asynchronously after the React render cycle. With 4 concurrent pages, some pages hit the `networkidle0` checkpoint before Helmet has finished updating the DOM. react-snap captures a snapshot with whatever `<head>` was there at that moment — which is the last page's head (often the homepage, which was rendered first and set the global `<head>`).
+**Cause:** react-snap's default `concurrency: 4` renders 4 pages simultaneously. `react-helmet-async` updates `<head>` asynchronously after the React render cycle. With 4 concurrent pages, some pages hit the `networkidle0` checkpoint before Helmet has finished updating the DOM. react-snap captures a snapshot with whatever `<head>` was there at that moment ,  which is the last page's head (often the homepage, which was rendered first and set the global `<head>`).
 
 **Fix:**
 ```json
@@ -409,7 +409,7 @@ Sequential rendering gives each page time to complete its full render cycle incl
 "skipThirdPartyRequests": true
 ```
 
-This tells react-snap to block all requests to domains other than `localhost`. Third-party iframes load as blanks, but that's fine — we only care about the `<head>` and body text content for SEO.
+This tells react-snap to block all requests to domains other than `localhost`. Third-party iframes load as blanks, but that's fine ,  we only care about the `<head>` and body text content for SEO.
 
 ---
 
@@ -430,7 +430,7 @@ Remove all static HTML content that was inside `#root` in your original `index.h
 
 ### TRAP #5: React.lazy() prevents content capture
 
-**Symptom:** The build works, pages are crawled, but the prerendered HTML has no page content — just the app shell (navbar, footer) with an empty body.
+**Symptom:** The build works, pages are crawled, but the prerendered HTML has no page content ,  just the app shell (navbar, footer) with an empty body.
 
 **Cause:** `React.lazy()` defers component loading until after the initial render. react-snap takes its snapshot based on `networkidle0`, which can fire before the lazy-loaded component has resolved its dynamic import and rendered its content.
 
@@ -461,7 +461,7 @@ For small marketing sites (<20 pages), the bundle size increase is negligible an
 
 **Symptom:** react-snap console output shows `🚀 POPUP TRIGGERED!`. The popup content appears in the prerendered HTML on some pages, which looks odd in SEO snapshots.
 
-**Cause:** Components like exit-intent popups, cookie banners, or newsletter modals use `setTimeout` triggers. react-snap's headless Chrome interacts with the page just like a user — mouse events (like tab focus changes) can trigger exit intent logic.
+**Cause:** Components like exit-intent popups, cookie banners, or newsletter modals use `setTimeout` triggers. react-snap's headless Chrome interacts with the page just like a user ,  mouse events (like tab focus changes) can trigger exit intent logic.
 
 **Fix:** Guard time-based and event-based UI interactions with an SSR/prerender check:
 ```tsx
@@ -570,12 +570,12 @@ If any page fails these checks, re-read the **Traps** section above. The most co
 
 After implementation, confirm these files are correctly set up:
 
-- [ ] `package.json` — `postbuild` script + `reactSnap` config block with all 6 settings
-- [ ] `src/main.tsx` — Conditional `hydrateRoot` / `createRoot` pattern with `HelmetProvider`
-- [ ] `src/routes.tsx` — All pages imported eagerly (no `React.lazy`, no `Suspense`)
-- [ ] `index.html` — Minimal: only charset, viewport, fallback title, favicon. No JSON-LD, no OG tags
-- [ ] `src/components/SEO.tsx` — Central SEO component using `react-helmet-async`
-- [ ] Every page file — Uses `<SEO>` with unique title, description, canonicalUrl, and structuredData
+- [ ] `package.json` ,  `postbuild` script + `reactSnap` config block with all 6 settings
+- [ ] `src/main.tsx` ,  Conditional `hydrateRoot` / `createRoot` pattern with `HelmetProvider`
+- [ ] `src/routes.tsx` ,  All pages imported eagerly (no `React.lazy`, no `Suspense`)
+- [ ] `index.html` ,  Minimal: only charset, viewport, fallback title, favicon. No JSON-LD, no OG tags
+- [ ] `src/components/SEO.tsx` ,  Central SEO component using `react-helmet-async`
+- [ ] Every page file ,  Uses `<SEO>` with unique title, description, canonicalUrl, and structuredData
 
 ---
 
@@ -583,9 +583,9 @@ After implementation, confirm these files are correctly set up:
 
 If you deploy via GitHub Actions, Vercel, Netlify, or similar:
 
-1. **Install Chrome on the CI machine** — most CI environments don't have Chrome by default
+1. **Install Chrome on the CI machine** ,  most CI environments don't have Chrome by default
 2. **Update `puppeteerExecutablePath`** for the CI environment (different path from macOS)
-3. Alternatively, set `PUPPETEER_SKIP_DOWNLOAD=false` in env to let Puppeteer download a compatible Chromium — but this often fails with modern JS syntax (Trap #1). System Chrome is more reliable.
+3. Alternatively, set `PUPPETEER_SKIP_DOWNLOAD=false` in env to let Puppeteer download a compatible Chromium ,  but this often fails with modern JS syntax (Trap #1). System Chrome is more reliable.
 4. For GitHub Actions, add this step before the build:
    ```yaml
    - name: Install Chrome
@@ -605,19 +605,19 @@ If you deploy via GitHub Actions, Vercel, Netlify, or similar:
 Remember: This is a lead generation machine. Every pixel, every word, every interaction should move toward one goal: getting qualified prospects to book a strategy call.
 
 Rules
-Rule 1: The Bar Test. Every sentence should pass this filter — "Would this make sense if I said it to someone at a bar who just asked what the company does?" If the answer is no, rewrite it. "Expert Production for Corporate Cohort Training" fails the bar test. "We run the tech so your trainers can just teach" passes it.
+Rule 1: The Bar Test. Every sentence should pass this filter ,  "Would this make sense if I said it to someone at a bar who just asked what the company does?" If the answer is no, rewrite it. "Expert Production for Corporate Cohort Training" fails the bar test. "We run the tech so your trainers can just teach" passes it.
 
 
-Rule 2: One Pain, One Outcome, One Proof — above the fold. The prospect should be able to answer three questions without scrolling: What problem do you solve? What happens if I hire you? Why should I believe you? Right now the page opens with the pain (good) but buries the outcome and scatters the proof. The hero section needs all three compressed into roughly 40 words.
+Rule 2: One Pain, One Outcome, One Proof ,  above the fold. The prospect should be able to answer three questions without scrolling: What problem do you solve? What happens if I hire you? Why should I believe you? Right now the page opens with the pain (good) but buries the outcome and scatters the proof. The hero section needs all three compressed into roughly 40 words.
 
 
-Rule 3: The Hormozi Value Equation as a copy audit. You know this one — perceived value = (Dream Outcome × Perceived Likelihood) / (Time Delay × Effort & Sacrifice). Score every section of the page against these four levers. Right now the page is almost entirely stacking "perceived likelihood" (testimonials, logo wall, stats) but barely touches "dream outcome" in concrete terms. What does the buyer's life actually look like after? Fewer Slack fires during live sessions? Facilitators who stop threatening to quit? Client renewal rates going up? The copy needs to name the after state in language the buyer already uses internally.
+Rule 3: The Hormozi Value Equation as a copy audit. You know this one ,  perceived value = (Dream Outcome × Perceived Likelihood) / (Time Delay × Effort & Sacrifice). Score every section of the page against these four levers. Right now the page is almost entirely stacking "perceived likelihood" (testimonials, logo wall, stats) but barely touches "dream outcome" in concrete terms. What does the buyer's life actually look like after? Fewer Slack fires during live sessions? Facilitators who stop threatening to quit? Client renewal rates going up? The copy needs to name the after state in language the buyer already uses internally.
 
 
-Rule 4: 6th-Grade Reading Level, maximum. Run the final copy through a Hemingway Editor or Flesch-Kincaid test. Target grade 6. Not because the ICP is unsophisticated — because they're busy. Cognitive load is the enemy of conversion. "Expert Production for Corporate Cohort Training" is ~grade 12 reading. "We handle the tech chaos so your trainers don't have to" is ~grade 4. The simpler version converts harder precisely because the buyer doesn't have to process it.
+Rule 4: 6th-Grade Reading Level, maximum. Run the final copy through a Hemingway Editor or Flesch-Kincaid test. Target grade 6. Not because the ICP is unsophisticated ,  because they're busy. Cognitive load is the enemy of conversion. "Expert Production for Corporate Cohort Training" is ~grade 12 reading. "We handle the tech chaos so your trainers don't have to" is ~grade 4. The simpler version converts harder precisely because the buyer doesn't have to process it.
 
 
-Rule 5: One CTA Verb, Escalating Context. The page uses "Check if Your Program Qualifies" five times identically. Instead, the CTA copy should stay consistent in action but escalate in reason as the page builds conviction. First CTA after the hero: "See if we're a fit." After the proof section: "Your Q3 sessions don't have to feel like Q2 — let's talk." After the founder section: "15 minutes. We'll map your next cohort together." Same button, different emotional fuel each time.
+Rule 5: One CTA Verb, Escalating Context. The page uses "Check if Your Program Qualifies" five times identically. Instead, the CTA copy should stay consistent in action but escalate in reason as the page builds conviction. First CTA after the hero: "See if we're a fit." After the proof section: "Your Q3 sessions don't have to feel like Q2 ,  let's talk." After the founder section: "15 minutes. We'll map your next cohort together." Same button, different emotional fuel each time.
 
 Here is your exact ICP, built ONLY from the real data in your file, not fantasies.
  Everything below is strictly derived from the patterns and written reasons inside paying_customers_icp_2_stats.json .
@@ -706,7 +706,7 @@ Fear of losing opportunities
 “I need to grow fast”
 They fear being invisible.
 Fear of inconsistency
-They know they should post daily—but they fail.
+They know they should post daily, but they fail.
  This creates guilt + stress.
 Fear of competition
 They see others posting more, faster, better.
@@ -806,7 +806,7 @@ This is your gold vein.
 
 This is the exact person your product converts best.
 Use this for ads, onboarding, landing pages, product decisions, EVERYTHING.
-🎯 ICP AVATAR SHEET — “The Overloaded Solo Social Manager”
+🎯 ICP AVATAR SHEET ,  “The Overloaded Solo Social Manager”
 (your statistically dominant paying user)
 👤 1. Identity Snapshot
 Name: Alex / Léa
@@ -956,9 +956,9 @@ They want a content machine, not a “creative sandbox.”
 They want results, not “creative tools.”
 Your product is PERFECT for them.
 🧨 9. Exact Persona Summary (Use This for Ads & Copy)
-“Alex — The Overloaded Solo Social Manager”
+“Alex ,  The Overloaded Solo Social Manager”
 Alex is a stressed but ambitious freelancer/manager juggling social media for multiple clients or multiple personal brands. They are overwhelmed by manual tasks, inconsistent posting, and chaotic multi-platform workflows. They lose hours creating, resizing, captioning, and scheduling content.
-Alex wants to appear professional, deliver consistent results, grow their clients’ pages, and eventually scale their freelance/agency work — but they’re drowning in repetitive work.
+Alex wants to appear professional, deliver consistent results, grow their clients’ pages, and eventually scale their freelance/agency work ,  but they’re drowning in repetitive work.
 Their dream is a single tool that:
 gives them ideas
 writes captions

@@ -33,7 +33,10 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://buffer.com/resources/community-management/",
+    "https://sproutsocial.com/insights/social-media-engagement/"
+  ]
 }
 ---
 
@@ -349,7 +352,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In community management, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When teams aren't getting results, the first instinct is often to pile on more tasks, meetings, dashboards, and content. But that just creates more noise, not real progress. Instead, focus on the few things that make the biggest difference. In community management, this means getting clear on your positioning, making sure your inputs are strong, doing things in the right order, and reviewing your work with discipline. These changes might not look flashy, but over time, they add up.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

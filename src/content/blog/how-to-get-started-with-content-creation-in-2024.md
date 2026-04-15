@@ -33,7 +33,11 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://www.hubspot.com/marketing-statistics",
+    "https://buffer.com/templates",
+    "https://buffer.com/library/social-media-scheduling-tools/"
+  ]
 }
 ---
 
@@ -133,7 +137,7 @@
   <li><strong>Tell stories:</strong> Narrative makes your message memorable and actionable.</li>
 </ul>
 
-<h2>Leveraging Tools for Content Creation</h2>
+<h2>Using Tools for Content Creation</h2>
 <p>
   Tooling matters when you manage multiple channels. Mydrop helps centralize and speed up your
   workflow so execution does not depend on switching between disconnected apps.
@@ -298,7 +302,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In content creation, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve the handful of decisions that influence quality the most. In content creation, that usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

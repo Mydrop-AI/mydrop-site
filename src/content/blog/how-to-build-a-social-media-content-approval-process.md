@@ -2,7 +2,7 @@
 {
   "slug": "how-to-build-a-social-media-content-approval-process",
   "title": "How to Build a Social Media Content Approval Process That Actually Works (Step-by-Step Guide)",
-  "description": "Learn how to set up a clear, efficient social media content approval process that keeps your team moving fast and protects your brand. Includes real examples, mistakes, and best practices.",
+  "description": "Build a clear social media content approval process that speeds reviews, protects your brand, and keeps campaigns moving without approval bottlenecks.",
   "author": {
     "name": "Ariana Collins",
     "role": "Social Media Strategy Lead",

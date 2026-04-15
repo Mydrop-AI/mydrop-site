@@ -33,7 +33,10 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://buffer.com/library/influencer-marketing-guide/",
+    "https://www.hubspot.com/marketing-statistics"
+  ]
 }
 ---
 
@@ -132,7 +135,7 @@
   then publish approved quotes where buying decisions happen.
 </p>
 
-<h3>Leverage Influencer Partnerships</h3>
+<h3>Work with Influencers</h3>
 <p>
   Partner with creators who already speak to your target audience. Give them enough creative space
   to keep the endorsement authentic.
@@ -164,7 +167,7 @@
   <figcaption>Consistent collection workflows make social proof easier to scale</figcaption>
 </figure>
 
-<h2>Leveraging Mydrop for Social Proof</h2>
+<h2>How Mydrop Makes Social Proof Easier</h2>
 
 <h3>Unified Calendar</h3>
 <p>
@@ -328,7 +331,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In social proof marketing, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When results aren’t great, most teams add more meetings, dashboards, or reports. But that just creates more work, not better outcomes. The smarter move is to focus on what really matters. In social proof marketing, you get better results by setting clear goals, using good information, working in the right order, and checking your progress regularly. It’s not always dramatic, but it works.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

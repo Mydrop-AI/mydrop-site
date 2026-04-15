@@ -114,9 +114,9 @@ export function markdownToHtml(text) {
     });
 
     return markedInstance
-        .parse(text.replace(/—/g, ", "))
+        .parse(text.replace(/, /g, ", "))
         .replace(/&mdash;|&#8212;/g, ", ")
-        .replace(/—/g, ", ");
+        .replace(/, /g, ", ");
 }
 
 export function installPublicPreviewMarkdownRenderer(markedInstance = null) {

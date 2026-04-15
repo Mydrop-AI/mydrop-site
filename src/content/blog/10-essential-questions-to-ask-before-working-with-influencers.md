@@ -33,7 +33,10 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://buffer.com/library/influencer-marketing-guide/",
+    "https://media.sproutsocial.com/uploads/2024/04/2024-influencer-marketing-benchmarks-report.pdf"
+  ]
 }
 ---
 
@@ -267,7 +270,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In influencer partnerships, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When results aren’t great, most teams add more calls, dashboards, or reports. But that just creates more work, not better outcomes. The smarter move is to focus on what really matters. In influencer partnerships, you get better results by setting clear goals, using good information, working in the right order, and checking your progress regularly. It’s not always dramatic, but it works.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

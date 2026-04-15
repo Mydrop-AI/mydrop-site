@@ -33,7 +33,11 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://www.canva.com/learn/brand-guidelines/",
+    "https://buffer.com/library/social-media-style-guide/",
+    "https://sproutsocial.com/insights/social-media-brand-guidelines/"
+  ]
 }
 ---
 

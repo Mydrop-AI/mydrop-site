@@ -37,6 +37,79 @@ const AUTHOR_PROFILES = [
   },
 ];
 
+function titleFromUrl(url) {
+  try {
+    const parsedUrl = new URL(url);
+    const lastSegment = parsedUrl.pathname.split("/").filter(Boolean).pop();
+
+    if (!lastSegment) {
+      return parsedUrl.hostname.replace(/^www\./, "");
+    }
+
+    return lastSegment
+      .replace(/\.[a-z0-9]+$/i, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\b\w/g, (character) => character.toUpperCase());
+  } catch {
+    return url;
+  }
+}
+
+function normalizeSources(sources) {
+  if (!Array.isArray(sources)) {
+    return [];
+  }
+
+  return sources
+    .map((source) => {
+      if (typeof source === "string") {
+        return {
+          title: titleFromUrl(source),
+          url: source,
+        };
+      }
+
+      if (source && typeof source === "object" && typeof source.url === "string") {
+        return {
+          title: source.title || titleFromUrl(source.url),
+          url: source.url,
+          publisher: source.publisher,
+        };
+      }
+
+      return null;
+    })
+    .filter(Boolean);
+}
+
+function normalizeFaq(faq) {
+  if (!Array.isArray(faq)) {
+    return [];
+  }
+
+  return faq
+    .map((item) => {
+      if (!item || typeof item !== "object") {
+        return null;
+      }
+
+      const question = item.question || item.q;
+      const answer = item.answer || item.a;
+
+      if (!question || !answer) {
+        return null;
+      }
+
+      return {
+        question,
+        answer,
+      };
+    })
+    .filter(Boolean);
+}
+
 function slugify(value) {
   return String(value)
     .toLowerCase()
@@ -132,8 +205,8 @@ function normalizeBlogPost(frontmatter, markdown, filePath) {
     featured: Boolean(frontmatter.featured),
     tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
     relatedSlugs: Array.isArray(frontmatter.relatedSlugs) ? frontmatter.relatedSlugs : [],
-    faq: Array.isArray(frontmatter.faq) ? frontmatter.faq : [],
-    sources: Array.isArray(frontmatter.sources) ? frontmatter.sources : [],
+    faq: normalizeFaq(frontmatter.faq),
+    sources: normalizeSources(frontmatter.sources),
     primaryCta:
       frontmatter.primaryCta?.label && frontmatter.primaryCta?.href
         ? frontmatter.primaryCta

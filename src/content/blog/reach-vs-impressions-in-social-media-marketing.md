@@ -33,7 +33,10 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://media.sproutsocial.com/uploads/Sprout-Guide-Social-Metrics-Map.pdf",
+    "https://blog.hootsuite.com/social-media-metrics/"
+  ]
 }
 ---
 
@@ -340,7 +343,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In reach and impressions analysis, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When numbers go down, most teams just add more reports, meetings, or dashboards. But that’s just more noise. The real way to improve your reach and impressions is to focus on what matters: clear goals, better data, a smart order of actions, and regular check-ins. These small tweaks add up over time.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

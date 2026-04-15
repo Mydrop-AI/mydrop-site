@@ -33,7 +33,11 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://www.tiktok.com/business/en/blog/tiktok-content-strategy",
+    "https://influencermarketinghub.com/how-to-get-more-tiktok-followers/",
+    "https://later.com/blog/tiktok-algorithm/"
+  ]
 }
 ---
 
@@ -114,7 +118,7 @@
   <figcaption>Small production upgrades can significantly improve perceived content quality</figcaption>
 </figure>
 
-<h2>Leveraging Hashtags and Challenges</h2>
+<h2>Using Hashtags and Challenges</h2>
 <h3>Use Relevant Hashtags</h3>
 <p>
   Use niche and intent-aligned hashtags rather than generic high-volume tags.
@@ -359,7 +363,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In TikTok follower growth, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to focus on the few actions that create the biggest results. In TikTok follower growth, real progress comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. These changes might not look dramatic, but they add up quickly.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 

@@ -68,7 +68,7 @@ Use the template file:
 - Use root-relative asset paths, example: `/media/images/example.webp`
 - Prefer markdown over raw `<p>`, `<h2>`, `<h3>` tags
 - Use short paragraphs and answer-first writing
-- Do not use em dashes `—`
+- Do not use em dashes `, `
 - Use a normal separator like `, ` or rewrite the sentence cleanly instead
 
 ## Tone and voice
@@ -216,6 +216,10 @@ Good topic patterns:
 - `Best X for Y`
 - `X checklist`
 - `X mistakes`
+- `Questions to ask before X`
+- `X templates`
+- `X examples`
+- `Why X fails`
 
 Avoid:
 
@@ -223,6 +227,45 @@ Avoid:
 - broad topics that need 5 articles instead of 1
 - topics unrelated to Mydrop's product or buyer intent
 - titles that sound like ads
+
+## Title diversity rules
+
+The library must not collapse into the same headline format over and over.
+
+Right now, the existing blog history already overuses `How to` titles, so new posts should actively diversify away from that pattern unless there is a very strong reason not to.
+
+Rules:
+
+- Do not default to `How to ...`
+- Do not default to another workflow / approval / process title just because it is easy
+- Use the full history of existing titles as a duplication check, not only recent posts
+- Prefer underused title styles first
+
+Prefer these title styles:
+
+- `What is X`
+- `X vs Y`
+- `Best X for Y`
+- `Top X tools for Y`
+- `X checklist`
+- `Questions to ask before X`
+- `X mistakes`
+- `Why X fails`
+- `X templates`
+- `X examples`
+- `X ideas`
+
+Only use `How to ...` when:
+
+- it is clearly the best search-intent match
+- it is not too close to an existing `How to ...` article
+- the angle is genuinely new
+
+Before locking the final title, the agent should ask:
+
+- Does this title format diversify the current library?
+- Does it avoid sounding like another generic workflow post?
+- Is there a sharper non-`How to` version that would work better?
 
 ## Choosing the next blog subject
 
@@ -232,13 +275,16 @@ Use this process:
 
 1. Read all existing slugs and titles
 2. List 5 candidate topics that are adjacent but not duplicates
-3. Pick the one with:
+3. Reject candidates that repeat an overused title pattern, especially another generic `How to ...` article
+4. Reject candidates that are mainly another workflow/process/approval angle if a fresher angle exists
+5. Pick the one with:
    - clear search intent
    - strong commercial or product relevance
    - potential to earn citations in AI search
    - low overlap with existing posts
-4. Write the final title in plain language
-5. Build the slug from the final title
+   - a title format that helps diversify the overall library
+6. Write the final title in plain language
+7. Build the slug from the final title
 
 Topic quality test:
 
@@ -377,7 +423,7 @@ The practical way to hit this reliably is to write section by section, then expa
 17. Stop expanding once the post is in the 3,000 to 3,800 range unless the topic clearly needs more depth
 18. If the post goes above 4,500 words, trim duplication and weak sections instead of adding more
 19. If a heading appears more than once unintentionally, stop and clean the file before continuing
-20. Before running checks, remove every em dash `—` from the article and rewrite those sentences cleanly
+20. Before running checks, remove every em dash `, ` from the article and rewrite those sentences cleanly
 21. Verify every main `##` section has one relevant image with alt text
 22. Run `npm run validate:blog`
 23. Run `npm run build`

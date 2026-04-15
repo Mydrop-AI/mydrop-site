@@ -33,7 +33,10 @@
     "href": "/contact"
   },
   "faq": [],
-  "sources": []
+  "sources": [
+    "https://media.sproutsocial.com/uploads/2019/03/instagram-engagement.pdf",
+    "https://blog.hootsuite.com/social-media-metrics/"
+  ]
 }
 ---
 
@@ -100,7 +103,7 @@
   <figcaption>High-quality visuals improve trust and stop the scroll</figcaption>
 </figure>
 
-<h2>Leverage User-Generated Content</h2>
+<h2>Make the Most of User-Generated Content</h2>
 <p>
   User-generated content builds credibility quickly because people trust other customers more than
   polished brand claims.
@@ -378,7 +381,7 @@ Finally, ask whether the system supports scale. This does not mean overbuilding 
 
 ## How to Keep Improving Without Adding Filler Work
 
-A lot of teams respond to underperformance by adding more tasks, more meetings, more dashboards, and more content. That often creates motion instead of progress. A better approach is to improve leverage points. In Instagram engagement, leverage usually comes from clearer positioning, stronger inputs, better sequencing, and more disciplined review. Those changes do not always look dramatic, but they compound.
+When engagement drops, most teams just add more posts, meetings, or dashboards. But that’s just more noise. The real way to boost Instagram engagement is to focus on what matters: clear goals, better content, a smart order of actions, and regular check-ins. These small changes add up fast.
 
 One useful habit is to ask after every campaign or content cycle: what would make the next round 20 percent easier or 20 percent stronger? The answer is often smaller than teams expect. It may be a better template, a tighter scorecard, a stronger hook pattern, a more focused set of content pillars, or a simpler approval rule. Small operational improvements tend to matter more than occasional big overhauls.
 
