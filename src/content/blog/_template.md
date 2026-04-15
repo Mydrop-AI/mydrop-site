@@ -37,17 +37,49 @@ Write the introduction here. Answer the core query quickly and clearly in the fi
 
 ## What it is
 
+<figure>
+  <img
+    src="/images/blogs-images-stocks/2.webp"
+    alt="Describe a social-media-related image that fits this section"
+  />
+  <figcaption>Optional caption tied to this section</figcaption>
+</figure>
+
 Explain the first important concept.
 
 ## Why it matters
+
+<figure>
+  <img
+    src="/images/blogs-images-stocks/3.webp"
+    alt="Describe a social-media-related image that fits this section"
+  />
+  <figcaption>Optional caption tied to this section</figcaption>
+</figure>
 
 Explain the second important concept.
 
 ## How to do it
 
+<figure>
+  <img
+    src="/images/blogs-images-stocks/4.webp"
+    alt="Describe a social-media-related image that fits this section"
+  />
+  <figcaption>Optional caption tied to this section</figcaption>
+</figure>
+
 Explain the third important concept.
 
 ## Best practices
+
+<figure>
+  <img
+    src="/images/blogs-images-stocks/5.webp"
+    alt="Describe a social-media-related image that fits this section"
+  />
+  <figcaption>Optional caption tied to this section</figcaption>
+</figure>
 
 Add practical guidance, examples, or mistakes to avoid.
 

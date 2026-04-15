@@ -68,6 +68,8 @@ Use the template file:
 - Use root-relative asset paths, example: `/media/images/example.webp`
 - Prefer markdown over raw `<p>`, `<h2>`, `<h3>` tags
 - Use short paragraphs and answer-first writing
+- Do not use em dashes `—`
+- Use a normal separator like `, ` or rewrite the sentence cleanly instead
 
 ## Tone and voice
 
@@ -246,14 +248,16 @@ Topic quality test:
 
 - Hero image is required
 - Every image needs useful alt text
-- Use body images only when they clarify the section
+- Add 1 body image for each main `##` section
+- Each body image must include useful alt text
+- Each body image should sit inside or directly under the relevant section
 - Keep image paths inside `public/`
 - Use only images from `public/images/blogs-images-stocks/` unless the user says otherwise
 - File names in that folder are numeric, so never use file names as alt text
 - Write a fresh, human alt text for each chosen image, related to social media, content planning, analytics, creators, team workflows, or digital marketing
 - The agent must rotate images and avoid always picking the same few files
 - Simple rotation rule: inspect files already used in `src/content/blog/` and prefer an image number not used recently
-- Body images are optional, but if used they must support the nearby section
+- Body images are not optional for main sections, and they must support the nearby section
 
 ## Sources
 
@@ -339,10 +343,12 @@ The practical way to hit this reliably is to write section by section, then expa
 17. Stop expanding once the post is in the 3,000 to 3,800 range unless the topic clearly needs more depth
 18. If the post goes above 4,500 words, trim duplication and weak sections instead of adding more
 19. If a heading appears more than once unintentionally, stop and clean the file before continuing
-20. Run `npm run validate:blog`
-21. Run `npm run build`
-22. If validation fails, fix the post file only
-23. If the article is weak, rewrite the post file only and rerun validation/build
+20. Before running checks, remove every em dash `—` from the article and rewrite those sentences cleanly
+21. Verify every main `##` section has one relevant image with alt text
+22. Run `npm run validate:blog`
+23. Run `npm run build`
+24. If validation fails, fix the post file only
+25. If the article is weak, rewrite the post file only and rerun validation/build
 
 ## Agent completion checklist
 
@@ -359,7 +365,9 @@ Before stopping, the agent must verify:
 - article is not above 4,500 words
 - no heading is repeated accidentally
 - the file does not contain duplicated blocks from a loop
+- no em dashes remain in the article
 - hero image path exists
+- every main `##` section includes one relevant image with alt text
 - alt text is descriptive and not based on the numeric file name
 - at least 1 internal link is present when relevant
 - sources are added when the article makes factual claims
