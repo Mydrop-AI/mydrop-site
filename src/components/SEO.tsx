@@ -10,6 +10,8 @@ interface SEOProps {
   ogType?: "website" | "article";
   publishedTime?: string;
   modifiedTime?: string;
+  author?: string;
+  keywords?: string[];
   noIndex?: boolean;
   structuredData?: Record<string, unknown>[];
 }
@@ -23,6 +25,8 @@ export default function SEO({
   ogType = "website",
   publishedTime,
   modifiedTime,
+  author,
+  keywords = [],
   noIndex = false,
   structuredData = [],
 }: SEOProps) {
@@ -44,9 +48,12 @@ export default function SEO({
     <Helmet prioritizeSeoTags>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {author && <meta name="author" content={author} />}
+      {keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
       <link rel="canonical" href={canonical} />
       <meta name="robots" content={robotsContent} />
       <meta name="googlebot" content={robotsContent} />
+      <meta name="bingbot" content={robotsContent} />
 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
@@ -63,6 +70,10 @@ export default function SEO({
       {ogType === "article" && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
       )}
+      {ogType === "article" &&
+        keywords.map((keyword) => (
+          <meta key={keyword} property="article:tag" content={keyword} />
+        ))}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

@@ -1,11 +1,20 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { execFileSync } = require("node:child_process");
+const { readBlogAuthors, readBlogPosts } = require("./blog-content.cjs");
 
 const rootDir = path.resolve(__dirname, "..");
-const routesFile = path.join(rootDir, "src/routes.tsx");
-const blogPostsFile = path.join(rootDir, "src/lib/blogPosts.ts");
 const seoFile = path.join(rootDir, "src/lib/seo.ts");
 const sitemapOutputFile = path.join(rootDir, "public/sitemap.xml");
+
+const staticRouteFiles = [
+  { path: "/", file: "src/pages/HomePage.tsx" },
+  { path: "/pricing", file: "src/pages/PricingPage.tsx" },
+  { path: "/privacy-policy", file: "src/pages/PrivacyPolicyPage.tsx" },
+  { path: "/terms-and-services", file: "src/pages/TermsAndServicesPage.tsx" },
+  { path: "/faq", file: "src/pages/FAQPage.tsx" },
+  { path: "/contact", file: "src/pages/ContactPage.tsx" },
+];
 
 function getSiteUrl() {
   const source = fs.readFileSync(seoFile, "utf8");
@@ -16,35 +25,6 @@ function getSiteUrl() {
   }
 
   return match[1].replace(/\/+$/, "");
-}
-
-function getStaticRoutes() {
-  const source = fs.readFileSync(routesFile, "utf8");
-  const routeSet = new Set(["/"]);
-  const pathMatches = source.matchAll(/path:\s*"([^"]+)"/g);
-
-  for (const match of pathMatches) {
-    const routePath = match[1];
-    if (routePath === "*" || routePath.includes(":")) {
-      continue;
-    }
-
-    routeSet.add(routePath.startsWith("/") ? routePath : `/${routePath}`);
-  }
-
-  return [...routeSet];
-}
-
-function getBlogPostRoutes() {
-  const source = fs.readFileSync(blogPostsFile, "utf8");
-  const slugMatches = source.matchAll(/slug:\s*"([^"]+)"/g);
-  const routeSet = new Set();
-
-  for (const match of slugMatches) {
-    routeSet.add(`/post/${match[1]}`);
-  }
-
-  return [...routeSet];
 }
 
 function toIsoDate(date) {
@@ -59,17 +39,55 @@ function toAbsoluteUrl(siteUrl, routePath) {
   return `${siteUrl}${routePath}`;
 }
 
-function generateSitemapXml(siteUrl, routePaths) {
-  const lastModified = toIsoDate(new Date());
-  const sortedRoutes = [...new Set(routePaths)].sort((a, b) => a.localeCompare(b));
+function getFallbackLastModified(relativeFilePath) {
+  const absoluteFilePath = path.join(rootDir, relativeFilePath);
+  const stats = fs.statSync(absoluteFilePath);
+  return toIsoDate(stats.mtime);
+}
 
-  const urlEntries = sortedRoutes
-    .map((routePath) => {
-      const absoluteUrl = toAbsoluteUrl(siteUrl, routePath);
+function getGitLastModified(relativeFilePath) {
+  try {
+    const output = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cs", "--", relativeFilePath],
+      {
+        cwd: rootDir,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      },
+    ).trim();
+
+    if (output) {
+      return output;
+    }
+  } catch (_error) {
+    // Fall through to filesystem-based fallback.
+  }
+
+  return getFallbackLastModified(relativeFilePath);
+}
+
+function getBlogIndexLastModified(posts) {
+  const pageDate = getGitLastModified("src/pages/BlogPage.tsx");
+  const latestPostDate = posts.reduce((latest, post) => {
+    return latest > post.updatedAt ? latest : post.updatedAt;
+  }, pageDate);
+
+  return latestPostDate > pageDate ? latestPostDate : pageDate;
+}
+
+function generateSitemapXml(siteUrl, routeEntries) {
+  const sortedEntries = [...routeEntries]
+    .sort((left, right) => left.path.localeCompare(right.path))
+    .filter((entry, index, entries) => entries.findIndex((candidate) => candidate.path === entry.path) === index);
+
+  const urlEntries = sortedEntries
+    .map((entry) => {
+      const absoluteUrl = toAbsoluteUrl(siteUrl, entry.path);
       return [
         "  <url>",
         `    <loc>${absoluteUrl}</loc>`,
-        `    <lastmod>${lastModified}</lastmod>`,
+        `    <lastmod>${entry.lastModified}</lastmod>`,
         "  </url>",
       ].join("\n");
     })
@@ -86,14 +104,36 @@ function generateSitemapXml(siteUrl, routePaths) {
 
 function main() {
   const siteUrl = getSiteUrl();
-  const allRoutes = [...getStaticRoutes(), ...getBlogPostRoutes()];
-  const xml = generateSitemapXml(siteUrl, allRoutes);
+  const blogPosts = readBlogPosts();
+  const blogAuthors = readBlogAuthors();
+
+  const routeEntries = [
+    ...staticRouteFiles.map((route) => ({
+      path: route.path,
+      lastModified: getGitLastModified(route.file),
+    })),
+    {
+      path: "/blog",
+      lastModified: getBlogIndexLastModified(blogPosts),
+    },
+    ...blogAuthors.map((author) => ({
+      path: `/authors/${author.slug}`,
+      lastModified: author.posts.reduce((latest, post) => {
+        return latest > post.updatedAt ? latest : post.updatedAt;
+      }, "1970-01-01"),
+    })),
+    ...blogPosts.map((post) => ({
+      path: post.canonicalPath,
+      lastModified: post.updatedAt,
+    })),
+  ];
+
+  const xml = generateSitemapXml(siteUrl, routeEntries);
 
   fs.mkdirSync(path.dirname(sitemapOutputFile), { recursive: true });
   fs.writeFileSync(sitemapOutputFile, xml, "utf8");
 
-  const urlCount = [...new Set(allRoutes)].length;
-  console.log(`Generated sitemap.xml with ${urlCount} URLs.`);
+  console.log(`Generated sitemap.xml with ${routeEntries.length} URLs.`);
 }
 
 main();

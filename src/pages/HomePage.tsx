@@ -17,7 +17,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import WebsiteAgentPreview from "@/components/WebsiteAgentPreview";
+import BlogPostCard from "@/components/blog/BlogPostCard";
 import { Button } from "@/components/ui/button";
+import { blogPosts } from "@/lib/blog";
 import {
   buildBreadcrumbSchema,
   buildWebPageSchema,
@@ -1205,6 +1207,30 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-3 text-sm text-slate-300">Free to start. No credit card. No bloated onboarding.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell section-shell--tint">
+        <div className="site-container section-content section-content--compact gap-6">
+          <div className="text-center">
+            <p className="section-kicker">From The Blog</p>
+          </div>
+
+          <section className="blog-slider-shell" aria-label="Latest blog posts">
+            <div className="blog-slider-track">
+              {blogPosts.map((post) => (
+                <div key={post.slug} className="blog-slider-slide">
+                  <BlogPostCard post={post} compact headingTag="h3" />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <div className="flex justify-center">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/blog">See all blog posts</Link>
+            </Button>
           </div>
         </div>
       </section>

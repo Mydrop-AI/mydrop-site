@@ -1,6 +1,7 @@
 const { run } = require("react-snap");
 const fs = require("node:fs");
 const path = require("node:path");
+const { readBlogAuthors, readBlogPosts } = require("./blog-content.cjs");
 
 const packageJsonPath = path.resolve(__dirname, "../package.json");
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
@@ -34,12 +35,11 @@ function normalizeBasePath(basePath) {
 }
 
 function getBlogPostRoutes() {
-  const blogPostsPath = path.resolve(__dirname, "../src/lib/blogPosts.ts");
-  const source = fs.readFileSync(blogPostsPath, "utf8");
-  const slugMatches = source.matchAll(/slug:\s*"([^"]+)"/g);
-  const slugs = [...slugMatches].map((match) => match[1]);
+  return readBlogPosts().map((post) => post.canonicalPath);
+}
 
-  return [...new Set(slugs)].map((slug) => `/post/${slug}`);
+function getAuthorRoutes() {
+  return readBlogAuthors().map((author) => `/authors/${author.slug}`);
 }
 
 const staticRoutes = [
@@ -100,7 +100,7 @@ function rewriteHrefsForBasePath(distDir, basePath) {
   const baseSegment = basePath.slice(1, -1);
   const rootHrefPattern = new RegExp(
     `href=\"\/(?!${escapeRegExp(baseSegment)}(?:\/|\"))`,
-    "g"
+    "g",
   );
 
   const stack = [distDir];
@@ -133,7 +133,8 @@ async function main() {
   const distDir = path.resolve(__dirname, "../dist");
   const mirrorDir = setupBasePathMirror(distDir, basePath);
   const blogPostRoutes = getBlogPostRoutes();
-  const allPrimaryRoutes = [...staticRoutes, ...blogPostRoutes];
+  const authorRoutes = getAuthorRoutes();
+  const allPrimaryRoutes = [...staticRoutes, ...authorRoutes, ...blogPostRoutes];
   const legacyFrenchRoutes = getLegacyFrenchRoutes(allPrimaryRoutes);
 
   try {

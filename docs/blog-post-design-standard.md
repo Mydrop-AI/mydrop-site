@@ -1,96 +1,394 @@
 # Blog Post Design Standard
 
-This document defines the default structure and style for all future Mydrop blog posts.
+This is the operating spec for all blog posts on this site.
 
-## 1. URL and SEO Rules
+## Source of truth
 
-- URL format: `/post/{slug}`
-- Slug style: lowercase, words separated by hyphens
-- Every post must include:
-  - unique title
-  - unique meta description
-  - canonical URL
-  - BlogPosting JSON-LD
-  - breadcrumb JSON-LD
-- Add each new blog URL in `scripts/react-snap.cjs` under `include`.
+- One post = one file in `src/content/blog/{slug}.md`
+- Do not add blog metadata in React page files
+- Do not add blog routes manually
+- Do not edit `sitemap.xml` manually
 
-## 2. Required Content Blocks
+The app, prerendering, and sitemap all read from the blog content files.
+Author archive pages are generated automatically from each post's `author` object.
 
-Each post should follow this order:
+## File format
 
-1. Back link to blog index
-2. Top image banner with overlay gradient
-3. Article title and subtitle
-4. Author, publish date, updated date, read time chips
-5. Intro section (2 to 4 short paragraphs)
-6. Main body sections with clear H2 titles
-7. Comparison or framework section when relevant
-8. Decision checklist section
-9. Closing CTA section with two actions
+Each post file has:
 
-## 2.1 SEO Heading Hierarchy
+1. JSON frontmatter between `---` lines
+2. Markdown-first body content, with simple HTML only when needed
 
-- Use exactly one `h1` per post, and it must be the post title.
-- Use `h2` for primary sections.
-- Use `h3` only as children of an `h2` section.
-- Use `h4` only inside an `h3` subsection.
-- Do not skip heading levels.
-- Keep heading text descriptive, plain-language, and keyword aligned.
+Use the template file:
 
-## 3. Visual System
+- `src/content/blog/_template.md`
 
-- Prose-first layout. The article should read like an article, not a dashboard.
-- Avoid card-heavy layouts and avoid boxing every paragraph.
-- Use clean spacing and visual rhythm for long-form reading comfort.
-- Keep content width around readable article length.
-- Use visuals to support sections, not replace text.
+## Required frontmatter
 
-## 4. Typography and Readability
+```json
+{
+  "slug": "example-post-slug",
+  "title": "Clear Search-Focused Title",
+  "description": "120 to 170 character summary that matches the query intent and explains the article clearly.",
+  "author": {
+    "name": "Author Name",
+    "role": "Mydrop Team"
+  },
+  "publishedAt": "2026-04-15",
+  "updatedAt": "2026-04-15",
+  "heroImage": "/media/images/example.webp",
+  "heroImageAlt": "Descriptive alt text for the hero image",
+  "heroCaption": "Optional supporting caption",
+  "featured": false,
+  "category": "Content Planning",
+  "tags": ["content calendar", "workflow automation", "social media strategy"],
+  "relatedSlugs": ["another-post-slug"],
+  "primaryCta": {
+    "label": "Start with Mydrop",
+    "href": "https://app.mydropai.com/register"
+  },
+  "secondaryCta": {
+    "label": "Talk to the team",
+    "href": "/contact"
+  },
+  "faq": [],
+  "sources": []
+}
+```
 
-- Keep language simple and direct.
-- Avoid em dash characters. Use commas or periods instead.
-- Prefer short paragraphs and active voice.
-- Keep line lengths readable with clear section breaks.
-- Use sentence-led copy first. Use lists only when they improve clarity.
+## Body rules
 
-## 5. Imagery Rules
+- The template renders the page `h1`, so the body must not contain an `# H1`
+- Start directly with the intro paragraphs
+- Use `##` for primary sections
+- Use `###` only under a `##`
+- Prefer markdown for paragraphs, lists, tables, and links
+- Use simple HTML only when needed for `figure`, `figcaption`, or advanced table markup
+- Do not add Tailwind classes in the post body
+- Use root-relative asset paths, example: `/media/images/example.webp`
+- Prefer markdown over raw `<p>`, `<h2>`, `<h3>` tags
+- Use short paragraphs and answer-first writing
 
-- Include one top hero banner image per post.
-- Use descriptive alt text for every image.
-- Keep logos and supporting visuals inside framed cards.
-- Do not stretch logos. Use object-fit contain.
+## Tone and voice
 
-## 6. CTA Pattern
+The blog should feel human, sharp, and pleasant to read.
 
-Use two actions in the final block:
+Write like a smart operator explaining something clearly to another person, not like a textbook or a bland AI summary.
 
-- Primary: conversion action, for example register free
-- Secondary: trust action, for example contact or strategy call
+Target tone:
 
-CTA copy should be short and outcome-driven.
+- conversational, but still professional
+- warm, clear, and confident
+- energetic without being hype-heavy
+- helpful and direct
+- specific and concrete
 
-## 7. Data Model for New Posts
+What to do:
 
-Add each post in `src/lib/blogPosts.ts` with:
+- use natural phrasing and sentence rhythm
+- vary sentence length so the article does not sound robotic
+- occasionally speak directly to the reader with `you`
+- make the writing feel lived-in, not synthetic
+- use vivid but controlled language when it helps clarity or momentum
+- keep intros and transitions lively
+- make examples sound real, not generic
 
-- slug
-- title
-- description
-- author
-- publishedAt and updatedAt in ISO format
-- readTime
-- heroImage and heroImageAlt
-- intro paragraphs
-- body arrays for bullets, comparisons, and prompts
-- closing copy and CTA link
+What to avoid:
 
-## 8. Quality Checklist Before Merge
+- empty corporate language
+- cold encyclopedia tone
+- repetitive AI-summary phrasing
+- flat transitions like `In today's digital world` unless they are rewritten more naturally
+- fake excitement, exaggerated hype, or cheesy motivational lines
+- too many filler adjectives
 
-- Route loads on `/post/{slug}`
-- Blog index links to the post
-- Build passes with no TypeScript errors
-- React Snap crawls the new post URL
-- No em dash characters in copy
-- JSON-LD is present and valid
-- Heading hierarchy is valid (`h1` > `h2` > `h3` > `h4`)
-- Article reads naturally as long-form prose
+Good style examples:
+
+- `If your approval process lives in Slack threads, screenshots, and last-minute pings, things get messy fast.`
+- `A good workflow does not just protect quality. It also gives your team room to move faster without second-guessing every post.`
+- `This is where most teams get stuck: the content is ready, but nobody is sure who is supposed to approve it.`
+
+Bad style examples:
+
+- `In today's fast-paced digital landscape, it is essential to leverage optimized workflows for success.`
+- `This article will explore various important aspects that can help businesses maximize outcomes.`
+- `Social media is very important for brands in the modern era.`
+
+## Standard article structure
+
+Every post should follow this order:
+
+1. Direct intro that answers the query fast
+2. 4 to 8 `##` sections with clear search intent coverage
+3. Practical examples, comparison points, or steps
+4. Internal links where relevant
+5. Short conclusion
+6. Optional FAQ
+7. Optional source list
+
+Recommended section pattern:
+
+1. What it is / direct answer
+2. Why it matters
+3. How to do it
+4. Mistakes or best practices
+5. Tools, workflow, or examples
+6. Conclusion
+
+## SEO and AI-search rules
+
+- Write for a specific query, not a broad topic dump
+- Put the clearest answer near the top
+- Use plain-language headings that match real search intent
+- Add real sources for factual or claim-heavy articles
+- Prefer concise, extractable paragraphs over fluff
+- Include original framing, examples, or decision criteria
+- Keep descriptions and headings consistent with the visible article
+- Only update `updatedAt` when the article materially changes
+- Never change `publishedAt` after first publication
+- Favor question-led titles and definitions, comparisons, workflows, and checklists because AI search systems often cite pages that answer a narrow intent clearly
+- The first 2 paragraphs should be understandable if shown alone as an AI search citation
+- Make the article pleasant to read, not just extractable; readability and voice still matter after the opening answer
+
+## Brand mention rules
+
+The blog has 2 goals:
+
+- build authority and search visibility
+- create trust and qualified demand for Mydrop
+
+That means posts must help first and sell second.
+
+Rules:
+
+- Do not make the article read like an ad
+- Do not force Mydrop into every section
+- Mention Mydrop only where it is genuinely relevant
+- The article should still be useful even if the Mydrop mentions are removed
+
+Good places to mention Mydrop:
+
+- one light mention in the intro if the topic is product-adjacent
+- a workflow or tools section where software is naturally relevant
+- a comparison section
+- the conclusion or CTA block
+- internal links to product-relevant pages
+
+Bad use:
+
+- repeating that Mydrop is the best
+- adding Mydrop to sections where it does not help the explanation
+- turning educational content into disguised product copy
+
+Practical rule by article type:
+
+- informational post: 0 to 2 light Mydrop mentions in the article body
+- how-to post: 1 to 3 light Mydrop mentions in the article body
+- comparison or tool post: stronger Mydrop mentions are acceptable if the comparison is still honest and useful
+- product-led post: direct Mydrop positioning is fine, but the article must still solve the reader's problem clearly
+
+The safest pattern is:
+
+1. answer the query
+2. explain the framework or process
+3. mention Mydrop where it naturally fits
+4. keep the strongest conversion push in the CTA block, not in every paragraph
+
+## Topic selection rules
+
+The agent must choose topics that are:
+
+- tightly tied to Mydrop's real problem space: social media management, content operations, scheduling, community management, creator workflows, AI-assisted marketing, analytics, approvals, collaboration
+- phrased like real search intent, not brand slogans
+- narrow enough that one article can be the best answer
+- evergreen or refreshable, not short-lived news
+
+Good topic patterns:
+
+- `What is X`
+- `How to do X`
+- `X vs Y`
+- `Best X for Y`
+- `X checklist`
+- `X mistakes`
+
+Avoid:
+
+- vague inspirational topics
+- broad topics that need 5 articles instead of 1
+- topics unrelated to Mydrop's product or buyer intent
+- titles that sound like ads
+
+## Choosing the next blog subject
+
+Before writing, the agent should inspect existing posts in `src/content/blog/` and avoid overlap.
+
+Use this process:
+
+1. Read all existing slugs and titles
+2. List 5 candidate topics that are adjacent but not duplicates
+3. Pick the one with:
+   - clear search intent
+   - strong commercial or product relevance
+   - potential to earn citations in AI search
+   - low overlap with existing posts
+4. Write the final title in plain language
+5. Build the slug from the final title
+
+Topic quality test:
+
+- Can the core query be answered in the first 2 paragraphs?
+- Can the article be broken into 4 to 8 clean sections?
+- Would a user searching this likely be helped by Mydrop?
+- Would an AI system have clear, quotable answers to extract?
+
+## Images
+
+- Hero image is required
+- Every image needs useful alt text
+- Use body images only when they clarify the section
+- Keep image paths inside `public/`
+- Use only images from `public/images/blogs-images-stocks/` unless the user says otherwise
+- File names in that folder are numeric, so never use file names as alt text
+- Write a fresh, human alt text for each chosen image, related to social media, content planning, analytics, creators, team workflows, or digital marketing
+- The agent must rotate images and avoid always picking the same few files
+- Simple rotation rule: inspect files already used in `src/content/blog/` and prefer an image number not used recently
+- Body images are optional, but if used they must support the nearby section
+
+## Sources
+
+- Add sources whenever the post includes factual claims, statistics, platform behavior claims, competitive comparisons, or AI-search/SEO advice
+- Prefer primary sources or authoritative documentation
+- Add sources to the `sources` frontmatter array
+- Do not invent citations
+
+## Internal linking
+
+- Link to at least 1 relevant internal page when it helps the reader
+- Link to related blog posts when there is a real topical connection
+- Use descriptive anchor text
+
+## Date rules
+
+- New post: set `publishedAt` and `updatedAt` to the same date
+- Existing post minor typo fix: leave `updatedAt` unchanged
+- Existing post substantial rewrite: bump `updatedAt`
+
+This matters because the sitemap now uses per-page dates. Fake freshness is not allowed.
+
+## Validation
+
+Before shipping, run:
+
+```bash
+npm run validate:blog
+npm run build
+```
+
+Validation currently enforces:
+
+- unique slug
+- unique title
+- required metadata
+- ISO dates
+- at least 2 tags
+- hero image exists
+- no body `h1`
+- at least 3 primary sections
+- minimum 3000 words per post
+- maximum 4500 words per post
+- repeated-heading loops are rejected
+
+It also warns on weak description length and missing sources.
+
+## Word count target
+
+There is no single perfect length. The goal is to fully answer the query with as little waste as possible.
+
+Minimum required length:
+
+- Every blog post must be at least 3000 words
+
+Operational target:
+
+- Aim for roughly 3000 to 3800 words for most posts
+- Go longer only when the query genuinely needs deeper comparison, examples, or FAQs
+- Never add filler just to hit the minimum
+- Do not exceed 4500 words
+
+The practical way to hit this reliably is to write section by section, then expand weak sections with examples, edge cases, mistakes, decision criteria, and FAQs.
+
+## Bot workflow
+
+1. Copy `src/content/blog/_template.md`
+2. Read existing blog titles and slugs to avoid duplicates
+3. Choose the next topic using the topic-selection rules above
+4. Rename the template to the final slug
+5. Fill every frontmatter field
+6. Pick a stock image from `public/images/blogs-images-stocks/`
+7. Write a real alt text and caption for that image
+8. Build a section plan before writing the article
+9. Write the article section by section, not all at once
+10. Before writing each new section, reread the current post file and compare it to the section plan
+11. If the next section already exists, do not rewrite or append it again
+12. After each section, append it to the same post file exactly once
+13. Use the full article plan as a checklist and complete every section
+14. Add internal links where relevant
+15. Add sources for factual claims
+16. Check the final word count and keep expanding until it is at least 3,000 words
+17. Stop expanding once the post is in the 3,000 to 3,800 range unless the topic clearly needs more depth
+18. If the post goes above 4,500 words, trim duplication and weak sections instead of adding more
+19. If a heading appears more than once unintentionally, stop and clean the file before continuing
+20. Run `npm run validate:blog`
+21. Run `npm run build`
+22. If validation fails, fix the post file only
+23. If the article is weak, rewrite the post file only and rerun validation/build
+
+## Agent completion checklist
+
+Before stopping, the agent must verify:
+
+- the file is in `src/content/blog/`
+- slug is unique
+- title is unique
+- description is 120 to 170 characters
+- body has no `# H1`
+- body uses 4 to 8 `##` sections when possible
+- article answers the query directly in the first 2 paragraphs
+- article is at least 3,000 words
+- article is not above 4,500 words
+- no heading is repeated accidentally
+- the file does not contain duplicated blocks from a loop
+- hero image path exists
+- alt text is descriptive and not based on the numeric file name
+- at least 1 internal link is present when relevant
+- sources are added when the article makes factual claims
+- `npm run validate:blog` passes
+- `npm run build` passes
+
+## Prompting notes for small agents
+
+- Keep the task narrow: produce exactly one post file
+- Do not ask the agent to redesign the system
+- Tell it to inspect existing posts first
+- Tell it to create a writing plan first, then write the article one section at a time
+- Tell it to use a checklist of sections as a task list
+- Tell it to reread the file before every append and skip any section that already exists
+- Tell it to stop in the 3,000 to 3,800 word range unless the topic clearly needs extra depth
+- Tell it to loop only on the article file until validation/build pass
+- Tell it to prefer simple markdown and simple JSON frontmatter
+- Tell it not to touch routes, sitemap, React files, or scripts
+- Tell it explicitly that the tone must feel human, conversational, warm, and specific
+- Tell it explicitly to avoid cold, empty, generic AI-summary language
+
+## Avoid
+
+- no metadata in React files
+- no manual route edits for blog posts
+- no manual sitemap edits
+- no fake date refreshes
+- no placeholder text
+- no body-level `h1`
+- no random styling in article bodies
+- no repeated headings from agent loops
+- no runaway append behavior

@@ -9,3 +9,5 @@ yarn-error.log*
 .env
 .env.*
 !.env.example
+
+/scripts/copilot_blog_batch.py

@@ -1,5 +1,6 @@
 import { Navigate, type RouteObject, useRoutes } from "react-router-dom";
 import SiteLayout from "@/components/layout/SiteLayout";
+import AuthorPage from "@/pages/AuthorPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import ContactPage from "@/pages/ContactPage";
@@ -17,6 +18,7 @@ const routes: RouteObject[] = [
       { index: true, element: <HomePage /> },
       { path: "pricing", element: <PricingPage /> },
       { path: "blog", element: <BlogPage /> },
+      { path: "authors/:slug", element: <AuthorPage /> },
       { path: "post/:slug", element: <BlogPostPage /> },
       { path: "privacy-policy", element: <PrivacyPolicyPage /> },
       { path: "terms-and-services", element: <TermsAndServicesPage /> },
