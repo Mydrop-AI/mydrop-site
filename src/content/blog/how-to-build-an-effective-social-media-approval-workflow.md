@@ -4,8 +4,9 @@
   "title": "How to Build an Effective Social Media Approval Workflow (Without Slowing Down)",
   "description": "Learn how to set up a fast, reliable social media approval workflow that keeps your team aligned and your brand safe—without bottlenecks or chaos.",
   "author": {
-    "name": "Mydrop Team",
-    "role": "Mydrop Team"
+    "name": "Evan Blake",
+    "role": "Content Operations Editor",
+    "slug": "evan-blake"
   },
   "publishedAt": "2026-04-15",
   "updatedAt": "2026-04-15",

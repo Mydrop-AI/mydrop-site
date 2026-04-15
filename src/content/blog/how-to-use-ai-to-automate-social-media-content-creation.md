@@ -4,8 +4,9 @@
   "title": "How to Use AI to Automate Social Media Content Creation",
   "description": "Discover how AI can streamline your social media content creation process, saving time and boosting consistency across platforms.",
   "author": {
-    "name": "Iris Morgan",
-    "role": "Mydrop Team"
+    "name": "Maya Chen",
+    "role": "Growth Content Editor",
+    "slug": "maya-chen"
   },
   "publishedAt": "2026-04-15",
   "updatedAt": "2026-04-15",

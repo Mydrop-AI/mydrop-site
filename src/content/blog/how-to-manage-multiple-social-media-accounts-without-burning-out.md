@@ -4,8 +4,9 @@
   "title": "How to Manage Multiple Social Media Accounts Without Burning Out",
   "description": "Learn a practical system to manage multiple social media accounts faster, stay consistent, and protect quality without burning out as a solo manager.",
   "author": {
-    "name": "Mydrop Team",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2026-04-15",
   "updatedAt": "2026-04-15",

@@ -4,8 +4,9 @@
   "title": "Mastering Social Media Tools for Business Success",
   "description": "Learn what social media tools are, why they matter, and how to combine publishing, listening, and analytics workflows to improve business outcomes.",
   "author": {
-    "name": "Avery Quinn",
-    "role": "Mydrop Team"
+    "name": "Maya Chen",
+    "role": "Growth Content Editor",
+    "slug": "maya-chen"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",

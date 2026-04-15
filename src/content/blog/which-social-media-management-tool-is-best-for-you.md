@@ -4,8 +4,9 @@
   "title": "Which Social Media Management Tool is Best for You?",
   "description": "Compare Mydrop, Buffer, Hootsuite, Sprout Social, and Later to find the right social media management tool for your workflow.",
   "author": {
-    "name": "Camille Bernard",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2025-01-24",
   "updatedAt": "2025-01-24",

@@ -4,8 +4,9 @@
   "title": "How To Become a Good Community Manager ?",
   "description": "Learn how to become an effective community manager with practical skills, strategy tips, and tools that help you scale engagement.",
   "author": {
-    "name": "Ariana Collins",
-    "role": "Mydrop Team"
+    "name": "Evan Blake",
+    "role": "Content Operations Editor",
+    "slug": "evan-blake"
   },
   "publishedAt": "2025-02-19",
   "updatedAt": "2025-02-19",

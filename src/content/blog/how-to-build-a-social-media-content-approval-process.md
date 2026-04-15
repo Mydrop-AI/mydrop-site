@@ -4,8 +4,9 @@
   "title": "How to Build a Social Media Content Approval Process That Actually Works (Step-by-Step Guide)",
   "description": "Learn how to set up a clear, efficient social media content approval process that keeps your team moving fast and protects your brand. Includes real examples, mistakes, and best practices.",
   "author": {
-    "name": "Gabriel L.",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2026-04-16",
   "updatedAt": "2026-04-16",

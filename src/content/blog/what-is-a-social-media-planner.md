@@ -4,8 +4,9 @@
   "title": "Your Ultimate Guide to Social Media Planners for Small Business Owners",
   "description": "Learn what a social media planner is, how it saves time and improves consistency, and how Mydrop AI helps automate planning across channels.",
   "author": {
-    "name": "Evan Blake",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",

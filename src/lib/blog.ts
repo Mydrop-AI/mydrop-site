@@ -6,6 +6,14 @@ export interface BlogAuthor {
   role: string;
   slug: string;
   bio?: string;
+  image: string;
+}
+
+export interface BlogAuthorFrontmatter {
+  name: string;
+  role: string;
+  slug?: string;
+  bio?: string;
 }
 
 export interface BlogAuthorProfile extends BlogAuthor {
@@ -33,7 +41,7 @@ export interface BlogPostFrontmatter {
   slug: string;
   title: string;
   description: string;
-  author: BlogAuthor;
+  author: BlogAuthorFrontmatter;
   publishedAt: string;
   updatedAt?: string;
   heroImage: string;
@@ -52,8 +60,9 @@ export interface BlogPostFrontmatter {
 export interface BlogPost
   extends Omit<
     BlogPostFrontmatter,
-    "updatedAt" | "featured" | "relatedSlugs" | "primaryCta" | "secondaryCta" | "faq" | "sources"
+    "author" | "updatedAt" | "featured" | "relatedSlugs" | "primaryCta" | "secondaryCta" | "faq" | "sources"
   > {
+  author: BlogAuthor;
   featured: boolean;
   relatedSlugs: string[];
   primaryCta: BlogCta;
@@ -80,16 +89,31 @@ const DEFAULT_SECONDARY_CTA: BlogCta = {
   href: "/contact",
 };
 
-const FRONTMATTER_PATTERN = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n?([\s\S]*)$/;
+const AUTHOR_PROFILES: Array<Omit<BlogAuthor, "bio"> & { bio: string }> = [
+  {
+    slug: "ariana-collins",
+    name: "Ariana Collins",
+    role: "Social Media Strategy Lead",
+    image: "/images/authors/ariana-collins.png",
+    bio: "Ariana Collins writes about content planning, campaign strategy, and the systems fast-moving teams need to stay consistent without sounding generic.",
+  },
+  {
+    slug: "evan-blake",
+    name: "Evan Blake",
+    role: "Content Operations Editor",
+    image: "/images/authors/evan-blake.png",
+    bio: "Evan Blake focuses on approval workflows, publishing operations, and practical ways to make collaboration smoother across social, content, and client teams.",
+  },
+  {
+    slug: "maya-chen",
+    name: "Maya Chen",
+    role: "Growth Content Editor",
+    image: "/images/authors/maya-chen.png",
+    bio: "Maya Chen covers analytics, audience growth, and AI-assisted marketing workflows, with an emphasis on advice teams can actually apply this week.",
+  },
+];
 
-function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
+const FRONTMATTER_PATTERN = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n?([\s\S]*)$/;
 
 function parseFrontmatter(source: string, filePath: string) {
   const match = source.match(FRONTMATTER_PATTERN);
@@ -159,22 +183,9 @@ function rewriteRootRelativeUrls(html: string) {
   });
 }
 
-function normalizeAuthor(author: BlogAuthor | undefined, title: string) {
-  if (!author?.name || !author?.role) {
-    throw new Error(`Missing author metadata for "${title}"`);
-  }
-
-  return {
-    ...author,
-    slug: author.slug || slugify(author.name),
-  };
-}
-
-function buildAuthorBio(name: string, role: string, bio?: string) {
-  return (
-    bio ||
-    `${name} is part of the Mydrop editorial team, focused on practical social media systems, content operations, and AI-assisted marketing workflows.`
-  );
+function getAuthorProfileForIndex(index: number): BlogAuthor {
+  const profile = AUTHOR_PROFILES[index % AUTHOR_PROFILES.length];
+  return { ...profile };
 }
 
 function normalizeCta(cta: BlogCta | undefined, fallback: BlogCta) {
@@ -190,6 +201,10 @@ function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sour
     throw new Error(`Missing required post metadata in ${sourcePath}`);
   }
 
+  if (!frontmatter.author?.name || !frontmatter.author?.role) {
+    throw new Error(`Missing author metadata in ${sourcePath}`);
+  }
+
   const updatedAt = frontmatter.updatedAt || frontmatter.publishedAt;
   const wordCount = countWords(markdown);
   const readTime = buildReadTimeLabel(wordCount);
@@ -197,7 +212,7 @@ function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sour
 
   return {
     ...frontmatter,
-    author: normalizeAuthor(frontmatter.author, frontmatter.title),
+    author: getAuthorProfileForIndex(0),
     updatedAt,
     heroCaption: frontmatter.heroCaption || "",
     featured: Boolean(frontmatter.featured),
@@ -215,6 +230,13 @@ function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sour
     readTimeLabel: readTime.readTimeLabel,
     sourcePath,
   };
+}
+
+function assignAuthors(posts: BlogPost[]) {
+  return posts.map((post, index) => ({
+    ...post,
+    author: getAuthorProfileForIndex(index),
+  }));
 }
 
 function sortPosts(posts: BlogPost[]) {
@@ -243,13 +265,15 @@ const blogPostModules = import.meta.glob("../content/blog/*.md", {
   query: "?raw",
 }) as Record<string, string>;
 
-export const blogPosts: BlogPost[] = sortPosts(
-  Object.entries(blogPostModules)
-    .filter(([filePath]) => !filePath.split("/").pop()?.startsWith("_"))
-    .map(([filePath, source]) => {
-      const { frontmatter, markdown } = parseFrontmatter(source, filePath);
-      return createBlogPost(frontmatter, markdown, filePath);
-    }),
+export const blogPosts: BlogPost[] = assignAuthors(
+  sortPosts(
+    Object.entries(blogPostModules)
+      .filter(([filePath]) => !filePath.split("/").pop()?.startsWith("_"))
+      .map(([filePath, source]) => {
+        const { frontmatter, markdown } = parseFrontmatter(source, filePath);
+        return createBlogPost(frontmatter, markdown, filePath);
+      }),
+  ),
 );
 
 export function getBlogPostBySlug(slug: string) {
@@ -311,7 +335,7 @@ export function getBlogAuthors(): BlogAuthorProfile[] {
 
   for (const post of blogPosts) {
     const existingAuthor = authorsBySlug.get(post.author.slug);
-    const bio = buildAuthorBio(post.author.name, post.author.role, post.author.bio);
+    const bio = post.author.bio || "";
 
     if (existingAuthor) {
       existingAuthor.posts.push(post);

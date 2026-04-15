@@ -4,8 +4,9 @@
   "title": "How to Plan a Social Media Content Calendar in 2026",
   "description": "Learn how to plan a social media content calendar in 2026 with practical steps for goals, platform selection, scheduling, analytics, and AI-assisted execution.",
   "author": {
-    "name": "Iris Morgan",
-    "role": "Mydrop Team"
+    "name": "Evan Blake",
+    "role": "Content Operations Editor",
+    "slug": "evan-blake"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",

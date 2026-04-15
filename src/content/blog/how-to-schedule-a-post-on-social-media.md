@@ -4,8 +4,9 @@
   "title": "How to Schedule a Post on Social Media?",
   "description": "Learn how to schedule social media posts step by step, build a cleaner publishing workflow, and use Mydrop AI to stay consistent across channels.",
   "author": {
-    "name": "Lucas Meyer",
-    "role": "Mydrop Team"
+    "name": "Maya Chen",
+    "role": "Growth Content Editor",
+    "slug": "maya-chen"
   },
   "publishedAt": "2025-02-03",
   "updatedAt": "2025-02-03",

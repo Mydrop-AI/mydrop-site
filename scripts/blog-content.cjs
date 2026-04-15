@@ -13,6 +13,29 @@ const DEFAULT_SECONDARY_CTA = {
   label: "Talk to the team",
   href: "/contact",
 };
+const AUTHOR_PROFILES = [
+  {
+    slug: "ariana-collins",
+    name: "Ariana Collins",
+    role: "Social Media Strategy Lead",
+    image: "/images/authors/ariana-collins.png",
+    bio: "Ariana Collins writes about content planning, campaign strategy, and the systems fast-moving teams need to stay consistent without sounding generic.",
+  },
+  {
+    slug: "evan-blake",
+    name: "Evan Blake",
+    role: "Content Operations Editor",
+    image: "/images/authors/evan-blake.png",
+    bio: "Evan Blake focuses on approval workflows, publishing operations, and practical ways to make collaboration smoother across social, content, and client teams.",
+  },
+  {
+    slug: "maya-chen",
+    name: "Maya Chen",
+    role: "Growth Content Editor",
+    image: "/images/authors/maya-chen.png",
+    bio: "Maya Chen covers analytics, audience growth, and AI-assisted marketing workflows, with an emphasis on advice teams can actually apply this week.",
+  },
+];
 
 function slugify(value) {
   return String(value)
@@ -126,12 +149,14 @@ function normalizeBlogPost(frontmatter, markdown, filePath) {
   };
 }
 
+function getAuthorProfileForIndex(index) {
+  return {
+    ...AUTHOR_PROFILES[index % AUTHOR_PROFILES.length],
+  };
+}
+
 function sortPosts(posts) {
   return [...posts].sort((left, right) => {
-    if (left.featured !== right.featured) {
-      return Number(right.featured) - Number(left.featured);
-    }
-
     const publishedDiff = new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime();
 
     if (publishedDiff !== 0) {
@@ -155,14 +180,10 @@ function readBlogPosts() {
       const { frontmatter, markdown } = parseFrontmatter(source, filePath);
       return normalizeBlogPost(frontmatter, markdown, filePath);
     }),
-  );
-}
-
-function buildAuthorBio(post) {
-  return (
-    post.author.bio ||
-    `${post.author.name} is part of the Mydrop editorial team, focused on practical social media systems, content operations, and AI-assisted marketing workflows.`
-  );
+  ).map((post, index) => ({
+    ...post,
+    author: getAuthorProfileForIndex(index),
+  }));
 }
 
 function readBlogAuthors() {
@@ -178,7 +199,7 @@ function readBlogAuthors() {
 
     authorsBySlug.set(post.author.slug, {
       ...post.author,
-      bio: buildAuthorBio(post),
+      bio: post.author.bio,
       posts: [post],
     });
   }

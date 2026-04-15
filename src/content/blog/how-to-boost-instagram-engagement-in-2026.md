@@ -4,8 +4,9 @@
   "title": "Boost Instagram Engagement in 2026 with These Proven Strategies",
   "description": "Learn practical Instagram engagement tactics for 2026, from better content workflows to hashtags, collaborations, and analytics.",
   "author": {
-    "name": "Elena Park",
-    "role": "Mydrop Team"
+    "name": "Maya Chen",
+    "role": "Growth Content Editor",
+    "slug": "maya-chen"
   },
   "publishedAt": "2025-03-18",
   "updatedAt": "2025-03-18",

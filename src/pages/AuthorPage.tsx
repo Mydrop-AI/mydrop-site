@@ -39,6 +39,7 @@ export default function AuthorPage() {
       name: author.name,
       description: author.bio,
       jobTitle: author.role,
+      image: `${SITE_URL}${author.image}`,
       url: `${SITE_URL}${canonicalPath}`,
     },
     buildWebPageSchema(`${author.name} Articles`, canonicalPath, author.bio),
@@ -73,9 +74,21 @@ export default function AuthorPage() {
             </p>
 
             <div className="mt-5 rounded-[1.5rem] border border-white/15 bg-[linear-gradient(165deg,rgba(29,34,57,0.84),rgba(11,13,25,0.95))] p-6 shadow-[0_20px_58px_rgba(4,7,15,0.45)]">
-              <p className="section-kicker !mb-2">Author</p>
-              <h1 className="section-title !text-left !text-white">{author.name}</h1>
-              <p className="mt-3 text-sm uppercase tracking-[0.12em] text-slate-400">{author.role}</p>
+              <div className="flex flex-col gap-5 md:flex-row md:items-center">
+                <img
+                  src={resolveAssetPath(author.image)}
+                  alt={author.name}
+                  className="h-24 w-24 rounded-3xl border border-white/15 object-cover shadow-[0_16px_40px_rgba(2,6,23,0.35)]"
+                />
+                <div>
+                  <p className="section-kicker !mb-2">Author</p>
+                  <h1 className="section-title !text-left !text-white">{author.name}</h1>
+                  <p className="mt-3 text-sm uppercase tracking-[0.12em] text-slate-400">{author.role}</p>
+                  <p className="mt-2 text-sm text-slate-400">
+                    {author.posts.length} published article{author.posts.length === 1 ? "" : "s"}
+                  </p>
+                </div>
+              </div>
               <p className="mt-5 max-w-2xl text-slate-200">{author.bio}</p>
             </div>
           </div>

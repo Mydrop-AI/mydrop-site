@@ -4,8 +4,9 @@
   "title": "How to Use Social Proof in Your Marketing Campaigns to Stand Out",
   "description": "Learn how to use social proof in marketing campaigns with reviews, testimonials, influencer content, case studies, and UGC to build trust and improve conversions.",
   "author": {
-    "name": "Mila Torres",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",

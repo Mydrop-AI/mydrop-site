@@ -4,8 +4,9 @@
   "title": "10 Essential Questions to Ask Before Working With Influencers",
   "description": "Use these 10 influencer vetting questions to choose better partners, protect brand reputation, and improve campaign outcomes.",
   "author": {
-    "name": "Noah Rivera",
-    "role": "Mydrop Team"
+    "name": "Evan Blake",
+    "role": "Content Operations Editor",
+    "slug": "evan-blake"
   },
   "publishedAt": "2025-03-24",
   "updatedAt": "2025-03-24",

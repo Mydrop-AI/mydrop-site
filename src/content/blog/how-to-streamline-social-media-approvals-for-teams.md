@@ -4,8 +4,9 @@
   "title": "How to Streamline Social Media Approvals for Teams",
   "description": "Learn how to simplify and optimize the social media approval process for teams, ensuring faster workflows and better collaboration.",
   "author": {
-    "name": "Mydrop Team",
-    "role": "Mydrop Team"
+    "name": "Evan Blake",
+    "role": "Content Operations Editor",
+    "slug": "evan-blake"
   },
   "publishedAt": "2026-04-15",
   "updatedAt": "2026-04-15",

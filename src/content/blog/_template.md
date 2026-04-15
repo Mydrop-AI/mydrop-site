@@ -4,8 +4,9 @@
   "title": "Replace With Final Title",
   "description": "Write a 120 to 170 character summary that matches the main search intent.",
   "author": {
-    "name": "Author Name",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2026-04-15",
   "updatedAt": "2026-04-15",

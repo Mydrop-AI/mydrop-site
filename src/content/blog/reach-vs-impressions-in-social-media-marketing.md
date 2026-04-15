@@ -4,8 +4,9 @@
   "title": "Reach vs. Impressions in Social Media Marketing",
   "description": "Understand the difference between reach and impressions and learn how to use both metrics to improve campaign performance.",
   "author": {
-    "name": "Maya Chen",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2025-03-07",
   "updatedAt": "2025-03-07",

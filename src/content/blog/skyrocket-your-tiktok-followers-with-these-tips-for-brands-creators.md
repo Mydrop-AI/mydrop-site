@@ -4,8 +4,9 @@
   "title": "How to Skyrocket Your TikTok Followers: Tips for Brands & Creators",
   "description": "Learn practical TikTok growth strategies for brands and creators, including trend execution, audience engagement, analytics, and consistent publishing.",
   "author": {
-    "name": "Lena Brooks",
-    "role": "Mydrop Team"
+    "name": "Maya Chen",
+    "role": "Growth Content Editor",
+    "slug": "maya-chen"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",

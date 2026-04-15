@@ -4,8 +4,9 @@
   "title": "How to Create a Social Media Analytics Dashboard That Actually Drives Action",
   "description": "Learn how to build a social media analytics dashboard that turns data into real decisions, with practical steps, tools, and examples for creators and teams.",
   "author": {
-    "name": "Mydrop Team",
-    "role": "Mydrop Team"
+    "name": "Maya Chen",
+    "role": "Growth Content Editor",
+    "slug": "maya-chen"
   },
   "publishedAt": "2026-04-15",
   "updatedAt": "2026-04-15",

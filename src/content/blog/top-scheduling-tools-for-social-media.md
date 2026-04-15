@@ -4,8 +4,9 @@
   "title": "Master Your Social Media Strategy with These Top Scheduling Tools for Social Media",
   "description": "Explore top social media scheduling tools and learn how Mydrop AI helps teams save time, stay consistent, and scale publishing across platforms.",
   "author": {
-    "name": "Nora Ellis",
-    "role": "Mydrop Team"
+    "name": "Evan Blake",
+    "role": "Content Operations Editor",
+    "slug": "evan-blake"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",

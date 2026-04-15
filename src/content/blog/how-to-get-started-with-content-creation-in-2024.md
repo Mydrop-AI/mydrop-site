@@ -4,8 +4,9 @@
   "title": "How to Get Started with Content Creation in 2026",
   "description": "Learn how to start content creation in 2026 with a practical step-by-step plan for audience research, platform strategy, SEO, and consistent publishing.",
   "author": {
-    "name": "Nina Laurent",
-    "role": "Mydrop Team"
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead",
+    "slug": "ariana-collins"
   },
   "publishedAt": "2026-03-31",
   "updatedAt": "2026-03-31",
