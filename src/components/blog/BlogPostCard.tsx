@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CalendarDays, Clock3, User2 } from "lucide-react";
+import { CalendarDays, Clock3 } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
 import { resolveAssetPath } from "@/lib/paths";
 
@@ -59,10 +59,21 @@ export default function BlogPostCard({
         </p>
 
         <p className="blog-card__meta-row">
-          <span className="blog-card__meta-item" itemProp="author" itemScope itemType="https://schema.org/Person">
-            <User2 className="h-3.5 w-3.5" />
+          <Link
+            to={`/authors/${post.author.slug}`}
+            className="blog-card__author"
+            itemProp="author"
+            itemScope
+            itemType="https://schema.org/Person"
+          >
+            <img
+              src={resolveAssetPath(post.author.image)}
+              alt={post.author.name}
+              className="blog-card__author-image"
+              loading="lazy"
+            />
             <span itemProp="name">{post.author.name}</span>
-          </span>
+          </Link>
           <span className="blog-card__meta-item">
             <CalendarDays className="h-3.5 w-3.5" />
             <time dateTime={post.publishedAt} itemProp="datePublished">

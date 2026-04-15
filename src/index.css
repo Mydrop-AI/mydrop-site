@@ -1353,6 +1353,21 @@ video {
   font-size: 0.96rem;
 }
 
+.blog-meta-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.blog-meta-author__image {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.95rem;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.24);
+}
+
 .blog-meta-update {
   margin-top: 0.35rem;
   color: #c6cce3;
@@ -1477,6 +1492,21 @@ video {
   margin: 0;
   font-size: 0.78rem;
   color: #aeb8d8;
+}
+
+.blog-card__author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-card__author-image {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.2);
 }
 
 .blog-card__meta-item {

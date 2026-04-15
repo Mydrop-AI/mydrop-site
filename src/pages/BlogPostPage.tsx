@@ -3,7 +3,6 @@ import {
   ArrowRight,
   CalendarDays,
   Clock3,
-  User2,
 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -41,11 +40,13 @@ function AuthorBio({
   role,
   slug,
   bio,
+  image,
 }: {
   name: string;
   role: string;
   slug: string;
   bio?: string;
+  image: string;
 }) {
   const resolvedBio =
     bio ||
@@ -53,9 +54,19 @@ function AuthorBio({
 
   return (
     <section className="mt-10 rounded-[1.4rem] border border-white/12 bg-white/5 p-5">
-      <p className="section-kicker !mb-2">About the author</p>
-      <h2 className="!mt-0 text-2xl">{name}</h2>
-      <p className="mt-2 text-sm uppercase tracking-[0.12em] text-slate-400">{role}</p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <img
+          src={resolveAssetPath(image)}
+          alt={name}
+          className="h-20 w-20 rounded-3xl border border-white/15 object-cover shadow-[0_16px_36px_rgba(2,6,23,0.28)]"
+          loading="lazy"
+        />
+        <div>
+          <p className="section-kicker !mb-2">About the author</p>
+          <h2 className="!mt-0 text-2xl">{name}</h2>
+          <p className="mt-2 text-sm uppercase tracking-[0.12em] text-slate-400">{role}</p>
+        </div>
+      </div>
       <p className="mt-4 text-slate-200">{resolvedBio}</p>
       <p className="mt-4">
         <Link to={`/authors/${slug}`} className="text-sm font-medium text-sky-300 transition hover:text-white">
@@ -120,6 +131,7 @@ export default function BlogPostPage() {
       "@type": "Person",
       name: post.author.name,
       description: post.author.role,
+      image: `${SITE_URL}${post.author.image}`,
       url: `${SITE_URL}/authors/${post.author.slug}`,
     },
     publisher: BLOG_PUBLISHER,
@@ -190,12 +202,15 @@ export default function BlogPostPage() {
               <p className="max-w-3xl text-lg text-slate-300">{post.description}</p>
 
               <p className="blog-meta-row">
-                <span className="inline-flex items-center gap-1.5">
-                  <User2 className="h-4 w-4" />
-                  <Link to={`/authors/${post.author.slug}`} className="transition hover:text-white">
-                    {post.author.name}
-                  </Link>
-                </span>
+                <Link to={`/authors/${post.author.slug}`} className="blog-meta-author transition hover:text-white">
+                  <img
+                    src={resolveAssetPath(post.author.image)}
+                    alt={post.author.name}
+                    className="blog-meta-author__image"
+                    loading="lazy"
+                  />
+                  <span>{post.author.name}</span>
+                </Link>
                 <span className="inline-flex items-center gap-1.5">
                   <CalendarDays className="h-4 w-4" />
                   {formatDate(post.publishedAt)}
@@ -274,6 +289,7 @@ export default function BlogPostPage() {
               role={post.author.role}
               slug={post.author.slug}
               bio={post.author.bio}
+              image={post.author.image}
             />
 
             {relatedPosts.length > 0 && (
