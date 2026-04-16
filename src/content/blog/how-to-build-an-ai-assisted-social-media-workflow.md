@@ -33,7 +33,28 @@
     "label": "Talk to the team",
     "href": "/contact"
   },
-  "faq": [],
+  "faq": [
+    {
+      "question": "What is an AI-assisted social media workflow?",
+      "answer": "It’s a repeatable process where you use AI tools to handle parts of your content planning, creation, and publishing, while you focus on strategy, quality, and brand voice."
+    },
+    {
+      "question": "How do I keep my brand voice consistent with AI?",
+      "answer": "Create a brand voice guide, train your AI tools with your guidelines, always review and edit AI output, and keep a swipe file of your best posts and prompts."
+    },
+    {
+      "question": "What are the most common mistakes with AI workflows?",
+      "answer": "Publishing without review, over-automation, ignoring analytics, using the same prompt for every post, and neglecting brand voice."
+    },
+    {
+      "question": "Which AI tools are best for solo managers and small teams?",
+      "answer": "Mydrop AI, ChatGPT, Buffer, Hootsuite, Canva Magic Write, Jasper, and Copy.ai are popular picks for 2026."
+    },
+    {
+      "question": "How do I know if AI is actually saving me time?",
+      "answer": "Track time spent briefing AI, editing drafts, number of posts approved on first review, and revisions caused by weak AI output. If editing time increases, tweak your prompts or workflow." 
+    }
+  ],
   "sources": [
     "https://blog.hootsuite.com/social-media-automation/",
     "https://blog.hootsuite.com/ai-copywriting/",
