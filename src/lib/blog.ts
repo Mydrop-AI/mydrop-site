@@ -216,6 +216,18 @@ function titleFromUrl(url: string) {
   }
 }
 
+function extractTitleAndUrl(value: string) {
+  const match = value.match(/^(.*?)\s*\((https?:\/\/[^)\s]+)\)\s*$/i);
+  if (!match) {
+    return null;
+  }
+
+  return {
+    title: match[1].trim().replace(/:\s*$/, ""),
+    url: match[2],
+  };
+}
+
 function normalizeSources(sources: BlogPostFrontmatter["sources"] | string[] | undefined): BlogSourceItem[] {
   if (!Array.isArray(sources)) {
     return [];
@@ -224,6 +236,11 @@ function normalizeSources(sources: BlogPostFrontmatter["sources"] | string[] | u
   return sources
     .map((source) => {
       if (typeof source === "string") {
+        const extracted = extractTitleAndUrl(source);
+        if (extracted) {
+          return extracted;
+        }
+
         return {
           title: titleFromUrl(source),
           url: source,

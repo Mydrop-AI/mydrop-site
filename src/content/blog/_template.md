@@ -36,6 +36,8 @@
 
 Write the introduction here. Answer the core query quickly and clearly in the first 2 paragraphs.
 
+<!-- The page generates the reading progress bar and left table of contents automatically from the headings below. Do not add a manual TOC block. -->
+
 ## What it is
 
 <figure>

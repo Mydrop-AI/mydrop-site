@@ -62,6 +62,8 @@ Use the template file:
 - Start directly with the intro paragraphs
 - Use `##` for primary sections
 - Use `###` only under a `##`
+- Build a clear section outline before writing, because the page auto-generates the table of contents from the `##` and `###` headings
+- Do not write a manual table of contents block in the post body
 - Prefer markdown for paragraphs, lists, tables, and links
 - Use simple HTML only when needed for `figure`, `figcaption`, or advanced table markup
 - Do not add Tailwind classes in the post body
@@ -139,6 +141,15 @@ Recommended section pattern:
 Do not add a body FAQ section.
 
 Do not add a `Sources` or `References` section unless it contains real source entries.
+
+The blog template automatically handles:
+
+- the reading progress bar under the top navigation
+- the sticky table of contents on the left
+- the sticky Mydrop CTA box on the right
+- the anchor links used by the table of contents
+
+That means the writer only needs a strong heading structure. The UI layer builds the navigation automatically.
 
 ## SEO and AI-search rules
 
