@@ -1,5 +1,6 @@
 import { marked } from "marked";
 import { resolveAssetPath } from "@/lib/paths";
+import { blogOrderTimestamps } from "@/generated/blog-order";
 
 export interface BlogAuthor {
   name: string;
@@ -77,6 +78,7 @@ export interface BlogPost
   readTimeMinutes: number;
   readTimeLabel: string;
   sourcePath: string;
+  createdAtTimestamp: number;
 }
 
 const DEFAULT_PRIMARY_CTA: BlogCta = {
@@ -318,6 +320,7 @@ function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sour
     readTimeMinutes: readTime.readTimeMinutes,
     readTimeLabel: readTime.readTimeLabel,
     sourcePath,
+    createdAtTimestamp: blogOrderTimestamps[frontmatter.slug] ?? 0,
   };
 }
 
@@ -342,6 +345,12 @@ function sortPosts(posts: BlogPost[]) {
 
     if (updatedDiff !== 0) {
       return updatedDiff;
+    }
+
+    const createdDiff = right.createdAtTimestamp - left.createdAtTimestamp;
+
+    if (createdDiff !== 0) {
+      return createdDiff;
     }
 
     return left.title.localeCompare(right.title);
