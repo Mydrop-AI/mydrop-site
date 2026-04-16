@@ -217,6 +217,18 @@ export default function BlogPostPage() {
   ];
 
   useEffect(() => {
+    if (window.location.hash) {
+      return;
+    }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+  }, [post.slug]);
+
+  useEffect(() => {
     const progressBar = document.querySelector<HTMLElement>("[data-blog-progress-bar]");
     const tocLinks = Array.from(
       document.querySelectorAll<HTMLAnchorElement>("[data-blog-toc-link]"),

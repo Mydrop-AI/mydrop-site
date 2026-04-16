@@ -1,5 +1,6 @@
 export const blogOrderTimestamps: Record<string, number> = {
-  "what-is-social-listening": 1776338551995,
+  "what-is-social-media-operations": 1776341521850,
+  "what-is-social-listening": 1776339717000,
   "what-is-a-social-media-content-audit": 1776337634000,
   "what-is-a-social-media-algorithm": 1776330612000,
   "what-is-social-media-engagement-rate": 1776323267000,

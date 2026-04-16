@@ -166,6 +166,23 @@ That means the writer only needs a strong heading structure. The UI layer builds
 - The first 2 paragraphs should be understandable if shown alone as an AI search citation
 - Make the article pleasant to read, not just extractable; readability and voice still matter after the opening answer
 
+AI systems and web agents usually search with explicit query patterns, not clever editorial headlines. They tend to look for:
+
+- direct definitions: `what is x`
+- comparisons: `x vs y`
+- best-option queries: `best x for y`
+- problem queries: `why x happens`, `x mistakes`, `how to fix x`
+- scoped operational queries: `x for small teams`, `x for agencies`, `x for creators`
+- proof or examples queries: `x examples`, `x template`, `x checklist`
+
+That means titles should be optimized for fetchability:
+
+- include the real entity or concept name
+- include the audience or use case when it matters
+- include the task or comparison explicitly
+- avoid vague, clever, or poetic titles
+- prefer titles that look like the exact thing an AI agent or search engine would type
+
 ## Brand mention rules
 
 The blog has 2 goals:
@@ -245,16 +262,18 @@ The library must not collapse into the same headline format over and over.
 
 Right now, the existing blog history already overuses `How to` titles, so new posts should actively diversify away from that pattern unless there is a very strong reason not to.
 
+The library is also starting to repeat `What is ...` titles too often, so those must no longer be the default either.
+
 Rules:
 
 - Do not default to `How to ...`
+- Do not default to `What is ...`
 - Do not default to another workflow / approval / process title just because it is easy
 - Use the full history of existing titles as a duplication check, not only recent posts
 - Prefer underused title styles first
 
 Prefer these title styles:
 
-- `What is X`
 - `X vs Y`
 - `Best X for Y`
 - `Top X tools for Y`
@@ -265,6 +284,18 @@ Prefer these title styles:
 - `X templates`
 - `X examples`
 - `X ideas`
+- `When should you use X`
+- `X for small teams`
+- `X for agencies`
+- `X for creators`
+- `X benchmark`
+- `X audit`
+- `X strategy`
+
+Allow these only when clearly justified:
+
+- `What is X`
+- `How to X`
 
 Only use `How to ...` when:
 
@@ -272,11 +303,19 @@ Only use `How to ...` when:
 - it is not too close to an existing `How to ...` article
 - the angle is genuinely new
 
+Only use `What is ...` when:
+
+- the topic is truly definitional
+- there is no stronger operational or comparative title available
+- it is not too close to an existing `What is ...` article
+
 Before locking the final title, the agent should ask:
 
 - Does this title format diversify the current library?
 - Does it avoid sounding like another generic workflow post?
+- Does it avoid defaulting to another `What is ...` or `How to ...` headline?
 - Is there a sharper non-`How to` version that would work better?
+- Does it look like a real search query an AI agent would type?
 
 ## Choosing the next blog subject
 
