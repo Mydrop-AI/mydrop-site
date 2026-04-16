@@ -2,7 +2,7 @@
 {
   "slug": "10-essential-questions-to-ask-before-working-with-influencers",
   "title": "10 Essential Questions to Ask Before Working With Influencers",
-  "description": "Use these 10 influencer vetting questions to choose better partners, protect brand reputation, and improve campaign outcomes.",
+  "description": "Ten practical questions to vet influencers so brands choose aligned creators, reduce brand risk, and measure campaigns for real results. Practical, repeatable, and team-ready.",
   "author": {
     "name": "Evan Blake",
     "role": "Content Operations Editor",
