@@ -1028,21 +1028,21 @@ video {
 }
 
 .blog-prose {
-  color: #d8dbeb;
+  color: #dfe5f4;
 }
 
 .blog-prose > * + * {
-  margin-top: 1.15rem;
+  margin-top: 1.35rem;
 }
 
 .blog-prose h1,
 .blog-prose h2,
 .blog-prose h3,
 .blog-prose h4 {
-  margin: 1.65rem 0 0.7rem;
+  margin: 2.3rem 0 0.9rem;
   color: #fbfcff;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.16;
 }
 
 .blog-prose h1 {
@@ -1055,6 +1055,72 @@ video {
 
 .blog-prose h3 {
   font-size: clamp(1.16rem, 2.1vw, 1.45rem);
+}
+
+.blog-post-main {
+  padding-inline: clamp(0.35rem, 1vw, 1rem);
+}
+
+.blog-post-main > header {
+  margin-bottom: 1.6rem;
+}
+
+.blog-article-body {
+  color: #dfe5f4;
+}
+
+.blog-article-body > * + * {
+  margin-top: 1.35rem;
+}
+
+.blog-article-body > h2 {
+  margin-top: 3.4rem;
+}
+
+.blog-article-body > h3 {
+  margin-top: 2rem;
+}
+
+.blog-article-body p {
+  max-width: 68ch;
+  color: #d8dfef;
+}
+
+.blog-article-body p + p {
+  margin-top: 1.15rem;
+}
+
+.blog-article-body h2 + p,
+.blog-article-body h3 + p {
+  margin-top: 0.8rem;
+}
+
+.blog-article-body ul,
+.blog-article-body ol {
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1.4rem;
+}
+
+.blog-article-body li + li {
+  margin-top: 0.65rem;
+}
+
+.blog-article-body strong {
+  color: #f7f9ff;
+}
+
+.blog-article-body blockquote {
+  margin: 1.8rem 0;
+  padding: 1rem 1.1rem 1rem 1.2rem;
+  border-left: 3px solid rgba(230, 52, 108, 0.85);
+  border-radius: 0 1rem 1rem 0;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e8eefc;
+}
+
+.blog-article-body blockquote > * {
+  margin: 0;
 }
 
 /* Responsive adjustments for homepage mobile/tablet */
@@ -1330,7 +1396,7 @@ video {
 }
 
 .blog-prose figure {
-  margin: 1.3rem 0;
+  margin: 2rem 0;
 }
 
 .blog-prose figure img {
@@ -1340,9 +1406,10 @@ video {
 }
 
 .blog-prose figcaption {
-  margin-top: 0.55rem;
-  color: #c8d0e8;
+  margin-top: 0.75rem;
+  color: #bfc8df;
   font-size: 0.92rem;
+  line-height: 1.65;
 }
 
 .blog-meta-row {
@@ -1388,14 +1455,14 @@ video {
   caption-side: top;
   text-align: left;
   color: #cad1e8;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.75rem;
   font-size: 0.93rem;
 }
 
 .blog-prose th,
 .blog-prose td {
   border: 1px solid rgba(255, 255, 255, 0.13);
-  padding: 0.6rem 0.62rem;
+  padding: 0.8rem 0.82rem;
   text-align: left;
 }
 

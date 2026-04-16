@@ -4,7 +4,7 @@ import {
   CalendarDays,
   Clock3,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SEO from "@/components/SEO";
 import {
@@ -168,8 +168,6 @@ function CtaButton({
 export default function BlogPostPage() {
   const { slug } = useParams();
   const post = getBlogPostBySlug(slug ?? "");
-  const [readingProgress, setReadingProgress] = useState(0);
-  const [activeHeadingId, setActiveHeadingId] = useState("");
 
   if (!post) {
     return <NotFoundPage />;
@@ -219,11 +217,20 @@ export default function BlogPostPage() {
   ];
 
   useEffect(() => {
+    const progressBar = document.querySelector<HTMLElement>("[data-blog-progress-bar]");
+    const tocLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>("[data-blog-toc-link]"),
+    );
+
     const updateReadingState = () => {
       const article = document.querySelector("[data-blog-article]") as HTMLElement | null;
       if (!article) {
-        setReadingProgress(0);
-        setActiveHeadingId("");
+        if (progressBar) {
+          progressBar.style.transform = "scaleX(0)";
+        }
+        for (const link of tocLinks) {
+          link.classList.remove("is-active");
+        }
         return;
       }
 
@@ -235,7 +242,9 @@ export default function BlogPostPage() {
         Math.max((window.scrollY - articleTop + 120) / maxScrollable, 0),
         1,
       );
-      setReadingProgress(progress);
+      if (progressBar) {
+        progressBar.style.transform = `scaleX(${progress})`;
+      }
 
       const headingElements = Array.from(
         article.querySelectorAll<HTMLElement>("[data-toc-heading='true']"),
@@ -251,7 +260,10 @@ export default function BlogPostPage() {
         }
       }
 
-      setActiveHeadingId(currentId);
+      for (const link of tocLinks) {
+        const isActive = link.getAttribute("href") === `#${currentId}`;
+        link.classList.toggle("is-active", isActive);
+      }
     };
 
     updateReadingState();
@@ -262,7 +274,7 @@ export default function BlogPostPage() {
       window.removeEventListener("scroll", updateReadingState);
       window.removeEventListener("resize", updateReadingState);
     };
-  }, [post.slug]);
+  }, [post.slug, articleContent.html]);
 
   return (
     <>
@@ -282,10 +294,7 @@ export default function BlogPostPage() {
 
       <section className="section-shell section-shell--deep">
         <div className="blog-reading-progress" aria-hidden="true">
-          <div
-            className="blog-reading-progress__bar"
-            style={{ transform: `scaleX(${readingProgress})` }}
-          />
+          <div className="blog-reading-progress__bar" data-blog-progress-bar />
         </div>
         <div className="site-container blog-post-shell py-10 md:py-14">
           <div className="blog-post-layout">
@@ -299,7 +308,7 @@ export default function BlogPostPage() {
                       <li key={item.id} className={`blog-toc-list__item blog-toc-list__item--level-${item.level}`}>
                         <a
                           href={`#${item.id}`}
-                          className={item.id === activeHeadingId ? "is-active" : undefined}
+                          data-blog-toc-link
                         >
                           {item.text}
                         </a>
