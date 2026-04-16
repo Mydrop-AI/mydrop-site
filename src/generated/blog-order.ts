@@ -1,5 +1,9 @@
 export const blogOrderTimestamps: Record<string, number> = {
-  "what-is-social-media-operations": 1776341521850,
+  "platform-posting-cadence-instagram-vs-tiktok-vs-linkedin": 1776345554188,
+  "when-to-repurpose-content-for-solo-social-managers": 1776344210292,
+  "when-to-use-evergreen-vs-trend-content": 1776342523652,
+  "best-social-media-content-formats-for-solo-managers": 1776342102650,
+  "what-is-social-media-operations": 1776341820000,
   "what-is-social-listening": 1776339717000,
   "what-is-a-social-media-content-audit": 1776337634000,
   "what-is-a-social-media-algorithm": 1776330612000,

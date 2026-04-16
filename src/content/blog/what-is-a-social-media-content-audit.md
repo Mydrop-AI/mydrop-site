@@ -10,7 +10,7 @@
   },
   "publishedAt": "2026-04-16",
   "updatedAt": "2026-04-16",
-  "heroImage": "/images/blogs-images-stocks/77.webp",
+  "heroImage": "/images/blogs-images-stocks/7.webp",
     "category": "Content Planning",
   "tags": [
     "content audit",
