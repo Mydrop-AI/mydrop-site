@@ -1,5 +1,5 @@
 export const blogOrderTimestamps: Record<string, number> = {
-  "when-to-use-paid-promotion-vs-organic-strategies-for-solo-social-managers": 1776414093544,
+  "when-to-use-paid-promotion-vs-organic-strategies-for-solo-social-managers": 1776421097000,
   "10-questions-to-ask-before-automating-social-media-with-mydrop": 1776413080000,
   "best-content-repurposing-tools-for-solo-social-managers": 1776413080000,
   "playbooks-vs-one-off-posts-for-solo-social-managers": 1776413080000,

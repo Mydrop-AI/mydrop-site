@@ -61,7 +61,7 @@ Quick checklist
 <figure>
   <img
     src="/images/blogs-images-stocks/47.webp"
-    alt="Social media team reviewing what "playbooks" and "one-off posts" really mean in a collaborative workspace"
+    alt="Social media team reviewing what playbooks and one-off posts really mean in a collaborative workspace"
   />
   <figcaption>A visual cue for what "playbooks" and "one-off posts" really mean</figcaption>
 </figure>

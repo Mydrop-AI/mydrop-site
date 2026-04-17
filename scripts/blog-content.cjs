@@ -163,6 +163,91 @@ function countWords(markdown) {
   return plainText.split(" ").length;
 }
 
+function validateRawImageTag(tag) {
+  let index = tag.indexOf("img") + 3;
+
+  while (index < tag.length) {
+    while (index < tag.length && /\s/.test(tag[index])) {
+      index += 1;
+    }
+
+    if (index >= tag.length || tag[index] === ">") {
+      return null;
+    }
+
+    if (tag[index] === "/" && tag[index + 1] === ">") {
+      return null;
+    }
+
+    if (tag[index] === '"' || tag[index] === "'") {
+      return 'unexpected quote while parsing <img> attributes; escape embedded quotes as &quot; or rewrite the attribute text';
+    }
+
+    if (!/[A-Za-z_:]/.test(tag[index])) {
+      return `unexpected character "${tag[index]}" while parsing <img> attributes`;
+    }
+
+    index += 1;
+    while (index < tag.length && /[A-Za-z0-9:._-]/.test(tag[index])) {
+      index += 1;
+    }
+
+    while (index < tag.length && /\s/.test(tag[index])) {
+      index += 1;
+    }
+
+    if (tag[index] !== "=") {
+      continue;
+    }
+
+    index += 1;
+    while (index < tag.length && /\s/.test(tag[index])) {
+      index += 1;
+    }
+
+    if (index >= tag.length) {
+      return "missing attribute value in <img> tag";
+    }
+
+    const quote = tag[index];
+    if (quote === '"' || quote === "'") {
+      index += 1;
+      const closingIndex = tag.indexOf(quote, index);
+
+      if (closingIndex === -1) {
+        return `missing closing ${quote} for an <img> attribute`;
+      }
+
+      index = closingIndex + 1;
+      continue;
+    }
+
+    while (index < tag.length && !/[\s>]/.test(tag[index])) {
+      index += 1;
+    }
+  }
+
+  return null;
+}
+
+function validateRawHtmlImageTags(markdown, filePath) {
+  const matches = markdown.matchAll(/<img\b[\s\S]*?>/g);
+
+  for (const match of matches) {
+    const tag = match[0];
+    const error = validateRawImageTag(tag);
+
+    if (!error) {
+      continue;
+    }
+
+    const lineNumber = markdown.slice(0, match.index).split(/\r?\n/).length;
+    throw new Error(
+      `Invalid raw <img> HTML in ${filePath}:${lineNumber} - ${error}`,
+    );
+  }
+}
+
 function parseFrontmatter(source, filePath) {
   const match = source.match(FRONTMATTER_PATTERN);
 
@@ -211,6 +296,8 @@ function normalizeBlogPost(frontmatter, markdown, filePath) {
   if (!frontmatter.author?.name || !frontmatter.author?.role) {
     throw new Error(`Missing author metadata in ${filePath}`);
   }
+
+  validateRawHtmlImageTags(markdown, filePath);
 
   return {
     ...frontmatter,
