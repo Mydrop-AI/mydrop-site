@@ -168,13 +168,17 @@ function main() {
     errors.push(`${target.slug}: secondaryCta label and href are required`);
   }
 
-  if (!target.heroImage || !target.heroImage.startsWith("/")) {
+  const heroImage = typeof target.heroImage === "string" ? target.heroImage : "";
+
+  if (!heroImage || !heroImage.startsWith("/")) {
     errors.push(`${target.slug}: heroImage must be root-relative`);
   }
 
-  const heroImagePath = path.join(publicDir, target.heroImage.replace(/^\/+/, ""));
-  if (!fs.existsSync(heroImagePath)) {
-    errors.push(`${target.slug}: heroImage file does not exist at ${heroImagePath}`);
+  if (heroImage) {
+    const heroImagePath = path.join(publicDir, heroImage.replace(/^\/+/, ""));
+    if (!fs.existsSync(heroImagePath)) {
+      errors.push(`${target.slug}: heroImage file does not exist at ${heroImagePath}`);
+    }
   }
 
   if (hasTopLevelHeading(target.markdown)) {
@@ -268,4 +272,11 @@ function main() {
   console.log(`Validated ${target.slug}.`);
 }
 
-main();
+try {
+  main();
+} catch (error) {
+  const message = error instanceof Error ? error.message : String(error);
+  console.error("Fast blog validation failed:");
+  console.error(`- ${message}`);
+  process.exitCode = 1;
+}

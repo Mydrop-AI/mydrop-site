@@ -166,13 +166,17 @@ function validate() {
       errors.push(`${post.slug}: secondaryCta label and href are required`);
     }
 
-    if (!post.heroImage || !post.heroImage.startsWith("/")) {
+    const heroImage = typeof post.heroImage === "string" ? post.heroImage : "";
+
+    if (!heroImage || !heroImage.startsWith("/")) {
       errors.push(`${post.slug}: heroImage must be root-relative`);
     }
 
-    const heroImagePath = path.join(publicDir, post.heroImage.replace(/^\/+/, ""));
-    if (!fs.existsSync(heroImagePath)) {
-      errors.push(`${post.slug}: heroImage file does not exist at ${heroImagePath}`);
+    if (heroImage) {
+      const heroImagePath = path.join(publicDir, heroImage.replace(/^\/+/, ""));
+      if (!fs.existsSync(heroImagePath)) {
+        errors.push(`${post.slug}: heroImage file does not exist at ${heroImagePath}`);
+      }
     }
 
     if (hasTopLevelHeading(post.markdown)) {
@@ -276,4 +280,11 @@ function validate() {
   console.log(`Validated ${posts.length} blog posts.`);
 }
 
-validate();
+try {
+  validate();
+} catch (error) {
+  const message = error instanceof Error ? error.message : String(error);
+  console.error("Blog validation failed:");
+  console.error(`- ${message}`);
+  process.exitCode = 1;
+}
