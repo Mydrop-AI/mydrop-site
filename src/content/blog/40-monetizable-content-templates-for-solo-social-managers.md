@@ -1,5 +1,5 @@
 ---
-{"slug":"40-monetizable-content-templates-for-solo-social-managers","title":"40 Monetizable Content Templates for Solo Social Managers","description":"Forty plug-and-play content templates solo social managers can batch, schedule, and use to generate leads, sell services, and build predictable, repeatable income.","category":"templates","tags":["templates","monetization","content","solo-social-managers","mydrop"]}
+{"slug": "40-monetizable-content-templates-for-solo-social-managers", "title": "40 Monetizable Content Templates for Solo Social Managers", "description": "Forty plug-and-play content templates solo social managers can batch and schedule to generate leads, sell services, and build predictable revenue.", "category": "templates", "tags": ["templates", "monetization", "content", "solo-social-managers", "mydrop"]}
 ---
 
 Intro
