@@ -2,7 +2,7 @@
 {
   "slug": "which-social-media-kpi-to-optimize-first-for-solo-social-managers",
   "title": "Which Social Media KPI Should Solo Social Managers Optimize First?",
-  "description": "A practical guide to choosing the first social KPI to optimize for solo social managers, with a clear decision framework and measurement checklist.",
+  "description": "A practical, hands-on guide for solo social managers to pick the first social KPI to optimize - includes a 10-minute decision framework and a measurement checklist.",
   "category": "strategy",
   "tags": [
     "kpi",
