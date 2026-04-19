@@ -1,5 +1,42 @@
 ---
-{"slug":"ab-testing-vs-micro-testing-which-should-solo-social-managers-use","title":"A/B Testing vs Micro-Testing: Which Should Solo Social Managers Use?","description":"A practical guide for solo social managers to choose between A/B testing and micro-testing, with step by step tactics, templates, and a weekly workflow.","category":"strategy","tags":["testing","strategy","analytics","solo social managers"]}
+{
+    "slug": "ab-testing-vs-micro-testing-which-should-solo-social-managers-use",
+    "title": "A/B Testing vs Micro-Testing: Which Should Solo Social Managers Use?",
+    "description": "A practical guide for solo social managers to choose between A/B testing and micro-testing, with step by step tactics, templates, and a weekly workflow.",
+    "category": "strategy",
+    "tags": [
+        "testing",
+        "strategy",
+        "analytics",
+        "solo-social-managers"
+    ],
+    "author": {
+        "slug": "mydrop-editorial",
+        "name": "Mydrop Editorial",
+        "role": "Content Team"
+    },
+    "publishedAt": "2026-04-19",
+    "updatedAt": "2026-04-19",
+    "heroImage": "/images/blogs-images-stocks/ab-vs-micro-testing.webp",
+    "heroImageAlt": "A/B testing versus micro-testing comparison for solo social managers",
+    "heroCaption": "How to pick the right testing approach when you manage multiple social accounts",
+    "featured": false,
+    "relatedSlugs": [
+        "micro-testing-templates-for-solo-social-managers",
+        "a-b-testing-guide-for-social-ads",
+        "weekly-testing-rhythm-for-social-managers"
+    ],
+    "primaryCta": {
+        "label": "Start with Mydrop",
+        "href": "https://app.mydropai.com/register"
+    },
+    "secondaryCta": {
+        "label": "Talk to the team",
+        "href": "/contact"
+    },
+    "faq": [],
+    "sources": []
+}
 ---
 
 Intro
