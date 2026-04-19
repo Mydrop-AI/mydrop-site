@@ -4,7 +4,38 @@
   "title": "50 Cross-Posting Templates Solo Social Managers Can Use Today",
   "description": "A practical pack of 50 cross-posting templates and repurpose workflows to help solo social managers publish faster, preserve client voice, and automate scheduling.",
   "category": "templates",
-  "tags": ["templates", "cross-posting", "scheduling", "mydrop", "solo-social-managers"],
+  "tags": [
+    "templates",
+    "cross-posting",
+    "scheduling",
+    "mydrop",
+    "solo-social-managers"
+  ],
+  "author": {
+    "slug": "ariana-collins",
+    "name": "Ariana Collins",
+    "role": "Social Media Strategy Lead"
+  },
+  "publishedAt": "2026-04-19",
+  "updatedAt": "2026-04-19",
+  "heroImage": "/images/blogs-images-stocks/50.webp",
+  "heroImageAlt": "Solo social manager using cross-posting templates to schedule content across multiple platforms",
+  "heroCaption": "Practical guidance on 50 cross-posting templates solo social managers can use to publish faster",
+  "featured": false,
+  "relatedSlugs": [
+    "30-ready-to-sell-content-packs-solo-social-managers-can-offer",
+    "25-monetizable-content-ideas-for-solo-social-managers",
+    "9-monetization-mistakes-solo-social-managers"
+  ],
+  "primaryCta": {
+    "label": "Start with Mydrop",
+    "href": "https://app.mydropai.com/register"
+  },
+  "secondaryCta": {
+    "label": "Talk to the team",
+    "href": "/contact"
+  },
+  "faq": [],
   "sources": []
 }
 ---
