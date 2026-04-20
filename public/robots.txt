@@ -1,25 +1,13 @@
 User-agent: *
 Allow: /
-Disallow: /about
-Disallow: /affiliates
-Disallow: /partnerships
 
 User-agent: OAI-SearchBot
 Allow: /
-Disallow: /about
-Disallow: /affiliates
-Disallow: /partnerships
 
 User-agent: ChatGPT-User
 Allow: /
-Disallow: /about
-Disallow: /affiliates
-Disallow: /partnerships
 
 User-agent: GPTBot
 Allow: /
-Disallow: /about
-Disallow: /affiliates
-Disallow: /partnerships
 
 Sitemap: https://www.mydropai.com/sitemap.xml

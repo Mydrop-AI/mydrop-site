@@ -8,7 +8,7 @@ import {
 
 export default function ContactPage() {
   const description =
-    "Contact MydropAI for sales, partnerships, and support questions about running brands, profiles, and social workflows with Mydrop.";
+    "Contact MydropAI for sales and support questions about running brands, profiles, and social workflows with Mydrop.";
 
   const structuredData = [
     organizationSchema,

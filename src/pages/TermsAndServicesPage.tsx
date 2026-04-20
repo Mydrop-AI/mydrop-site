@@ -185,7 +185,7 @@ export default function TermsAndServicesPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">13. Indemnification</h2>
             <p>
-              You agree to indemnify and hold the service and its affiliates harmless from claims arising from your use of the platform, your content, or
+              You agree to indemnify and hold the service and its related entities harmless from claims arising from your use of the platform, your content, or
               violation of these terms or applicable laws.
             </p>
           </section>

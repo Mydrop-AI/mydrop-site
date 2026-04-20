@@ -1,5 +1,5 @@
 export const blogOrderTimestamps: Record<string, number> = {
-  "30-point-ai-automation-readiness-checklist-for-solo-social-managers": 1776627823626,
+  "30-point-ai-automation-readiness-checklist-for-solo-social-managers": 1776629639000,
   "9-community-moderation-mistakes-solo-social-managers-make": 1776627752000,
   "best-content-approval-tools-for-solo-social-managers-and-freelancers-2026": 1776627752000,
   "monthly-vs-weekly-content-planning-for-solo-social-managers": 1776626366000,
