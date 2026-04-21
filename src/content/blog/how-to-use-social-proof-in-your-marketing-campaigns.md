@@ -52,7 +52,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+    src="/images/blogs-images-stocks/55.webp"
     alt="Marketing team reviewing social proof assets and campaign messaging"
   />
   <figcaption>Social proof works best when it is integrated into campaign planning early</figcaption>
@@ -81,7 +81,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-google-rating.webp"
+    src="/images/blogs-images-stocks/42.webp"
     alt="Online rating and customer review summary used as trust signals"
   />
   <figcaption>Visible ratings and testimonials can remove buying friction quickly</figcaption>
@@ -121,7 +121,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/20.webp"
     alt="Audience sharing brand mentions and user-generated posts on social media"
   />
   <figcaption>Mentions and UGC make your brand feel active and trusted in public spaces</figcaption>
@@ -161,7 +161,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-partners.webp"
+    src="/images/blogs-images-stocks/16.webp"
     alt="Influencer and brand collaboration workflow planned in a shared campaign board"
   />
   <figcaption>Consistent collection workflows make social proof easier to scale</figcaption>
@@ -175,7 +175,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/75.webp"
     alt="Unified social calendar scheduling social proof posts across several platforms"
   />
   <figcaption>A unified schedule helps social proof content land at the right time</figcaption>
@@ -187,7 +187,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-cross-posting.webp"
+    src="/images/blogs-images-stocks/28.webp"
     alt="Cross-platform publishing panel for sharing proof content to multiple profiles"
   />
   <figcaption>Multi-profile posting expands proof visibility with less manual work</figcaption>
@@ -199,7 +199,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-media-editor.png"
+    src="/images/blogs-images-stocks/34.webp"
     alt="AI content creation workspace converting testimonials into campaign-ready posts"
   />
   <figcaption>AI tools make it faster to transform social proof into publishable assets</figcaption>
@@ -211,7 +211,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+    src="/images/blogs-images-stocks/29.webp"
     alt="Media library dashboard organizing social proof assets by campaign and format"
   />
   <figcaption>Centralized media organization improves campaign speed and consistency</figcaption>
@@ -223,7 +223,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-posts-design.png"
+    src="/images/blogs-images-stocks/20.webp"
     alt="Reusable social template layout for customer review and testimonial posts"
   />
   <figcaption>Reusable templates keep social proof content visually consistent</figcaption>
@@ -247,7 +247,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+    src="/images/blogs-images-stocks/56.webp"
     alt="Social media management interface used to plan and publish trust-building campaigns"
   />
   <figcaption>Mydrop helps teams turn social proof into a repeatable marketing system</figcaption>

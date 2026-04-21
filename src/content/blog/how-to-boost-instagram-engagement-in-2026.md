@@ -100,7 +100,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/55.webp"
     alt="Audience research board with persona notes and engagement data"
   />
   <figcaption>Audience insights guide stronger content decisions</figcaption>
@@ -118,7 +118,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/71.webp"
     alt="High quality social visuals arranged for Instagram publishing"
   />
   <figcaption>High-quality visuals improve trust and stop the scroll</figcaption>
@@ -136,7 +136,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-people-on-their-phones-2d-design-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/68.webp"
     alt="People sharing social content from their phones"
   />
   <figcaption>User-generated content increases trust and participation</figcaption>
@@ -153,7 +153,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/30.webp"
     alt="Content calendar with scheduled Instagram posts"
   />
   <figcaption>A calendar helps maintain consistent daily publishing</figcaption>
@@ -170,7 +170,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-reels-vs-stories-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/7.webp"
     alt="Comparison between Instagram reels and stories formats"
   />
   <figcaption>Mixing Stories and Reels improves both retention and discovery</figcaption>
@@ -197,7 +197,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-partners.webp"
+    src="/images/blogs-images-stocks/10.webp"
     alt="Brand partnership workflow for influencer collaboration"
   />
   <figcaption>Strategic influencer collaborations can amplify engagement quickly</figcaption>
@@ -214,7 +214,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/30.webp"
     alt="Social analytics dashboard used to review engagement metrics"
   />
   <figcaption>Weekly analysis helps improve engagement strategy over time</figcaption>
@@ -231,7 +231,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-proof-ad-campaigns-how-to-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/27.webp"
     alt="Campaign creative promoting giveaway and social proof"
   />
   <figcaption>Well-designed giveaways can increase interaction and discovery</figcaption>
@@ -248,7 +248,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/28.webp"
     alt="Hashtag testing and discovery performance trends"
   />
   <figcaption>Strategic hashtag sets improve targeted content distribution</figcaption>
@@ -262,7 +262,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/35.webp"
     alt="Instagram profile bio optimization checklist"
   />
   <figcaption>A clear profile bio improves profile-to-click conversion</figcaption>
@@ -276,7 +276,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-team-building-holding-hands.png"
+    src="/images/blogs-images-stocks/27.webp"
     alt="Team collaboration moment captured behind the scenes"
   />
   <figcaption>Behind-the-scenes content builds stronger audience connection</figcaption>
@@ -290,7 +290,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-ads-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/4.webp"
     alt="Instagram ad formats shown for campaign testing"
   />
   <figcaption>Paid distribution can accelerate engagement growth when targeting is strong</figcaption>
@@ -314,7 +314,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+    src="/images/blogs-images-stocks/36.webp"
     alt="Social media management workspace used to plan and optimize Instagram campaigns"
   />
   <figcaption>Use a centralized workflow to improve Instagram results consistently</figcaption>

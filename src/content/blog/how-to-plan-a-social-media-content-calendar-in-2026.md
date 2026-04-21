@@ -76,7 +76,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+    src="/images/blogs-images-stocks/51.webp"
     alt="Social content calendar filled with planned posts across multiple dates"
   />
   <figcaption>Planning ahead turns social publishing into a repeatable system</figcaption>
@@ -126,7 +126,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/11.webp"
     alt="Goal planning board with campaign objectives and KPI targets"
   />
   <figcaption>Strong calendars start with clear objectives and measurable KPIs</figcaption>
@@ -152,7 +152,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-choosing-the-right-platform-for-social-media-design-for-blog-banner-2.webp"
+    src="/images/blogs-images-stocks/38.webp"
     alt="Platform selection map showing where different audience segments spend time"
   />
   <figcaption>Platform fit matters more than publishing everywhere without focus</figcaption>
@@ -178,7 +178,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/21.webp"
     alt="Balanced social content mix including educational posts, videos, and promos"
   />
   <figcaption>A balanced mix keeps audiences interested without over-selling</figcaption>
@@ -203,7 +203,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-posts-design.png"
+    src="/images/blogs-images-stocks/10.webp"
     alt="Template-based social post repository organized by campaign themes"
   />
   <figcaption>Template libraries reduce production time and creative friction</figcaption>
@@ -228,7 +228,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+    src="/images/blogs-images-stocks/78.webp"
     alt="Unified social media scheduling dashboard with multi-platform calendar view"
   />
   <figcaption>One scheduling hub makes consistent publishing much easier</figcaption>
@@ -253,7 +253,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-how-to-become-a-community-manager-2.png"
+    src="/images/blogs-images-stocks/50.webp"
     alt="Community management workflow with response queues and audience interactions"
   />
   <figcaption>Community engagement converts passive followers into active advocates</figcaption>
@@ -277,7 +277,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/69.webp"
     alt="Social media analytics dashboard for monitoring reach engagement and conversions"
   />
   <figcaption>Weekly analysis helps refine your content calendar with real data</figcaption>
@@ -302,7 +302,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-media-editor.png"
+    src="/images/blogs-images-stocks/46.webp"
     alt="AI-assisted media editor used to generate social assets quickly"
   />
   <figcaption>AI tools reduce production time while maintaining content quality</figcaption>
@@ -326,7 +326,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-team-building-holding-hands.png"
+    src="/images/blogs-images-stocks/8.webp"
     alt="Content team collaborating on a shared publishing plan"
   />
   <figcaption>Collaborative workflows make content execution faster and cleaner</figcaption>
@@ -350,7 +350,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/31.webp"
     alt="Trend monitoring board for social media format and topic experiments"
   />
   <figcaption>Trend awareness helps keep your calendar relevant and high-performing</figcaption>
@@ -374,7 +374,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+    src="/images/blogs-images-stocks/68.webp"
     alt="Social media management tools dashboard used for planning and scheduling"
   />
   <figcaption>Mydrop centralizes planning, creation, and scheduling for social teams</figcaption>

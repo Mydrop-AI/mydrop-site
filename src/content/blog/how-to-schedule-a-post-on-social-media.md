@@ -55,7 +55,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+    src="/images/blogs-images-stocks/77.webp"
     alt="A social content calendar"
   />
   <figcaption>A social content calendar</figcaption>
@@ -92,7 +92,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+    src="/images/blogs-images-stocks/63.webp"
     alt="Effortless social management tool"
   />
   <figcaption>Effortless social management tool</figcaption>
@@ -114,7 +114,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/76.webp"
     alt="Full content calendar"
   />
   <figcaption>Full content calendar</figcaption>
@@ -145,7 +145,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-cross-posting.webp"
+    src="/images/blogs-images-stocks/20.webp"
     alt="Cross-post and schedule everywhere"
   />
   <figcaption>Cross-post and schedule everywhere</figcaption>
@@ -178,7 +178,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+    src="/images/blogs-images-stocks/69.webp"
     alt="Social media dashboard"
   />
   <figcaption>Social media dashboard</figcaption>
@@ -198,7 +198,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-smiling-woman-looking-at-phone.png"
+    src="/images/blogs-images-stocks/25.webp"
     alt="Smiling woman"
   />
   <figcaption>Smiling woman</figcaption>

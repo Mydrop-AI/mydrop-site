@@ -1,4 +1,7 @@
 export const blogOrderTimestamps: Record<string, number> = {
+  "trends-vs-evergreen-which-should-solo-social-managers-prioritize": 1776766331762,
+  "repurpose-vs-recreate-for-solo-social-managers": 1776761634862,
+  "when-to-automate-client-reporting-for-solo-social-managers": 1776755835454,
   "30-point-ai-automation-readiness-checklist-for-solo-social-managers": 1776629639000,
   "9-community-moderation-mistakes-solo-social-managers-make": 1776627752000,
   "best-content-approval-tools-for-solo-social-managers-and-freelancers-2026": 1776627752000,

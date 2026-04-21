@@ -66,7 +66,7 @@
 <h2>Understanding Your Audience</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/75.webp"
     alt="Audience research board showing demographics, goals, and content preferences"
   />
   <figcaption>Start with audience clarity before creating content at scale</figcaption>
@@ -84,7 +84,7 @@
 <h2>Setting Clear Goals</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-clear-goal-setting-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/71.webp"
     alt="Goal-setting board mapping awareness, leads, and sales objectives"
   />
   <figcaption>Clear goals make your content strategy measurable and focused</figcaption>
@@ -99,7 +99,7 @@
 <h2>Choosing the Right Platforms</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-choosing-the-right-platform-for-social-media-design-for-blog-banner-2.webp"
+    src="/images/blogs-images-stocks/36.webp"
     alt="Social platform selection map for content distribution"
   />
   <figcaption>Pick channels based on audience behavior, not trends alone</figcaption>
@@ -126,7 +126,7 @@
 <h2>Creating High-Quality Content</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/4.webp"
     alt="High-quality content examples including video, graphics, and editorial copy"
   />
   <figcaption>Quality wins over volume when your message is clear and useful</figcaption>
@@ -159,7 +159,7 @@
 <h2>Analyzing and Adjusting Your Strategy</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics.webp"
+    src="/images/blogs-images-stocks/71.webp"
     alt="Analytics dashboard for engagement, reach, and conversion tracking"
   />
   <figcaption>Measure what works and iterate quickly</figcaption>
@@ -191,7 +191,7 @@
 <h2>Staying Updated with Trends</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/65.webp"
     alt="Trend monitoring dashboard for social media and content formats"
   />
   <figcaption>Trend awareness helps you stay relevant without chasing every tactic</figcaption>

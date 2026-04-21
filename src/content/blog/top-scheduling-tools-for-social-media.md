@@ -55,7 +55,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+    src="/images/blogs-images-stocks/22.webp"
     alt="Social media content calendar filled with scheduled posts across channels"
   />
   <figcaption>Scheduling tools help teams maintain consistency across every platform</figcaption>
@@ -83,7 +83,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-dashboards-design.png"
+    src="/images/blogs-images-stocks/24.webp"
     alt="Social media management dashboard showing scheduling and campaign overview"
   />
   <figcaption>A centralized dashboard reduces context switching and planning errors</figcaption>
@@ -110,7 +110,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-organic-reach-counter.webp"
+    src="/images/blogs-images-stocks/8.webp"
     alt="Organic reach growth indicators linked to consistent posting workflows"
   />
   <figcaption>Consistent scheduling is closely tied to stronger reach and engagement</figcaption>
@@ -133,7 +133,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/57.webp"
     alt="Unified calendar view used to schedule social posts across many platforms"
   />
   <figcaption>One calendar view makes planning and adjustments much easier</figcaption>
@@ -145,7 +145,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-cross-posting.webp"
+    src="/images/blogs-images-stocks/63.webp"
     alt="Multi-profile publishing workflow for social campaigns"
   />
   <figcaption>Multi-profile posting improves scale without adding manual overhead</figcaption>
@@ -157,7 +157,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-media-editor.png"
+    src="/images/blogs-images-stocks/65.webp"
     alt="AI-assisted editor for creating social media visuals and captions"
   />
   <figcaption>AI generation reduces content production bottlenecks</figcaption>
@@ -181,7 +181,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-posts-design.png"
+    src="/images/blogs-images-stocks/32.webp"
     alt="Multi-network publishing layout showing channel-specific post formats"
   />
   <figcaption>Channel-specific support helps teams publish effectively across platforms</figcaption>
@@ -206,7 +206,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+    src="/images/blogs-images-stocks/33.webp"
     alt="Continuous improvement loop for planning publishing and optimization"
   />
   <figcaption>Automation plus iteration improves strategic performance over time</figcaption>
@@ -231,7 +231,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-effortless-dashboard2.webp"
+    src="/images/blogs-images-stocks/38.webp"
     alt="Organized media and grouped profile workflow in a social dashboard"
   />
   <figcaption>Well-organized assets and grouped profiles improve execution speed</figcaption>
@@ -261,7 +261,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-partners.webp"
+    src="/images/blogs-images-stocks/72.webp"
     alt="Teams and creators coordinating multi-account publishing workflows"
   />
   <figcaption>Mydrop supports different user profiles with one scalable workflow</figcaption>
@@ -285,7 +285,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+    src="/images/blogs-images-stocks/12.webp"
     alt="Comprehensive social media management platform used for scheduled publishing"
   />
   <figcaption>Mydrop AI helps convert social media execution into a repeatable system</figcaption>

@@ -94,7 +94,7 @@
 <h3>1. Mydrop (The Game-Changer)</h3>
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-blog-banner.png"
+    src="/images/blogs-images-stocks/30.webp"
     alt="Mydrop interface on multiple tablets showing scheduling, automation, and contact workflows."
   />
 </figure>
@@ -140,7 +140,7 @@
 <h3>2. Buffer</h3>
 <figure>
   <img
-    src="/media/images/original-site/legacy-buffer-logo.png"
+    src="/images/blogs-images-stocks/39.webp"
     alt="Buffer logo."
   />
 </figure>
@@ -161,7 +161,7 @@
 <h3>3. Hootsuite</h3>
 <figure>
   <img
-    src="/media/images/original-site/legacy-hootsuite-logo.png"
+    src="/images/blogs-images-stocks/36.webp"
     alt="Hootsuite logo with red owl icon and text."
   />
 </figure>
@@ -181,7 +181,7 @@
 <h3>4. Sprout Social</h3>
 <figure>
   <img
-    src="/media/images/original-site/legacy-sprout-social-logo.png"
+    src="/images/blogs-images-stocks/71.webp"
     alt="Sprout Social logo with leaf icon."
   />
 </figure>
@@ -200,7 +200,7 @@
 <h3>5. Later</h3>
 <figure>
   <img
-    src="/media/images/original-site/legacy-later-logo-wide.jpg"
+    src="/images/blogs-images-stocks/65.webp"
     alt="Later logo with colorful social symbols."
   />
 </figure>
@@ -279,7 +279,7 @@
 <h2>How to Choose the Right Tool</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-smiling-man-with-mobile-phone.png"
+    src="/images/blogs-images-stocks/17.webp"
     alt="Professional reviewing social media channels before choosing a management platform."
   />
 </figure>
@@ -310,7 +310,7 @@
 <h2>Start Managing Your Social Media Like a Pro</h2>
 <figure>
   <img
-    src="/media/images/original-site/legacy-dashboards-design.png"
+    src="/images/blogs-images-stocks/10.webp"
     alt="Dashboard with social metrics and calendar insights for social media performance tracking."
   />
 </figure>

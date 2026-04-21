@@ -39,7 +39,7 @@
 }
 ---
 
-Intro
+## Intro
 
 Repurposing and reposting sound like the same thing, but for a solo social manager they are two different time investments with very different returns. Reposting means sharing the same asset again, often with the exact same caption and creative. Repurposing means taking the idea or core content and turning it into a new piece - a new caption, a different format, a shorter clip, or a carousel that targets a new audience or platform.
 

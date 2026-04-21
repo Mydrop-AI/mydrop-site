@@ -54,7 +54,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-how-to-become-a-community-manager.png"
+    src="/images/blogs-images-stocks/19.webp"
     alt="Community manager planning audience engagement activities"
   />
   <figcaption>Community management starts with strategy and consistency</figcaption>
@@ -101,7 +101,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-how-to-become-a-community-manager-2.png"
+    src="/images/blogs-images-stocks/4.webp"
     alt="Essential Skills for a Community Manager"
   />
   <figcaption>Essential Skills for a Community Manager</figcaption>
@@ -159,7 +159,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/79.webp"
     alt="Editorial calendar used to organize community campaigns"
   />
   <figcaption>Planning cadence and content themes for community growth</figcaption>
@@ -213,7 +213,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+    src="/images/blogs-images-stocks/73.webp"
     alt="Performance cycle showing analysis and strategy adjustments"
   />
   <figcaption>Measure, learn, and improve engagement over time</figcaption>
@@ -262,7 +262,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-posts-design.png"
+    src="/images/blogs-images-stocks/31.webp"
     alt="Social planner dashboard with upcoming community posts"
   />
   <figcaption>Use a planner to keep daily engagement consistent</figcaption>

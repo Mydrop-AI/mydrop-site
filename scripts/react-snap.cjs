@@ -1,5 +1,6 @@
 const { run } = require("react-snap");
 const fs = require("node:fs");
+const net = require("node:net");
 const path = require("node:path");
 const { readBlogAuthors, readBlogPosts } = require("./blog-content.cjs");
 
@@ -128,6 +129,68 @@ function rewriteHrefsForBasePath(distDir, basePath) {
   }
 }
 
+function resolvePreferredPort() {
+  const envPort = Number.parseInt(process.env.REACT_SNAP_PORT ?? "", 10);
+  if (Number.isInteger(envPort) && envPort > 0 && envPort <= 65535) {
+    return envPort;
+  }
+
+  const configPort = Number.parseInt(packageReactSnapConfig.port ?? "", 10);
+  if (Number.isInteger(configPort) && configPort > 0 && configPort <= 65535) {
+    return configPort;
+  }
+
+  return 45678;
+}
+
+function getAvailablePort(preferredPort) {
+  return new Promise((resolve, reject) => {
+    const preferredServer = net.createServer();
+
+    preferredServer.once("error", (error) => {
+      if (error && error.code === "EADDRINUSE") {
+        const fallbackServer = net.createServer();
+
+        fallbackServer.once("error", reject);
+        fallbackServer.listen(0, () => {
+          const address = fallbackServer.address();
+          const fallbackPort =
+            address && typeof address === "object" ? address.port : null;
+
+          fallbackServer.close((closeError) => {
+            if (closeError) {
+              reject(closeError);
+              return;
+            }
+
+            if (!fallbackPort) {
+              reject(new Error("Unable to determine a free port for react-snap."));
+              return;
+            }
+
+            resolve(fallbackPort);
+          });
+        });
+
+        return;
+      }
+
+      reject(error);
+    });
+
+    preferredServer.listen(preferredPort, () => {
+      preferredServer.close((closeError) => {
+        if (closeError) {
+          reject(closeError);
+          return;
+        }
+
+        resolve(preferredPort);
+      });
+    });
+  });
+}
+
 async function main() {
   const basePath = normalizeBasePath(process.env.BASE_PATH);
   const distDir = path.resolve(__dirname, "../dist");
@@ -136,10 +199,12 @@ async function main() {
   const authorRoutes = getAuthorRoutes();
   const allPrimaryRoutes = [...staticRoutes, ...authorRoutes, ...blogPostRoutes];
   const legacyFrenchRoutes = getLegacyFrenchRoutes(allPrimaryRoutes);
+  const port = await getAvailablePort(resolvePreferredPort());
 
   try {
     await run({
       source: packageReactSnapConfig.source ?? "dist",
+      port,
       include: [...allPrimaryRoutes, ...legacyFrenchRoutes],
       inlineCss: packageReactSnapConfig.inlineCss ?? false,
       skipThirdPartyRequests: packageReactSnapConfig.skipThirdPartyRequests ?? true,

@@ -54,7 +54,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+    src="/images/blogs-images-stocks/11.webp"
     alt="Content planning workspace for short-form social media campaigns"
   />
   <figcaption>Follower growth improves when creative direction and execution stay aligned</figcaption>
@@ -86,7 +86,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-trend-watching-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/4.webp"
     alt="Trend tracking dashboard for TikTok sounds hashtags and content formats"
   />
   <figcaption>Trend awareness helps content reach the right audience faster</figcaption>
@@ -112,7 +112,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-quality-content-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/40.webp"
     alt="High-quality short-form video production setup with lighting and framing"
   />
   <figcaption>Small production upgrades can significantly improve perceived content quality</figcaption>
@@ -133,7 +133,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/42.webp"
     alt="Performance trends from hashtag experiments and challenge-based TikTok posts"
   />
   <figcaption>Hashtag and challenge testing helps improve discoverability over time</figcaption>
@@ -158,7 +158,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/28.webp"
     alt="Weekly TikTok posting schedule planned in a content calendar"
   />
   <figcaption>Batching and scheduling help maintain consistent TikTok output</figcaption>
@@ -182,7 +182,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-how-to-become-a-community-manager.png"
+    src="/images/blogs-images-stocks/40.webp"
     alt="Community manager engaging with audience comments and creator interactions"
   />
   <figcaption>Active community interaction helps convert viewers into long-term followers</figcaption>
@@ -207,7 +207,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics.webp"
+    src="/images/blogs-images-stocks/30.webp"
     alt="TikTok analytics dashboard showing follower growth and engagement metrics"
   />
   <figcaption>Analytics-driven iteration is essential for sustainable TikTok growth</figcaption>
@@ -231,7 +231,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-cross-posting.webp"
+    src="/images/blogs-images-stocks/40.webp"
     alt="Cross-platform distribution workflow for TikTok videos"
   />
   <figcaption>Cross-promotion expands reach beyond TikTok alone</figcaption>
@@ -255,7 +255,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+    src="/images/blogs-images-stocks/64.webp"
     alt="Centralized social media dashboard used to schedule and optimize TikTok content"
   />
   <figcaption>Mydrop AI helps teams execute faster with less manual overhead</figcaption>
@@ -279,7 +279,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+    src="/images/blogs-images-stocks/23.webp"
     alt="Social media management platform supporting TikTok growth planning"
   />
   <figcaption>Centralized workflows make TikTok growth easier to sustain long term</figcaption>

@@ -54,7 +54,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+    src="/images/blogs-images-stocks/69.webp"
     alt="Business team planning a social media strategy with centralized tools"
   />
   <figcaption>Social tools simplify execution so teams can focus on growth</figcaption>
@@ -98,7 +98,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+    src="/images/blogs-images-stocks/63.webp"
     alt="Continuous social media workflow cycle from creation to analysis"
   />
   <figcaption>A complete workflow loop turns social media into a repeatable process</figcaption>
@@ -126,7 +126,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/20.webp"
     alt="Publishing and listening tools mapped across a unified social calendar"
   />
   <figcaption>Tool categories work best when connected in one workflow</figcaption>
@@ -148,7 +148,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics-management-listening-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/71.webp"
     alt="Advanced analytics and listening dashboard available in paid social tools"
   />
   <figcaption>Advanced features often become essential as operations grow</figcaption>
@@ -170,7 +170,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-cross-posting.webp"
+    src="/images/blogs-images-stocks/30.webp"
     alt="Cross-platform publishing workflow connected to performance measurement"
   />
   <figcaption>Integrated tools improve both execution speed and decision quality</figcaption>
@@ -199,7 +199,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-smiling-woman-looking-at-phone.png"
+    src="/images/blogs-images-stocks/66.webp"
     alt="Business owner reviewing social engagement metrics on mobile"
   />
   <figcaption>Social tools help businesses stay responsive on every major channel</figcaption>
@@ -222,7 +222,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+    src="/images/blogs-images-stocks/67.webp"
     alt="Social media tools interface centralizing publishing and reporting"
   />
   <figcaption>A centralized platform helps convert daily tasks into structured growth</figcaption>

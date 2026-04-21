@@ -53,7 +53,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-organic-reach-counter.webp"
+    src="/images/blogs-images-stocks/67.webp"
     alt="Analytics card showing unique audience reach for a campaign"
   />
   <figcaption>Reach tracks how many unique people saw your content</figcaption>
@@ -82,7 +82,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-optimisation-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/12.webp"
     alt="Content optimization board with post timing and targeting notes"
   />
   <figcaption>Optimize timing and targeting to increase unique visibility</figcaption>
@@ -111,7 +111,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-total-likes-counter.webp"
+    src="/images/blogs-images-stocks/21.webp"
     alt="Performance card showing repeated post visibility and interactions"
   />
   <figcaption>Impressions indicate how frequently your audience is exposed to content</figcaption>
@@ -139,7 +139,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-graphs-and-curves-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/11.webp"
     alt="Comparison chart illustrating reach and impressions trends"
   />
   <figcaption>Compare breadth and frequency to diagnose campaign performance</figcaption>
@@ -167,7 +167,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-graphs-and-curves-showing-the-benefits-of-mydrop-vs-without-mydrop.png"
+    src="/images/blogs-images-stocks/47.webp"
     alt="Performance trend lines improving after strategy optimization"
   />
   <figcaption>Balanced metric analysis supports better strategic decisions</figcaption>
@@ -195,7 +195,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics.webp"
+    src="/images/blogs-images-stocks/29.webp"
     alt="Analytics dashboard displaying campaign performance by channel"
   />
   <figcaption>Track reach and impressions regularly to guide iteration</figcaption>
@@ -223,7 +223,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-smiling-couple-looking-at-laptop-in-their-small-shop.png"
+    src="/images/blogs-images-stocks/8.webp"
     alt="Small business owners reviewing social campaign performance together"
   />
   <figcaption>Data-informed iteration turns awareness into business outcomes</figcaption>
@@ -249,7 +249,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+    src="/images/blogs-images-stocks/28.webp"
     alt="Team collaborating on social campaign planning and audience engagement"
   />
   <figcaption>Strong creative and engagement discipline lift both reach and impressions</figcaption>

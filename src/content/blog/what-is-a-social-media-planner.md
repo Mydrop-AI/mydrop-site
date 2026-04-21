@@ -53,7 +53,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-full-of-content.png"
+    src="/images/blogs-images-stocks/15.webp"
     alt="Weekly social media calendar planned in advance with platform-specific content"
   />
   <figcaption>Planning ahead keeps publishing consistent and reduces daily pressure</figcaption>
@@ -68,7 +68,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-posts-design.png"
+    src="/images/blogs-images-stocks/16.webp"
     alt="Social media planner showing post queue and publishing workflows"
   />
   <figcaption>Planners combine creation, scheduling, and review in one interface</figcaption>
@@ -96,7 +96,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics.webp"
+    src="/images/blogs-images-stocks/53.webp"
     alt="Social analytics panel tracking mentions hashtags and engagement metrics"
   />
   <figcaption>Metrics and automation help teams iterate faster with less effort</figcaption>
@@ -121,7 +121,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-high-organic-reach-counter.webp"
+    src="/images/blogs-images-stocks/62.webp"
     alt="Engagement growth indicators linked to consistent scheduling workflows"
   />
   <figcaption>Consistency and optimization usually lead to better engagement outcomes</figcaption>
@@ -146,7 +146,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner.png"
+    src="/images/blogs-images-stocks/20.webp"
     alt="Strategic planning board used to evaluate social media tool requirements"
   />
   <figcaption>Choosing the right planner starts with clear operational priorities</figcaption>
@@ -171,7 +171,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-content-calendar-planner-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/65.webp"
     alt="Weekly planner setup for content batching and scheduled publishing"
   />
   <figcaption>Batch planning is one of the fastest ways to stabilize output</figcaption>
@@ -196,7 +196,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-the-continous-improvement-cycle.png"
+    src="/images/blogs-images-stocks/53.webp"
     alt="Continuous optimization cycle for social planning and execution"
   />
   <figcaption>Long-term growth comes from consistent analysis and iteration</figcaption>
@@ -210,7 +210,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-media-editor.png"
+    src="/images/blogs-images-stocks/70.webp"
     alt="AI content creation workspace for social captions and visual assets"
   />
   <figcaption>AI assistance helps teams produce more content with consistent quality</figcaption>
@@ -222,7 +222,7 @@
 </p>
 <figure>
   <img
-    src="/media/images/original-site/legacy-mydrop-dashboard.webp"
+    src="/images/blogs-images-stocks/34.webp"
     alt="Unified social calendar dashboard coordinating multiple channel schedules"
   />
   <figcaption>A unified calendar improves control and visibility across all channels</figcaption>
@@ -250,7 +250,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools.jpeg"
+    src="/images/blogs-images-stocks/7.webp"
     alt="Social media planner interface used to centralize posting and optimization"
   />
   <figcaption>Mydrop AI helps transform social media planning into a repeatable system</figcaption>

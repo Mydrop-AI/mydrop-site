@@ -55,7 +55,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-blog-intro-banner.png"
+    src="/images/blogs-images-stocks/65.webp"
     alt="Influencer campaign briefing workspace with goals and deliverables"
   />
   <figcaption>Start influencer partnerships with clear evaluation criteria</figcaption>
@@ -76,7 +76,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-know-your-audience-design-for-blog-banner-2.png"
+    src="/images/blogs-images-stocks/5.webp"
     alt="Audience demographic breakdown used to evaluate influencer fit"
   />
   <figcaption>Audience fit is more important than follower count alone</figcaption>
@@ -96,7 +96,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-smiling-vlogger-cooking.png"
+    src="/images/blogs-images-stocks/46.webp"
     alt="Creator producing authentic brand content in a real-life setting"
   />
   <figcaption>Authentic storytelling improves trust and campaign performance</figcaption>
@@ -116,7 +116,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-media-editor.png"
+    src="/images/blogs-images-stocks/75.webp"
     alt="Content creation workflow with editing and approval checkpoints"
   />
   <figcaption>Structured production workflows reduce execution risk</figcaption>
@@ -136,7 +136,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-google-rating.webp"
+    src="/images/blogs-images-stocks/36.webp"
     alt="Social proof and campaign outcome indicators from past brand collaborations"
   />
   <figcaption>Past performance data helps forecast future collaboration quality</figcaption>
@@ -156,7 +156,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-analytics.webp"
+    src="/images/blogs-images-stocks/79.webp"
     alt="Campaign KPI dashboard used to evaluate influencer performance"
   />
   <figcaption>Shared KPIs keep influencer campaigns measurable and accountable</figcaption>
@@ -180,7 +180,7 @@
 
 <figure>
   <img
-    src="/media/images/original-site/legacy-social-media-management-tools-2.jpeg"
+    src="/images/blogs-images-stocks/70.webp"
     alt="Social media management platform interface coordinating influencer campaigns"
   />
   <figcaption>A centralized workflow helps manage influencer campaigns efficiently</figcaption>
