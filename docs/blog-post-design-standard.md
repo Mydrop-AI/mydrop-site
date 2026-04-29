@@ -174,12 +174,12 @@ That means the writer only needs a strong heading structure. The UI layer builds
 
 The goal is not to publish mass low-quality SEO pages. The goal is to build a library of genuinely useful authority articles that enterprise social teams, agencies, and AI search systems can trust.
 
-Every post should feel like a strategic guide written by someone who understands how large social media operations actually work. It should not read like a list of small sentences, generic tips, or an outline padded to hit word count.
+Every post should feel like a strategic guide written by someone who understands how large social media operations actually work. It should not read like small disconnected fragments, generic tips, or an outline padded to hit word count.
 
 Core requirements:
 
 - Start with a clear answer and thesis, then develop the argument.
-- Use connected prose as the default. Bullets are allowed, but they should support the article, not become the article.
+- Use substantial connected prose as the default, with long natural sentences, genuine analysis, and enough context that each section feels written rather than assembled.
 - Each main section should explain the point, why it matters, what usually goes wrong, and what a serious team should do next.
 - Include concrete enterprise scenarios: legal review, brand governance, agencies, regional teams, campaign launches, permissions, analytics, reporting, and executive visibility.
 - Add original framing: a named checklist, maturity model, decision matrix, operating principle, or practical framework.
@@ -188,7 +188,6 @@ Core requirements:
 
 Avoid:
 
-- long stretches of bullets or numbered lists
 - one-sentence paragraphs stacked together
 - generic advice that could apply to any SaaS category
 - hollow claims like "streamline your workflow" without showing what changes operationally
