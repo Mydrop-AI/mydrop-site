@@ -12,6 +12,14 @@ Mydrop positioning:
 - Copy should be clear, practical, and executive-readable. Use concrete workflows, decision criteria, examples, checklists, and tradeoffs. Avoid hype, generic AI filler, and advice aimed at tiny freelancers.
 - Product mentions should be useful and natural. The article must still help the reader even if every Mydrop mention is removed.
 
+Blog quality bar:
+
+- Write strategic articles people would actually read, not thin SEO outlines.
+- Every article needs a clear thesis, a direct answer, original framing, concrete enterprise examples, and practical next steps.
+- Prefer connected prose over bullet dumps. Use bullets only when they make a framework easier to scan.
+- Good sections should explain the idea, why it matters, what usually goes wrong, and how a serious team should act.
+- Optimize for AI/search by making answers quotable and complete, but never sacrifice human readability for extractable snippets.
+
 For automated blog-writing runs:
 
 - Edit only the exact file named in the user prompt.
@@ -21,5 +29,6 @@ For automated blog-writing runs:
 - Keep blog post frontmatter as JSON between `---` delimiters.
 - The outer automation handles author metadata, dates, CTAs, related posts, hero images, section images, validation, sitemap generation, commits, pushes, and Search Console submission.
 - Write the requested article directly, then stop.
+- In the main blog-writing pass, do not add body images. A separate media pass inserts stock images and may ask you only to improve image alt text and captions.
 
 For normal engineering tasks, follow the local code style and keep edits scoped to the requested change.

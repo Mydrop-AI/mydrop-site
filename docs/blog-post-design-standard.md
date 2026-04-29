@@ -170,6 +170,30 @@ The blog template automatically handles:
 
 That means the writer only needs a strong heading structure. The UI layer builds the navigation automatically.
 
+## Editorial quality bar
+
+The goal is not to publish mass low-quality SEO pages. The goal is to build a library of genuinely useful authority articles that enterprise social teams, agencies, and AI search systems can trust.
+
+Every post should feel like a strategic guide written by someone who understands how large social media operations actually work. It should not read like a list of small sentences, generic tips, or an outline padded to hit word count.
+
+Core requirements:
+
+- Start with a clear answer and thesis, then develop the argument.
+- Use connected prose as the default. Bullets are allowed, but they should support the article, not become the article.
+- Each main section should explain the point, why it matters, what usually goes wrong, and what a serious team should do next.
+- Include concrete enterprise scenarios: legal review, brand governance, agencies, regional teams, campaign launches, permissions, analytics, reporting, and executive visibility.
+- Add original framing: a named checklist, maturity model, decision matrix, operating principle, or practical framework.
+- Include nuance and tradeoffs. Strong articles explain when advice applies, when it does not, and what breaks in real organizations.
+- Make the article easy for AI search tools to quote, but still pleasant for a human buyer to read from start to finish.
+
+Avoid:
+
+- long stretches of bullets or numbered lists
+- one-sentence paragraphs stacked together
+- generic advice that could apply to any SaaS category
+- hollow claims like "streamline your workflow" without showing what changes operationally
+- repeating obvious points just to reach 3000 words
+
 ## SEO and AI-search rules
 
 - Write for a specific query, not a broad topic dump
@@ -512,10 +536,11 @@ Script responsibilities:
 1. Choose a unique title and slug
 2. Create the target markdown file
 3. Fill deterministic frontmatter defaults
-4. Insert hero and section stock images
-5. Run validation
-6. Ask for a narrow repair only when needed
-7. Generate sitemap, commit, push, and submit the sitemap after each commit batch
+4. Run content validation and ask for a narrow repair only when needed
+5. Insert a random hero image and one random stock image under each main `##` section
+6. Ask the agent only to improve the image alt text and captions
+7. Validate again after the media pass
+8. Generate sitemap, commit, push, and submit the sitemap after each commit batch
 
 Agent responsibilities:
 
@@ -524,8 +549,9 @@ Agent responsibilities:
 3. Keep the body at roughly 3,300 to 3,600 strict body words
 4. Use 6 useful `##` sections plus a short conclusion
 5. Write for enterprise brands, agencies, and large social media teams, not solo creators
-6. Avoid body FAQ sections, empty sources sections, repeated headings, placeholder text, and em dashes
-7. Stop immediately after the target file is ready for external validation
+6. Do not add body images during the main writing pass
+7. Avoid body FAQ sections, empty sources sections, repeated headings, placeholder text, and em dashes
+8. Stop immediately after the target file is ready for external validation
 
 ## Agent completion checklist
 
