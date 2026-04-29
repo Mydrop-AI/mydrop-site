@@ -128,7 +128,7 @@ What to avoid:
 Good style examples:
 
 - `If your approval process lives in Slack threads, screenshots, and last-minute pings, things get messy fast.`
-- `A good workflow does not just protect quality. It also gives your team room to move faster without second-guessing every post.`
+- `A good workflow does not just protect quality. It gives regional, brand, agency, and legal teams room to move faster without second-guessing every post.`
 - `This is where most teams get stuck: the content is ready, but nobody is sure who is supposed to approve it.`
 
 Bad style examples:
@@ -191,7 +191,7 @@ AI systems and web agents usually search with explicit query patterns, not cleve
 - comparisons: `x vs y`
 - best-option queries: `best x for y`
 - problem queries: `why x happens`, `x mistakes`, `how to fix x`
-- scoped operational queries: `x for small teams`, `x for agencies`, `x for creators`
+- scoped operational queries: `x for enterprise teams`, `x for agencies`, `x for brands`, `x for multi-brand companies`
 - proof or examples queries: `x examples`, `x template`, `x checklist`
 
 That means titles should be optimized for fetchability:
@@ -210,6 +210,35 @@ The blog has 2 goals:
 - create trust and qualified demand for Mydrop
 
 That means posts must help first and sell second.
+
+## Audience and positioning
+
+Mydrop should be positioned as a social media management platform for enterprise brands, large marketing teams, agencies, and multi-brand organizations.
+
+Write for:
+
+- heads of social and social media directors
+- brand and communications teams
+- agency operations leads
+- enterprise marketing managers
+- distributed regional or market teams
+- teams comparing Hootsuite-style tools, approval platforms, publishing tools, and content operations systems
+
+The reader is not mainly a solo creator or tiny freelancer. They care about:
+
+- centralizing social media operations
+- reducing approval delays
+- keeping brand governance consistent across teams and markets
+- managing permissions, legal review, and stakeholder sign-off
+- coordinating campaigns across many channels, brands, clients, or regions
+- improving reporting visibility for leadership and clients
+- scaling content production without losing control
+
+Human drivers still matter. The strongest emotional levers are:
+
+- status: the team looks organized, modern, reliable, and in control
+- control: fewer last-minute fires, fewer scattered tools, clearer ownership, safer publishing
+- trust: leaders, clients, and stakeholders can see that the process is governed and repeatable
 
 Rules:
 
@@ -250,7 +279,7 @@ The safest pattern is:
 
 The agent must choose topics that are:
 
-- tightly tied to Mydrop's real problem space: social media management, content operations, scheduling, community management, creator workflows, AI-assisted marketing, analytics, approvals, collaboration
+- tightly tied to Mydrop's real problem space: enterprise social media management, content operations, scheduling, publishing governance, community management, AI-assisted marketing, analytics, approvals, collaboration, permissions, agency workflows, multi-brand operations
 - phrased like real search intent, not brand slogans
 - narrow enough that one article can be the best answer
 - evergreen or refreshable, not short-lived news
@@ -304,9 +333,11 @@ Prefer these title styles:
 - `X examples`
 - `X ideas`
 - `When should you use X`
-- `X for small teams`
+- `X for enterprise teams`
 - `X for agencies`
-- `X for creators`
+- `X for brands`
+- `X for multi-brand companies`
+- `X alternative`
 - `X benchmark`
 - `X audit`
 - `X strategy`
@@ -361,6 +392,7 @@ Topic quality test:
 - Can the article be broken into 4 to 8 clean sections?
 - Would a user searching this likely be helped by Mydrop?
 - Would an AI system have clear, quotable answers to extract?
+- Would the topic attract a serious brand, agency, or enterprise social team rather than only a solo creator?
 
 ## Competitor inspiration
 
@@ -381,7 +413,7 @@ Use this process:
    - examples and formatting choices
    - where the article feels strong
    - where the article feels weak, generic, padded, or overly promotional
-4. Write a better post for Mydrop
+4. Write a better post for Mydrop, with stronger enterprise use cases and less generic advice
 
 Rules:
 
@@ -389,7 +421,7 @@ Rules:
 - never clone the structure section by section
 - never lightly rewrite their article
 - use competitor reading only to understand what already exists and how to beat it
-- the Mydrop post should have a sharper title, clearer answer-first intro, stronger examples, and a warmer, more human tone
+- the Mydrop post should have a sharper title, clearer answer-first intro, stronger enterprise examples, and a warmer, more human tone
 
 ## Images
 
@@ -402,7 +434,7 @@ Rules:
 - Use only images from `public/images/blogs-images-stocks/` unless the user says otherwise
 - Treat this folder as a fixed stock pool: `1.webp` through `80.webp`
 - File names in that folder are numeric, so never use file names as alt text
-- Write a fresh, human alt text for each chosen image, related to social media, content planning, analytics, creators, team workflows, or digital marketing
+- Write a fresh, human alt text for each chosen image, related to social media, content planning, analytics, brand teams, agency workflows, approvals, collaboration, or digital marketing
 - Do not waste time listing the folder contents or checking usage history
 - Just pick random image numbers from `1` to `80` and move on
 - Body images are not optional for main sections, and they must support the nearby section
@@ -465,39 +497,35 @@ Minimum required length:
 Operational target:
 
 - Aim for roughly 3000 to 3800 words for most posts
-- Go longer only when the query genuinely needs deeper comparison, examples, or FAQs
+- Go longer only when the query genuinely needs deeper comparison, examples, or edge cases
 - Never add filler just to hit the minimum
 - Do not exceed 4500 words
 
-The practical way to hit this reliably is to write section by section, then expand weak sections with examples, edge cases, mistakes, decision criteria, and FAQs.
+The practical way to hit this reliably is to draft a complete article in one pass, then expand only the weakest sections when validation says the strict body word count is low.
 
 ## Bot workflow
 
-1. Copy `src/content/blog/_template.md`
-2. Read existing blog titles and slugs to avoid duplicates
-3. Choose the next topic using the topic-selection rules above
-4. Rename the template to the final slug
-5. Fill every frontmatter field
-6. Pick a stock image from `public/images/blogs-images-stocks/`
-7. Write a real alt text and caption for that image
-8. Build a section plan before writing the article
-9. Write the article section by section, not all at once
-10. Before writing each new section, reread the current post file and compare it to the section plan
-11. If the next section already exists, do not rewrite or append it again
-12. After each section, append it to the same post file exactly once
-13. Use the full article plan as a checklist and complete every section
-14. Add internal links where relevant
-15. Add sources for factual claims
-16. Check the final word count and keep expanding until it is at least 3,000 words
-17. Stop expanding once the post is in the 3,000 to 3,800 range unless the topic clearly needs more depth
-18. If the post goes above 4,500 words, trim duplication and weak sections instead of adding more
-19. If a heading appears more than once unintentionally, stop and clean the file before continuing
-20. Before running checks, remove every em dash `, ` from the article and rewrite those sentences cleanly
-21. Verify every main `##` section has one relevant image with alt text
-22. Run `npm run validate:blog`
-23. Run `npm run build`
-24. If validation fails, fix the post file only
-25. If the article is weak, rewrite the post file only and rerun validation/build
+When a post is generated by `scripts/copilot_blog_batch.py`, the script owns deterministic work and the agent owns content only.
+
+Script responsibilities:
+
+1. Choose a unique title and slug
+2. Create the target markdown file
+3. Fill deterministic frontmatter defaults
+4. Insert hero and section stock images
+5. Run validation
+6. Ask for a narrow repair only when needed
+7. Generate sitemap, commit, push, and submit the sitemap after each commit batch
+
+Agent responsibilities:
+
+1. Edit only the exact target file provided by the script
+2. Write the full article in one pass
+3. Keep the body at roughly 3,300 to 3,600 strict body words
+4. Use 6 useful `##` sections plus a short conclusion
+5. Write for enterprise brands, agencies, and large social media teams, not solo creators
+6. Avoid body FAQ sections, empty sources sections, repeated headings, placeholder text, and em dashes
+7. Stop immediately after the target file is ready for external validation
 
 ## Agent completion checklist
 
@@ -529,12 +557,12 @@ Before stopping, the agent must verify:
 
 - Keep the task narrow: produce exactly one post file
 - Do not ask the agent to redesign the system
-- Tell it to inspect existing posts first
-- Tell it to create a writing plan first, then write the article one section at a time
-- Tell it to use a checklist of sections as a task list
-- Tell it to reread the file before every append and skip any section that already exists
+- Give the agent one exact file path, title, slug, and topic angle
+- Do not ask it to inspect existing posts unless a duplicate slipped through
+- Do not ask it to create a separate plan or checklist
+- Do not ask it to write section by section or reread the file before each section
 - Tell it to stop in the 3,000 to 3,800 word range unless the topic clearly needs extra depth
-- Tell it to loop only on the article file until validation/build pass
+- Tell it not to run validation or build; the outer automation does that
 - Tell it to prefer simple markdown and simple JSON frontmatter
 - Tell it not to touch routes, sitemap, React files, or scripts
 - Tell it explicitly that the tone must feel human, conversational, warm, and specific
