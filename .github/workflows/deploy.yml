@@ -38,16 +38,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Chrome for react-snap
+      - name: Resolve Chrome for react-snap
         run: |
+          set -euo pipefail
+
+          for chrome_bin in \
+            google-chrome-stable \
+            google-chrome \
+            chromium \
+            chromium-browser; do
+            if command -v "$chrome_bin" >/dev/null 2>&1; then
+              echo "PUPPETEER_EXECUTABLE_PATH=$(command -v "$chrome_bin")" >> "$GITHUB_ENV"
+              exit 0
+            fi
+          done
+
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
+          echo "PUPPETEER_EXECUTABLE_PATH=$(command -v google-chrome-stable)" >> "$GITHUB_ENV"
 
       - name: Build
         run: npm run build
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

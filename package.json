@@ -18,7 +18,7 @@
     "inlineCss": false,
     "skipThirdPartyRequests": true,
     "crawl": false,
-    "concurrency": 6,
+    "concurrency": 10,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
