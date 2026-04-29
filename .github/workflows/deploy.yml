@@ -35,27 +35,45 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Resolve Chrome for react-snap
+      - name: Install dependencies and resolve Chrome
         run: |
           set -euo pipefail
 
-          for chrome_bin in \
-            google-chrome-stable \
-            google-chrome \
-            chromium \
-            chromium-browser; do
-            if command -v "$chrome_bin" >/dev/null 2>&1; then
-              echo "PUPPETEER_EXECUTABLE_PATH=$(command -v "$chrome_bin")" >> "$GITHUB_ENV"
-              exit 0
-            fi
-          done
+          npm ci &
+          npm_pid=$!
 
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          echo "PUPPETEER_EXECUTABLE_PATH=$(command -v google-chrome-stable)" >> "$GITHUB_ENV"
+          (
+            for chrome_bin in \
+              google-chrome-stable \
+              google-chrome \
+              chromium \
+              chromium-browser; do
+              if command -v "$chrome_bin" >/dev/null 2>&1; then
+                echo "PUPPETEER_EXECUTABLE_PATH=$(command -v "$chrome_bin")" >> "$GITHUB_ENV"
+                exit 0
+              fi
+            done
+
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+            echo "PUPPETEER_EXECUTABLE_PATH=$(command -v google-chrome-stable)" >> "$GITHUB_ENV"
+          ) &
+          chrome_pid=$!
+
+          set +e
+          wait "$npm_pid"
+          npm_status=$?
+          wait "$chrome_pid"
+          chrome_status=$?
+          set -e
+
+          if [ "$npm_status" -ne 0 ]; then
+            exit "$npm_status"
+          fi
+
+          if [ "$chrome_status" -ne 0 ]; then
+            exit "$chrome_status"
+          fi
 
       - name: Build
         run: npm run build
