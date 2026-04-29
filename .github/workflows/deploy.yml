@@ -8,6 +8,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
 
 permissions:
   contents: read
@@ -39,7 +40,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          npm ci &
+          npm ci --prefer-offline --no-audit --no-fund &
           npm_pid=$!
 
           (
