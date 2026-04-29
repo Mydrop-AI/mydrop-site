@@ -53,15 +53,6 @@ const staticRoutes = [
   "/contact",
 ];
 
-function getLegacyFrenchRoutes(routes) {
-  const legacyAliases = ["/fr", "/fr/home", "/fr/blogs"];
-  const prefixedRoutes = routes
-    .filter((route) => route !== "/")
-    .map((route) => `/fr${route}`);
-
-  return [...new Set([...legacyAliases, ...prefixedRoutes])];
-}
-
 function setupBasePathMirror(distDir, basePath) {
   if (basePath === "/") {
     return null;
@@ -198,16 +189,16 @@ async function main() {
   const blogPostRoutes = getBlogPostRoutes();
   const authorRoutes = getAuthorRoutes();
   const allPrimaryRoutes = [...staticRoutes, ...authorRoutes, ...blogPostRoutes];
-  const legacyFrenchRoutes = getLegacyFrenchRoutes(allPrimaryRoutes);
   const port = await getAvailablePort(resolvePreferredPort());
 
   try {
     await run({
       source: packageReactSnapConfig.source ?? "dist",
       port,
-      include: [...allPrimaryRoutes, ...legacyFrenchRoutes],
+      include: allPrimaryRoutes,
       inlineCss: packageReactSnapConfig.inlineCss ?? false,
       skipThirdPartyRequests: packageReactSnapConfig.skipThirdPartyRequests ?? true,
+      crawl: packageReactSnapConfig.crawl ?? false,
       concurrency: packageReactSnapConfig.concurrency ?? 1,
       puppeteerArgs: packageReactSnapConfig.puppeteerArgs ?? [
         "--no-sandbox",

@@ -6,19 +6,19 @@
   </url>
   <url>
     <loc>https://www.mydropai.com/authors/ariana-collins</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/authors/evan-blake</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/authors/maya-chen</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/blog</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/contact</loc>
@@ -149,6 +149,14 @@
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/ai-content-repurposing-for-enterprise-brands-playbook</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/ai-first-content-planning-multi-brand-social-media</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/ai-generated-captions-vs-human-written-captions-which-should-solo-social-managers-use</loc>
     <lastmod>2026-04-18</lastmod>
   </url>
@@ -245,8 +253,16 @@
     <lastmod>2026-04-19</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/best-hootsuite-alternatives-for-enterprise-social-media-teams-2026</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/best-influencer-outreach-tools-for-solo-social-managers-2026</loc>
     <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/best-lead-magnets-for-solo-social-managers</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/best-link-in-bio-tools-for-solo-social-managers-2026</loc>
@@ -273,6 +289,10 @@
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/best-tools-and-workflows-for-agency-social-media-operations</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/best-ugc-platforms-for-solo-social-managers-2026</loc>
     <lastmod>2026-04-17</lastmod>
   </url>
@@ -281,16 +301,76 @@
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/coordinating-global-product-launches-on-social-media</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/creating-vs-curating-which-should-solo-social-managers-prioritize</loc>
     <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/cross-brand-social-media-playbooks-scale-creative-consistency-enterprise</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/delegated-publishing-audit-trails-enterprise-social-media-governance</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/email-vs-social-which-channel-should-solo-social-managers-prioritize</loc>
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/enterprise-social-asset-libraries-reduce-creative-waste-speed-publishing</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/enterprise-social-media-attribution-prove-roi</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/enterprise-social-media-experimentation-run-ab-tests-scale</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/enterprise-social-media-governance-checklist</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/enterprise-social-media-reporting-stack-for-cmos</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/evaluate-hootsuite-alternatives-enterprise-governance-approvals</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/hootsuite-alternatives-enterprise</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/hootsuite-alternatives-enterprise-feature-roi-comparison</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/hootsuite-alternatives-enterprise-migration-checklist-roi</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/hootsuite-alternatives-enterprise-scale-teams-brands-ai</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/hootsuite-alternatives-for-enterprise-scalable-publishing-collaboration-analytics</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/how-much-content-should-solo-social-managers-automate</loc>
     <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/how-to-audit-and-enforce-social-media-brand-compliance-at-scale</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/how-to-audit-and-optimize-your-social-media-content-calendar</loc>
@@ -329,6 +409,10 @@
     <lastmod>2026-04-15</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/how-to-build-brand-voice-matrix-enterprise-social-teams</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/how-to-create-a-social-media-analytics-dashboard</loc>
     <lastmod>2026-04-15</lastmod>
   </url>
@@ -339,6 +423,10 @@
   <url>
     <loc>https://www.mydropai.com/post/how-to-get-started-with-content-creation-in-2024</loc>
     <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/how-to-localize-social-media-content-at-scale-for-multi-brand-enterprises</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/how-to-manage-multiple-social-media-accounts-without-burning-out</loc>
@@ -369,12 +457,24 @@
     <lastmod>2026-03-31</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/measure-enterprise-social-media-roi-attribute-revenue</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/mistakes-monetizing-social-media-solo-managers</loc>
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/monthly-vs-weekly-content-planning-for-solo-social-managers</loc>
     <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/multi-brand-social-calendar-scale-across-regions</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/multi-brand-social-media-management-vs-ad-hoc-posting</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/mydrop-18-point-automation-health-checklist</loc>
@@ -397,8 +497,16 @@
     <lastmod>2026-04-17</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/native-video-vs-reused-video-which-should-solo-social-managers-use</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/one-page-social-strategy-for-solo-social-managers</loc>
     <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/operationalizing-social-media-insights-enterprise-decision-making</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/optimal-caption-lengths-for-solo-social-managers</loc>
@@ -437,6 +545,18 @@
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
+    <loc>https://www.mydropai.com/post/role-based-permissions-enterprise-social-media</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/scalable-multi-brand-publishing-governance-approvals-ai-workflows</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/scaling-ai-content-repurposing-across-brands-regions</loc>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.mydropai.com/post/short-form-vs-long-form-content-for-solo-social-managers</loc>
     <lastmod>2026-04-17</lastmod>
   </url>
@@ -447,6 +567,10 @@
   <url>
     <loc>https://www.mydropai.com/post/skyrocket-your-tiktok-followers-with-these-tips-for-brands-creators</loc>
     <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/structure-enterprise-social-media-operations-for-scale</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/top-12-growth-tools-for-solo-social-managers-2026</loc>
@@ -507,6 +631,10 @@
   <url>
     <loc>https://www.mydropai.com/post/when-should-solo-social-managers-automate-engagement</loc>
     <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mydropai.com/post/when-should-you-use-enterprise-social-media-approval-workflows</loc>
+    <lastmod>2026-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.mydropai.com/post/when-to-archive-vs-update-old-social-posts</loc>

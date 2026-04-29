@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page not found</title>
+    <script>
+      const localePathPattern = /^\/(fr|en|es|de|it|pt|nl|ja|ko|zh)(\/|$)/i;
+
+      if (localePathPattern.test(window.location.pathname)) {
+        window.location.replace("/");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Page not found.</p>
+    <p><a href="/">Go to the homepage</a></p>
+  </body>
+</html>

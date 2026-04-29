@@ -11,6 +11,22 @@ import PricingPage from "@/pages/PricingPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsAndServicesPage from "@/pages/TermsAndServicesPage";
 
+const localeRedirectRoutes: RouteObject[] = [
+  "fr",
+  "en",
+  "es",
+  "de",
+  "it",
+  "pt",
+  "nl",
+  "ja",
+  "ko",
+  "zh",
+].map((locale) => ({
+  path: `${locale}/*`,
+  element: <Navigate to="/" replace />,
+}));
+
 const routes: RouteObject[] = [
   {
     element: <SiteLayout />,
@@ -24,7 +40,7 @@ const routes: RouteObject[] = [
       { path: "terms-and-services", element: <TermsAndServicesPage /> },
       { path: "faq", element: <FAQPage /> },
       { path: "contact", element: <ContactPage /> },
-      { path: "fr/*", element: <Navigate to="/" replace /> },
+      ...localeRedirectRoutes,
       { path: "*", element: <NotFoundPage /> },
     ],
   },
