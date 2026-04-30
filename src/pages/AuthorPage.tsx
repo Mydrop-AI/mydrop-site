@@ -101,7 +101,7 @@ export default function AuthorPage() {
               >
                 <img
                   src={resolveAssetPath(post.heroImage)}
-                  alt={post.heroImageAlt}
+                  alt={post.heroImageAlt || post.title}
                   className="h-44 w-full object-cover"
                   loading="lazy"
                 />

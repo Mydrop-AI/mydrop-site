@@ -4,7 +4,7 @@ import {
   CalendarDays,
   Clock3,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import SEO from "@/components/SEO";
 import {
@@ -14,7 +14,7 @@ import {
   organizationSchema,
   SITE_URL,
 } from "@/lib/seo";
-import { getBlogPostBySlug, getRelatedBlogPosts, type BlogCta } from "@/lib/blog";
+import { getRelatedBlogPosts, loadBlogPostBySlug, type BlogCta, type BlogPost } from "@/lib/blog";
 import { resolveAssetPath } from "@/lib/paths";
 import { Button } from "@/components/ui/button";
 import NotFoundPage from "@/pages/NotFoundPage";
@@ -167,12 +167,52 @@ function CtaButton({
 
 export default function BlogPostPage() {
   const { slug } = useParams();
-  const post = getBlogPostBySlug(slug ?? "");
+  const [post, setPost] = useState<BlogPost | null | undefined>(undefined);
+
+  useEffect(() => {
+    let isActive = true;
+
+    if (!slug) {
+      setPost(null);
+      return undefined;
+    }
+
+    setPost(undefined);
+    void loadBlogPostBySlug(slug)
+      .then((loadedPost) => {
+        if (isActive) {
+          setPost(loadedPost);
+        }
+      })
+      .catch(() => {
+        if (isActive) {
+          setPost(null);
+        }
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, [slug]);
+
+  if (post === undefined) {
+    return (
+      <section className="section-shell section-shell--deep">
+        <div className="site-container section-content section-content--compact">
+          <p className="section-kicker">Loading article</p>
+        </div>
+      </section>
+    );
+  }
 
   if (!post) {
     return <NotFoundPage />;
   }
 
+  return <BlogPostContent post={post} />;
+}
+
+function BlogPostContent({ post }: { post: BlogPost }) {
   const canonicalPath = post.canonicalPath;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
   const relatedPosts = getRelatedBlogPosts(post, 3);
@@ -367,7 +407,8 @@ export default function BlogPostPage() {
                   <Link to={`/authors/${post.author.slug}`} className="blog-meta-author transition hover:text-white">
                     <img
                       src={resolveAssetPath(post.author.image)}
-                      alt={post.author.name}
+                      alt=""
+                      aria-hidden="true"
                       className="blog-meta-author__image"
                       loading="lazy"
                     />
@@ -391,7 +432,7 @@ export default function BlogPostPage() {
               <figure className="blog-hero">
                 <img
                   src={resolveAssetPath(post.heroImage)}
-                  alt={post.heroImageAlt}
+                  alt={post.heroImageAlt || post.title}
                   className="h-[210px] w-full object-cover md:h-[360px]"
                   loading="eager"
                   itemProp="image"

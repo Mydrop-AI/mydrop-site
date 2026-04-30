@@ -1,6 +1,5 @@
-import { marked } from "marked";
+import { blogPostMetadata } from "@/generated/blog-metadata";
 import { resolveAssetPath } from "@/lib/paths";
-import { blogOrderTimestamps } from "@/generated/blog-order";
 
 export interface BlogAuthor {
   name: string;
@@ -19,7 +18,7 @@ export interface BlogAuthorFrontmatter {
 
 export interface BlogAuthorProfile extends BlogAuthor {
   bio: string;
-  posts: BlogPost[];
+  posts: BlogPostSummary[];
 }
 
 export interface BlogCta {
@@ -58,7 +57,7 @@ export interface BlogPostFrontmatter {
   sources?: BlogSourceItem[];
 }
 
-export interface BlogPost
+export interface BlogPostSummary
   extends Omit<
     BlogPostFrontmatter,
     "author" | "updatedAt" | "featured" | "relatedSlugs" | "primaryCta" | "secondaryCta" | "faq" | "sources"
@@ -72,48 +71,17 @@ export interface BlogPost
   sources: BlogSourceItem[];
   updatedAt: string;
   canonicalPath: string;
-  html: string;
-  markdown: string;
+  sourcePath: string;
   wordCount: number;
   readTimeMinutes: number;
   readTimeLabel: string;
-  sourcePath: string;
   createdAtTimestamp: number;
 }
 
-const DEFAULT_PRIMARY_CTA: BlogCta = {
-  label: "Start with Mydrop",
-  href: "https://app.mydropai.com/register",
-};
-
-const DEFAULT_SECONDARY_CTA: BlogCta = {
-  label: "Talk to the team",
-  href: "/contact",
-};
-
-const AUTHOR_PROFILES: Array<Omit<BlogAuthor, "bio"> & { bio: string }> = [
-  {
-    slug: "ariana-collins",
-    name: "Ariana Collins",
-    role: "Social Media Strategy Lead",
-    image: "/images/authors/ariana-collins.png",
-    bio: "Ariana Collins writes about content planning, campaign strategy, and the systems fast-moving teams need to stay consistent without sounding generic.",
-  },
-  {
-    slug: "evan-blake",
-    name: "Evan Blake",
-    role: "Content Operations Editor",
-    image: "/images/authors/evan-blake.png",
-    bio: "Evan Blake focuses on approval workflows, publishing operations, and practical ways to make collaboration smoother across social, content, and client teams.",
-  },
-  {
-    slug: "maya-chen",
-    name: "Maya Chen",
-    role: "Growth Content Editor",
-    image: "/images/authors/maya-chen.png",
-    bio: "Maya Chen covers analytics, audience growth, and AI-assisted marketing workflows, with an emphasis on advice teams can actually apply this week.",
-  },
-];
+export interface BlogPost extends BlogPostSummary {
+  html: string;
+  markdown: string;
+}
 
 const FRONTMATTER_PATTERN = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n?([\s\S]*)$/;
 
@@ -126,10 +94,8 @@ function parseFrontmatter(source: string, filePath: string) {
 
   const [, rawFrontmatter, markdown] = match;
 
-  let frontmatter: BlogPostFrontmatter;
-
   try {
-    frontmatter = JSON.parse(rawFrontmatter) as BlogPostFrontmatter;
+    JSON.parse(rawFrontmatter) as BlogPostFrontmatter;
   } catch (error) {
     throw new Error(
       `Invalid JSON frontmatter in ${filePath}: ${
@@ -139,36 +105,8 @@ function parseFrontmatter(source: string, filePath: string) {
   }
 
   return {
-    frontmatter,
     markdown: markdown.trim(),
   };
-}
-
-function stripHtmlTags(value: string) {
-  return value.replace(/<[^>]+>/g, " ");
-}
-
-function stripMarkdownSyntax(value: string) {
-  return value
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/`[^`]+`/g, " ")
-    .replace(/!\[[^\]]*]\([^)]+\)/g, " ")
-    .replace(/\[[^\]]+]\([^)]+\)/g, " ")
-    .replace(/^>\s+/gm, "")
-    .replace(/^#{1,6}\s+/gm, "")
-    .replace(/[*_~>-]/g, " ");
-}
-
-function countWords(markdown: string) {
-  const plainText = stripMarkdownSyntax(stripHtmlTags(markdown))
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (!plainText) {
-    return 0;
-  }
-
-  return plainText.split(" ").length;
 }
 
 function validateRawImageTag(tag: string) {
@@ -254,223 +192,89 @@ function validateRawHtmlImageTags(markdown: string, filePath: string) {
   }
 }
 
-function buildReadTimeLabel(wordCount: number) {
-  const readTimeMinutes = Math.max(1, Math.round(wordCount / 220));
-  return {
-    readTimeMinutes,
-    readTimeLabel: `${readTimeMinutes} min read`,
-  };
-}
-
 function rewriteRootRelativeUrls(html: string) {
   return html.replace(/\b(href|src)="(\/[^"]*)"/g, (_match, attribute, url) => {
     return `${attribute}="${resolveAssetPath(url)}"`;
   });
 }
 
-function getAuthorProfileForIndex(index: number): BlogAuthor {
-  const profile = AUTHOR_PROFILES[index % AUTHOR_PROFILES.length];
-  return { ...profile };
+function clonePostSummary(post: (typeof blogPostMetadata)[number]): BlogPostSummary {
+  return {
+    ...post,
+    author: { ...post.author },
+    tags: [...post.tags],
+    relatedSlugs: [...post.relatedSlugs],
+    primaryCta: { ...post.primaryCta },
+    secondaryCta: { ...post.secondaryCta },
+    faq: post.faq.map((item) => ({ ...item })),
+    sources: post.sources.map((item) => ({ ...item })),
+  };
 }
 
-function normalizeCta(cta: BlogCta | undefined, fallback: BlogCta) {
-  if (!cta?.label || !cta?.href) {
-    return fallback;
-  }
+export const blogPosts: BlogPostSummary[] = blogPostMetadata.map(clonePostSummary);
 
-  return cta;
+const blogPostModules = import.meta.glob("../content/blog/*.md", {
+  import: "default",
+  query: "?raw",
+}) as Record<string, () => Promise<string>>;
+
+const blogPostCache = new Map<string, Promise<BlogPost | null>>();
+
+export function getBlogPostBySlug(slug: string) {
+  return blogPosts.find((post) => post.slug === slug) ?? null;
 }
 
-function titleFromUrl(url: string) {
-  try {
-    const parsedUrl = new URL(url);
-    const lastSegment = parsedUrl.pathname.split("/").filter(Boolean).pop();
+export const getBlogPostSummaryBySlug = getBlogPostBySlug;
 
-    if (!lastSegment) {
-      return parsedUrl.hostname.replace(/^www\./, "");
-    }
+export async function loadBlogPostBySlug(slug: string) {
+  const normalizedSlug = slug.trim();
 
-    return lastSegment
-      .replace(/\.[a-z0-9]+$/i, "")
-      .replace(/[-_]+/g, " ")
-      .replace(/\s+/g, " ")
-      .trim()
-      .replace(/\b\w/g, (character) => character.toUpperCase());
-  } catch {
-    return url;
-  }
-}
-
-function extractTitleAndUrl(value: string) {
-  const match = value.match(/^(.*?)\s*\((https?:\/\/[^)\s]+)\)\s*$/i);
-  if (!match) {
+  if (!normalizedSlug) {
     return null;
   }
 
-  return {
-    title: match[1].trim().replace(/:\s*$/, ""),
-    url: match[2],
-  };
+  const cachedPost = blogPostCache.get(normalizedSlug);
+  if (cachedPost) {
+    return cachedPost;
+  }
+
+  const postPromise = loadBlogPost(normalizedSlug);
+  blogPostCache.set(normalizedSlug, postPromise);
+  return postPromise;
 }
 
-function normalizeSources(sources: BlogPostFrontmatter["sources"] | string[] | undefined): BlogSourceItem[] {
-  if (!Array.isArray(sources)) {
-    return [];
+async function loadBlogPost(slug: string): Promise<BlogPost | null> {
+  const summary = getBlogPostBySlug(slug);
+  const sourcePath = summary?.sourcePath ?? `../content/blog/${slug}.md`;
+  const loadSource = blogPostModules[sourcePath];
+
+  if (!summary || !loadSource) {
+    return null;
   }
 
-  return sources
-    .map((source) => {
-      if (typeof source === "string") {
-        const extracted = extractTitleAndUrl(source);
-        if (extracted) {
-          return extracted;
-        }
-
-        return {
-          title: titleFromUrl(source),
-          url: source,
-        };
-      }
-
-      if (source?.url) {
-        return {
-          title: source.title || titleFromUrl(source.url),
-          url: source.url,
-          publisher: source.publisher,
-        };
-      }
-
-      return null;
-    })
-    .filter((source): source is BlogSourceItem => Boolean(source));
-}
-
-function normalizeFaq(
-  faq: Array<BlogFaqItem | { q?: string; a?: string } | null | undefined> | undefined,
-): BlogFaqItem[] {
-  if (!Array.isArray(faq)) {
-    return [];
-  }
-
-  return faq
-    .map((item) => {
-      const rawItem = item as BlogFaqItem & { q?: string; a?: string };
-      const question = rawItem?.question || rawItem?.q;
-      const answer = rawItem?.answer || rawItem?.a;
-
-      if (!question || !answer) {
-        return null;
-      }
-
-      return {
-        question,
-        answer,
-      };
-    })
-    .filter((item): item is BlogFaqItem => Boolean(item));
-}
-
-function createBlogPost(frontmatter: BlogPostFrontmatter, markdown: string, sourcePath: string): BlogPost {
-  if (!frontmatter.slug || !frontmatter.title || !frontmatter.description) {
-    throw new Error(`Missing required post metadata in ${sourcePath}`);
-  }
-
-  if (!frontmatter.author?.name || !frontmatter.author?.role) {
-    throw new Error(`Missing author metadata in ${sourcePath}`);
-  }
-
+  const source = await loadSource();
+  const { markdown } = parseFrontmatter(source, sourcePath);
   validateRawHtmlImageTags(markdown, sourcePath);
 
-  const updatedAt = frontmatter.updatedAt || frontmatter.publishedAt;
-  const wordCount = countWords(markdown);
-  const readTime = buildReadTimeLabel(wordCount);
-  const html = rewriteRootRelativeUrls(String(marked.parse(markdown)));
+  const { marked } = await import("marked");
+  const html = rewriteRootRelativeUrls(String(await marked.parse(markdown)));
 
   return {
-    ...frontmatter,
-    author: getAuthorProfileForIndex(0),
-    updatedAt,
-    heroCaption: frontmatter.heroCaption || "",
-    featured: Boolean(frontmatter.featured),
-    tags: frontmatter.tags ?? [],
-    relatedSlugs: frontmatter.relatedSlugs ?? [],
-    primaryCta: normalizeCta(frontmatter.primaryCta, DEFAULT_PRIMARY_CTA),
-    secondaryCta: normalizeCta(frontmatter.secondaryCta, DEFAULT_SECONDARY_CTA),
-    faq: normalizeFaq(frontmatter.faq),
-    sources: normalizeSources(frontmatter.sources),
-    canonicalPath: `/post/${frontmatter.slug}`,
+    ...summary,
     html,
     markdown,
-    wordCount,
-    readTimeMinutes: readTime.readTimeMinutes,
-    readTimeLabel: readTime.readTimeLabel,
     sourcePath,
-    createdAtTimestamp: blogOrderTimestamps[frontmatter.slug] ?? 0,
   };
-}
-
-function assignAuthors(posts: BlogPost[]) {
-  return posts.map((post, index) => ({
-    ...post,
-    author: getAuthorProfileForIndex(index),
-  }));
-}
-
-function sortPosts(posts: BlogPost[]) {
-  return [...posts].sort((left, right) => {
-    const publishedDiff =
-      new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime();
-
-    if (publishedDiff !== 0) {
-      return publishedDiff;
-    }
-
-    const updatedDiff =
-      new Date(right.updatedAt).getTime() - new Date(left.updatedAt).getTime();
-
-    if (updatedDiff !== 0) {
-      return updatedDiff;
-    }
-
-    const createdDiff = right.createdAtTimestamp - left.createdAtTimestamp;
-
-    if (createdDiff !== 0) {
-      return createdDiff;
-    }
-
-    return left.title.localeCompare(right.title);
-  });
-}
-
-const blogPostModules = import.meta.glob("../content/blog/*.md", {
-  eager: true,
-  import: "default",
-  query: "?raw",
-}) as Record<string, string>;
-
-export const blogPosts: BlogPost[] = assignAuthors(
-  sortPosts(
-    Object.entries(blogPostModules)
-      .filter(([filePath]) => !filePath.split("/").pop()?.startsWith("_"))
-      .map(([filePath, source]) => {
-        const { frontmatter, markdown } = parseFrontmatter(source, filePath);
-        return createBlogPost(frontmatter, markdown, filePath);
-      }),
-  ),
-);
-
-export function getBlogPostBySlug(slug: string) {
-  return blogPosts.find((post) => post.slug === slug);
 }
 
 export function getFeaturedBlogPost() {
   return blogPosts[0] ?? null;
 }
 
-export function getRelatedBlogPosts(post: BlogPost, limit = 3) {
+export function getRelatedBlogPosts(post: BlogPostSummary, limit = 3) {
   const explicitRelatedPosts = post.relatedSlugs
     .map((slug) => getBlogPostBySlug(slug))
-    .filter((candidate): candidate is BlogPost => Boolean(candidate));
+    .filter((candidate): candidate is BlogPostSummary => Boolean(candidate));
 
   if (explicitRelatedPosts.length > 0) {
     return explicitRelatedPosts.slice(0, limit);
@@ -536,5 +340,5 @@ export function getBlogAuthors(): BlogAuthorProfile[] {
 }
 
 export function getBlogAuthorBySlug(slug: string) {
-  return getBlogAuthors().find((author) => author.slug === slug);
+  return getBlogAuthors().find((author) => author.slug === slug) ?? null;
 }

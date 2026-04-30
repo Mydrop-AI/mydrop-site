@@ -10,19 +10,50 @@
     />
     <script>
       window.lemonSqueezyAffiliateConfig = { store: "mydrop" };
-    </script>
-    <script src="https://lmsqueezy.com/affiliate.js" defer></script>
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-NT9H9RK7");
+      window.dataLayer = window.dataLayer || [];
+
+      (function () {
+        var loaded = false;
+        var isReactSnap = navigator.userAgent === "ReactSnap";
+
+        function appendScript(src) {
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = src;
+          document.head.appendChild(script);
+        }
+
+        function loadThirdPartyScripts() {
+          if (loaded || isReactSnap) {
+            return;
+          }
+
+          loaded = true;
+          appendScript("https://lmsqueezy.com/affiliate.js");
+          window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          appendScript("https://www.googletagmanager.com/gtm.js?id=GTM-NT9H9RK7");
+        }
+
+        function scheduleThirdPartyScripts() {
+          var schedule = function () {
+            if ("requestIdleCallback" in window) {
+              window.requestIdleCallback(loadThirdPartyScripts, { timeout: 3000 });
+              return;
+            }
+
+            window.setTimeout(loadThirdPartyScripts, 1500);
+          };
+
+          if (document.readyState === "complete") {
+            schedule();
+            return;
+          }
+
+          window.addEventListener("load", schedule, { once: true });
+        }
+
+        scheduleThirdPartyScripts();
+      })();
     </script>
     <style>
       .iub__us-widget,

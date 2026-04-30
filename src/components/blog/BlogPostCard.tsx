@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CalendarDays, Clock3 } from "lucide-react";
-import type { BlogPost } from "@/lib/blog";
+import type { BlogPostSummary } from "@/lib/blog";
 import { resolveAssetPath } from "@/lib/paths";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
@@ -14,7 +14,7 @@ function formatDate(dateValue: string) {
 }
 
 interface BlogPostCardProps {
-  post: BlogPost;
+  post: BlogPostSummary;
   compact?: boolean;
   headingTag?: "h2" | "h3";
 }
@@ -36,9 +36,11 @@ export default function BlogPostCard({
       >
         <img
           src={resolveAssetPath(post.heroImage)}
-          alt={post.heroImageAlt}
+          alt={post.heroImageAlt || post.title}
           className="blog-card__image"
           loading="lazy"
+          width="640"
+          height="360"
           itemProp="image"
         />
       </Link>
@@ -68,9 +70,12 @@ export default function BlogPostCard({
           >
             <img
               src={resolveAssetPath(post.author.image)}
-              alt={post.author.name}
+              alt=""
+              aria-hidden="true"
               className="blog-card__author-image"
               loading="lazy"
+              width="29"
+              height="29"
             />
             <span itemProp="name">{post.author.name}</span>
           </Link>

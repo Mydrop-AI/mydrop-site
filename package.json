@@ -6,7 +6,7 @@
     "dev": "vite",
     "validate:blog": "node scripts/validate-blog-posts.cjs",
     "validate:blog:file": "node scripts/validate-single-blog.cjs",
-    "prebuild": "node scripts/generate-blog-order.cjs && node scripts/generate-sitemap.cjs",
+    "prebuild": "node scripts/generate-blog-order.cjs && node scripts/generate-blog-metadata.cjs && node scripts/generate-sitemap.cjs",
     "build": "tsc --noEmit && vite build",
     "postbuild": "node scripts/react-snap.cjs",
     "preview": "vite preview",

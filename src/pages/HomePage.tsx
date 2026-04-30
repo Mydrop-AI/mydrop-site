@@ -13,7 +13,7 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import WebsiteAgentPreview from "@/components/WebsiteAgentPreview";
@@ -33,6 +33,71 @@ type GalleryItem = {
   alt: string;
   size: "sm" | "md" | "lg" | "wide" | "tall";
 };
+
+function ViewportAutoplayVideo({ src, alt }: { src: string; alt: string }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const resolvedSrc = resolveAssetPath(src);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) {
+      return undefined;
+    }
+
+    let hasLoadedSource = false;
+    const loadAndPlay = () => {
+      if (!hasLoadedSource) {
+        video.src = resolvedSrc;
+        hasLoadedSource = true;
+      }
+
+      void video.play().catch(() => {
+        // Browser autoplay policies can still reject in edge cases.
+      });
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      loadAndPlay();
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          loadAndPlay();
+          return;
+        }
+
+        video.pause();
+      },
+      {
+        rootMargin: "180px 0px",
+        threshold: 0.12,
+      },
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+    };
+  }, [resolvedSrc]);
+
+  return (
+    <video
+      ref={videoRef}
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-label={alt}
+      title={alt}
+    />
+  );
+}
 
 type SpotlightSection = {
   title: string;
@@ -620,6 +685,7 @@ export default function HomePage() {
 
   const galleryRowA = [...galleryRowASeed, ...galleryRowASeed];
   const galleryRowB = [...galleryRowBSeed, ...galleryRowBSeed];
+  const homeBlogPosts = blogPosts.slice(0, 20);
 
   return (
     <>
@@ -832,15 +898,9 @@ export default function HomePage() {
                 {galleryRowA.map((item, index) => (
                   <article key={`row-a-${item.src}-${index}`} className={`gallery-tile gallery-tile--${item.size}`}>
                     {item.type === "video" ? (
-                      <video
-                        src={resolveAssetPath(item.src)}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-label={item.alt}
-                        title={item.alt}
+                      <ViewportAutoplayVideo
+                        src={item.src}
+                        alt={item.alt}
                       />
                     ) : (
                       <img src={resolveAssetPath(item.src)} alt={item.alt} loading="lazy" />
@@ -855,15 +915,9 @@ export default function HomePage() {
                 {galleryRowB.map((item, index) => (
                   <article key={`row-b-${item.src}-${index}`} className={`gallery-tile gallery-tile--${item.size}`}>
                     {item.type === "video" ? (
-                      <video
-                        src={resolveAssetPath(item.src)}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-label={item.alt}
-                        title={item.alt}
+                      <ViewportAutoplayVideo
+                        src={item.src}
+                        alt={item.alt}
                       />
                     ) : (
                       <img src={resolveAssetPath(item.src)} alt={item.alt} loading="lazy" />
@@ -1219,7 +1273,7 @@ export default function HomePage() {
 
           <section className="blog-slider-shell" aria-label="Latest blog posts">
             <div className="blog-slider-track">
-              {blogPosts.map((post) => (
+              {homeBlogPosts.map((post) => (
                 <div key={post.slug} className="blog-slider-slide">
                   <BlogPostCard post={post} compact headingTag="h3" />
                 </div>
